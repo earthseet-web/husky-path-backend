@@ -1,0 +1,3200 @@
+{
+  "source": "UW course catalog (washington.edu/students/crscat), collected 2026-11-16",
+  "note": "Descriptions are short summaries. Prerequisite text is from the catalog; always confirm in MyPlan.",
+  "courses": [
+    {
+      "code": "MATH 124",
+      "title": "Calculus with Analytic Geometry I",
+      "credits": 5,
+      "credits_max": 5,
+      "description": "Single-variable calculus focused on differentiation and its applications.",
+      "prereq_text": "None listed. Recommended: completion of Department of Mathematics' Guided Self-Placement.",
+      "prereq": [],
+      "recommended": null,
+      "offered": "AWSpS",
+      "areas": [
+        "NSc",
+        "RSN"
+      ],
+      "url": "https://www.washington.edu/students/crscat/math.html#math124",
+      "notes": null,
+      "source_checked": "2026-11-16"
+    },
+    {
+      "code": "MATH 125",
+      "title": "Calculus with Analytic Geometry II",
+      "credits": 5,
+      "credits_max": 5,
+      "description": "Continues single-variable calculus with an emphasis on integration and applications.",
+      "prereq_text": "Either minimum grade of 2.0 in MATH 124, score of 3 on AB advanced placement test, or score of 3 on BC advanced placement test.",
+      "prereq": [
+        {
+          "any_of": [
+            "MATH 124"
+          ],
+          "concurrent_ok": false,
+          "min_grade": 2.0,
+          "alt": "AP Calculus AB or BC score of 3"
+        }
+      ],
+      "recommended": null,
+      "offered": "AWSpS",
+      "areas": [
+        "NSc"
+      ],
+      "url": "https://www.washington.edu/students/crscat/math.html#math125",
+      "notes": null,
+      "source_checked": "2026-11-16"
+    },
+    {
+      "code": "MATH 126",
+      "title": "Calculus with Analytic Geometry III",
+      "credits": 5,
+      "credits_max": 5,
+      "description": "Vector geometry, vector functions, multivariable differential calculus, and Taylor series.",
+      "prereq_text": "Either a minimum grade of 2.0 in MATH 125, a minimum grade of 2.0 in MATH 135, or a minimum score of 4 on BC advanced placement test.",
+      "prereq": [
+        {
+          "any_of": [
+            "MATH 125",
+            "MATH 135"
+          ],
+          "concurrent_ok": false,
+          "min_grade": 2.0,
+          "alt": "AP Calculus BC score of 4"
+        }
+      ],
+      "recommended": null,
+      "offered": "AWSpS",
+      "areas": [
+        "NSc"
+      ],
+      "url": "https://www.washington.edu/students/crscat/math.html#math126",
+      "notes": null,
+      "source_checked": "2026-11-16"
+    },
+    {
+      "code": "MATH 134",
+      "title": "Accelerated (Honors) Calculus",
+      "credits": 5,
+      "credits_max": 5,
+      "description": "First course of the two-year honors sequence covering MATH 124-126 and 207-208.",
+      "prereq_text": "None listed.",
+      "prereq": [],
+      "recommended": null,
+      "offered": "A",
+      "areas": [
+        "NSc",
+        "RSN"
+      ],
+      "url": "https://www.washington.edu/students/crscat/math.html#math134",
+      "notes": null,
+      "source_checked": "2026-11-16"
+    },
+    {
+      "code": "MATH 135",
+      "title": "Accelerated (Honors) Calculus",
+      "credits": 5,
+      "credits_max": 5,
+      "description": "Second course of the first-year honors calculus sequence.",
+      "prereq_text": "A minimum grade of 2.0 in MATH 134.",
+      "prereq": [
+        {
+          "any_of": [
+            "MATH 134"
+          ],
+          "concurrent_ok": false,
+          "min_grade": 2.0,
+          "alt": null
+        }
+      ],
+      "recommended": null,
+      "offered": "W",
+      "areas": [
+        "NSc"
+      ],
+      "url": "https://www.washington.edu/students/crscat/math.html#math135",
+      "notes": null,
+      "source_checked": "2026-11-16"
+    },
+    {
+      "code": "MATH 136",
+      "title": "Accelerated (Honors) Calculus",
+      "credits": 5,
+      "credits_max": 5,
+      "description": "Completes the first-year honors calculus sequence; overlaps with MATH 126.",
+      "prereq_text": "A minimum grade of 2.0 in MATH 135.",
+      "prereq": [
+        {
+          "any_of": [
+            "MATH 135"
+          ],
+          "concurrent_ok": false,
+          "min_grade": 2.0,
+          "alt": null
+        }
+      ],
+      "recommended": null,
+      "offered": "Sp",
+      "areas": [
+        "NSc"
+      ],
+      "url": "https://www.washington.edu/students/crscat/math.html#math136",
+      "notes": null,
+      "source_checked": "2026-11-16"
+    },
+    {
+      "code": "MATH 207",
+      "title": "Introduction to Differential Equations",
+      "credits": 4,
+      "credits_max": 4,
+      "description": "Ordinary differential equations: first- and second-order equations and the Laplace transform.",
+      "prereq_text": "A minimum grade of 2.0 in MATH 125.",
+      "prereq": [
+        {
+          "any_of": [
+            "MATH 125"
+          ],
+          "concurrent_ok": false,
+          "min_grade": 2.0,
+          "alt": null
+        }
+      ],
+      "recommended": null,
+      "offered": "AWSpS",
+      "areas": [
+        "NSc"
+      ],
+      "url": "https://www.washington.edu/students/crscat/math.html#math207",
+      "notes": null,
+      "source_checked": "2026-11-16"
+    },
+    {
+      "code": "MATH 208",
+      "title": "Matrix Algebra with Applications",
+      "credits": 4,
+      "credits_max": 4,
+      "description": "Linear systems, vector spaces, matrices, orthogonality, eigenvalues, and applications.",
+      "prereq_text": "None listed. Recommended: completion of Department of Mathematics' Guided Self-Placement.",
+      "prereq": [],
+      "recommended": null,
+      "offered": "AWSpS",
+      "areas": [
+        "NSc",
+        "RSN"
+      ],
+      "url": "https://www.washington.edu/students/crscat/math.html#math208",
+      "notes": null,
+      "source_checked": "2026-11-16"
+    },
+    {
+      "code": "MATH 224",
+      "title": "Advanced Multivariable Calculus",
+      "credits": 4,
+      "credits_max": 4,
+      "description": "Multivariable integration, vector fields, and the theorems of Green, Stokes, and Gauss.",
+      "prereq_text": "A minimum grade of 2.0 in either MATH 126 or MATH 136.",
+      "prereq": [
+        {
+          "any_of": [
+            "MATH 126",
+            "MATH 136"
+          ],
+          "concurrent_ok": false,
+          "min_grade": 2.0,
+          "alt": null
+        }
+      ],
+      "recommended": null,
+      "offered": "AWSpS",
+      "areas": [
+        "NSc"
+      ],
+      "url": "https://www.washington.edu/students/crscat/math.html#math224",
+      "notes": null,
+      "source_checked": "2026-11-16"
+    },
+    {
+      "code": "AMATH 351",
+      "title": "Introduction to Differential Equations and Applications",
+      "credits": 3,
+      "credits_max": 3,
+      "description": "Ordinary differential equations with Taylor series and Laplace transforms, using science and engineering examples.",
+      "prereq_text": "MATH 125 or MATH 135.",
+      "prereq": [
+        {
+          "any_of": [
+            "MATH 125",
+            "MATH 135"
+          ],
+          "concurrent_ok": false,
+          "min_grade": null,
+          "alt": null
+        }
+      ],
+      "recommended": null,
+      "offered": "AWSpS",
+      "areas": [
+        "NSc"
+      ],
+      "url": "https://www.washington.edu/students/crscat/amath.html#amath351",
+      "notes": null,
+      "source_checked": "2026-11-16"
+    },
+    {
+      "code": "AMATH 352",
+      "title": "Applied Linear Algebra and Numerical Analysis",
+      "credits": 3,
+      "credits_max": 3,
+      "description": "Numerical methods and linear algebra, including eigenvalue problems, using MATLAB and/or Python.",
+      "prereq_text": "MATH 126 or MATH 136.",
+      "prereq": [
+        {
+          "any_of": [
+            "MATH 126",
+            "MATH 136"
+          ],
+          "concurrent_ok": false,
+          "min_grade": null,
+          "alt": null
+        }
+      ],
+      "recommended": null,
+      "offered": "AWSpS",
+      "areas": [
+        "NSc"
+      ],
+      "url": "https://www.washington.edu/students/crscat/amath.html#amath352",
+      "notes": null,
+      "source_checked": "2026-11-16"
+    },
+    {
+      "code": "STAT 390",
+      "title": "Statistical Methods in Engineering and Science",
+      "credits": 4,
+      "credits_max": 4,
+      "description": "Probability and statistics for engineering and science, with hands-on computing.",
+      "prereq_text": "Either MATH 126 or MATH 136.",
+      "prereq": [
+        {
+          "any_of": [
+            "MATH 126",
+            "MATH 136"
+          ],
+          "concurrent_ok": false,
+          "min_grade": null,
+          "alt": null
+        }
+      ],
+      "recommended": null,
+      "offered": "AWSpS",
+      "areas": [
+        "NSc"
+      ],
+      "url": "https://www.washington.edu/students/crscat/stat.html#stat390",
+      "notes": null,
+      "source_checked": "2026-11-16"
+    },
+    {
+      "code": "IND E 315",
+      "title": "Probability and Statistics for Engineers",
+      "credits": 3,
+      "credits_max": 3,
+      "description": "Probability theory and statistics applied to engineering problems and data analysis.",
+      "prereq_text": "Either MATH 135, MATH 136, MATH 207, or AMATH 351.",
+      "prereq": [
+        {
+          "any_of": [
+            "MATH 135",
+            "MATH 136",
+            "MATH 207",
+            "AMATH 351"
+          ],
+          "concurrent_ok": false,
+          "min_grade": null,
+          "alt": null
+        }
+      ],
+      "recommended": null,
+      "offered": "AWS",
+      "areas": [
+        "NSc"
+      ],
+      "url": "https://www.washington.edu/students/crscat/inde.html#inde315",
+      "notes": null,
+      "source_checked": "2026-11-16"
+    },
+    {
+      "code": "PHYS 121",
+      "title": "Mechanics",
+      "credits": 5,
+      "credits_max": 5,
+      "description": "Basic principles of mechanics with lab, for physical science and engineering majors.",
+      "prereq_text": "Either MATH 124 or MATH 134, which may be taken concurrently.",
+      "prereq": [
+        {
+          "any_of": [
+            "MATH 124",
+            "MATH 134"
+          ],
+          "concurrent_ok": true,
+          "min_grade": null,
+          "alt": null
+        }
+      ],
+      "recommended": null,
+      "offered": "AWSpS",
+      "areas": [
+        "NSc",
+        "RSN"
+      ],
+      "url": "https://www.washington.edu/students/crscat/phys.html#phys121",
+      "notes": null,
+      "source_checked": "2026-11-16"
+    },
+    {
+      "code": "PHYS 122",
+      "title": "Electromagnetism",
+      "credits": 5,
+      "credits_max": 5,
+      "description": "Fundamentals of electromagnetism with lab, for physical science and engineering majors.",
+      "prereq_text": "Either PHYS 121 or PHYS 141; and either MATH 125 or MATH 134, which may be taken concurrently.",
+      "prereq": [
+        {
+          "any_of": [
+            "PHYS 121",
+            "PHYS 141"
+          ],
+          "concurrent_ok": false,
+          "min_grade": null,
+          "alt": null
+        },
+        {
+          "any_of": [
+            "MATH 125",
+            "MATH 134"
+          ],
+          "concurrent_ok": true,
+          "min_grade": null,
+          "alt": null
+        }
+      ],
+      "recommended": null,
+      "offered": "AWSpS",
+      "areas": [
+        "NSc"
+      ],
+      "url": "https://www.washington.edu/students/crscat/phys.html#phys122",
+      "notes": null,
+      "source_checked": "2026-11-16"
+    },
+    {
+      "code": "PHYS 123",
+      "title": "Waves, Light, and Heat",
+      "credits": 5,
+      "credits_max": 5,
+      "description": "Oscillations, light and optics, fluids, and heat, with lab and tutorial.",
+      "prereq_text": "Either PHYS 122 or PHYS 142; and either MATH 126 or MATH 134, which may be taken concurrently.",
+      "prereq": [
+        {
+          "any_of": [
+            "PHYS 122",
+            "PHYS 142"
+          ],
+          "concurrent_ok": false,
+          "min_grade": null,
+          "alt": null
+        },
+        {
+          "any_of": [
+            "MATH 126",
+            "MATH 134"
+          ],
+          "concurrent_ok": true,
+          "min_grade": null,
+          "alt": null
+        }
+      ],
+      "recommended": null,
+      "offered": "AWSpS",
+      "areas": [
+        "NSc"
+      ],
+      "url": "https://www.washington.edu/students/crscat/phys.html#phys123",
+      "notes": null,
+      "source_checked": "2026-11-16"
+    },
+    {
+      "code": "PHYS 141",
+      "title": "Honors Mechanics",
+      "credits": 5,
+      "credits_max": 5,
+      "description": "Honors version of PHYS 121 in greater depth, for students with strong calculus preparation.",
+      "prereq_text": "Either a minimum grade of 2.5 in MATH 124, MATH 134 (may be concurrent), a minimum score of 4 on AP Calculus AB, or 3 on AP Calculus BC.",
+      "prereq": [
+        {
+          "any_of": [
+            "MATH 124",
+            "MATH 134"
+          ],
+          "concurrent_ok": true,
+          "min_grade": 2.5,
+          "alt": "AP Calculus AB score of 4 or BC score of 3"
+        }
+      ],
+      "recommended": null,
+      "offered": "A",
+      "areas": [
+        "NSc"
+      ],
+      "url": "https://www.washington.edu/students/crscat/phys.html#phys141",
+      "notes": null,
+      "source_checked": "2026-11-16"
+    },
+    {
+      "code": "PHYS 142",
+      "title": "Honors Electromagnetism",
+      "credits": 5,
+      "credits_max": 5,
+      "description": "Honors version of PHYS 122 in greater depth.",
+      "prereq_text": "A minimum grade of 2.5 in PHYS 141; and MATH 125 or MATH 134, either of which may be taken concurrently.",
+      "prereq": [
+        {
+          "any_of": [
+            "PHYS 141"
+          ],
+          "concurrent_ok": false,
+          "min_grade": 2.5,
+          "alt": null
+        },
+        {
+          "any_of": [
+            "MATH 125",
+            "MATH 134"
+          ],
+          "concurrent_ok": true,
+          "min_grade": null,
+          "alt": null
+        }
+      ],
+      "recommended": null,
+      "offered": "W",
+      "areas": [
+        "NSc"
+      ],
+      "url": "https://www.washington.edu/students/crscat/phys.html#phys142",
+      "notes": null,
+      "source_checked": "2026-11-16"
+    },
+    {
+      "code": "CHEM 142",
+      "title": "General Chemistry I",
+      "credits": 5,
+      "credits_max": 5,
+      "description": "Atomic nature of matter, bonding, molecular geometry, and stoichiometry, with lab.",
+      "prereq_text": "Either a minimum grade of 1.7 in CHEM 110, a passing score in the General Chemistry Placement exam, or a minimum score of 1 on the Chemistry AP exam; recommended: MATH 120 or MATH 124.",
+      "prereq": [
+        {
+          "any_of": [
+            "CHEM 110"
+          ],
+          "concurrent_ok": false,
+          "min_grade": 1.7,
+          "alt": "General Chemistry Placement exam or AP Chemistry score"
+        }
+      ],
+      "recommended": null,
+      "offered": "AWSpS",
+      "areas": [
+        "NSc",
+        "RSN"
+      ],
+      "url": "https://www.washington.edu/students/crscat/chem.html#chem142",
+      "notes": null,
+      "source_checked": "2026-11-16"
+    },
+    {
+      "code": "CHEM 143",
+      "title": "Accelerated General Chemistry I",
+      "credits": 6,
+      "credits_max": 6,
+      "description": "Accelerated general chemistry covering about half of the year-long sequence, with lab.",
+      "prereq_text": "Same as CHEM 142.",
+      "prereq": [
+        {
+          "any_of": [
+            "CHEM 110"
+          ],
+          "concurrent_ok": false,
+          "min_grade": 1.7,
+          "alt": "General Chemistry Placement exam or AP Chemistry score"
+        }
+      ],
+      "recommended": null,
+      "offered": "A",
+      "areas": [
+        "NSc",
+        "RSN"
+      ],
+      "url": "https://www.washington.edu/students/crscat/chem.html#chem143",
+      "notes": null,
+      "source_checked": "2026-11-16"
+    },
+    {
+      "code": "CHEM 145",
+      "title": "Honors General Chemistry",
+      "credits": 5,
+      "credits_max": 5,
+      "description": "Honors chemistry covering CHEM 142, 152, and 162 topics with more mathematical rigor.",
+      "prereq_text": "MATH 124 or MATH 134 (may be concurrent) and an honors placement score, AP Chemistry 3, or IB HL chemistry 5.",
+      "prereq": [
+        {
+          "any_of": [
+            "MATH 124",
+            "MATH 134"
+          ],
+          "concurrent_ok": true,
+          "min_grade": null,
+          "alt": null
+        }
+      ],
+      "recommended": null,
+      "offered": "A",
+      "areas": [
+        "NSc",
+        "RSN"
+      ],
+      "url": "https://www.washington.edu/students/crscat/chem.html#chem145",
+      "notes": "Also requires a placement or exam score, which this app cannot check.",
+      "source_checked": "2026-11-16"
+    },
+    {
+      "code": "BIOL 130",
+      "title": "Introduction to Neuroscience",
+      "credits": 4,
+      "credits_max": 4,
+      "description": "How brain circuits process sensory information and generate movement.",
+      "prereq_text": "None listed.",
+      "prereq": [],
+      "recommended": null,
+      "offered": "Sp",
+      "areas": [
+        "NSc"
+      ],
+      "url": "https://www.washington.edu/students/crscat/biol.html#biol130",
+      "notes": null,
+      "source_checked": "2026-11-16"
+    },
+    {
+      "code": "BIOL 220",
+      "title": "Introductory Biology",
+      "credits": 5,
+      "credits_max": 5,
+      "description": "Final course of the introductory biology series: animal and plant physiology.",
+      "prereq_text": "Minimum grade of 2.0 in either BIOL 200, B BIO 200, or T BIOL 140.",
+      "prereq": [
+        {
+          "any_of": [
+            "BIOL 200",
+            "B BIO 200",
+            "T BIOL 140"
+          ],
+          "concurrent_ok": false,
+          "min_grade": 2.0,
+          "alt": null
+        }
+      ],
+      "recommended": null,
+      "offered": "AWSpS",
+      "areas": [
+        "NSc"
+      ],
+      "url": "https://www.washington.edu/students/crscat/biol.html#biol220",
+      "notes": null,
+      "source_checked": "2026-11-16"
+    },
+    {
+      "code": "CSE 121",
+      "title": "Introduction to Computer Programming I",
+      "credits": 4,
+      "credits_max": 4,
+      "description": "Programming for beginners: methods, loops, conditionals, and arrays.",
+      "prereq_text": "None listed. Recommended: completion of Paul G. Allen School's Guided Self-Placement.",
+      "prereq": [],
+      "recommended": null,
+      "offered": "AWSpS",
+      "areas": [
+        "NSc",
+        "RSN"
+      ],
+      "url": "https://www.washington.edu/students/crscat/cse.html#cse121",
+      "notes": null,
+      "source_checked": "2026-11-16"
+    },
+    {
+      "code": "CSE 122",
+      "title": "Introduction to Computer Programming II",
+      "credits": 4,
+      "credits_max": 4,
+      "description": "Program design, style, decomposition, and data structures such as lists, dictionaries, and sets.",
+      "prereq_text": "None listed. Recommended: CSE 121 or completion of Paul G. Allen School's Guided Self-Placement.",
+      "prereq": [],
+      "recommended": "CSE 121",
+      "offered": "AWSpS",
+      "areas": [
+        "NSc",
+        "RSN"
+      ],
+      "url": "https://www.washington.edu/students/crscat/cse.html#cse122",
+      "notes": null,
+      "source_checked": "2026-11-16"
+    },
+    {
+      "code": "CSE 123",
+      "title": "Introduction to Computer Programming III",
+      "credits": 4,
+      "credits_max": 4,
+      "description": "Data structures and algorithms with linked references, recursion, and inheritance.",
+      "prereq_text": "None listed. Recommended: CSE 122 or completion of Paul G. Allen School's Guided Self-Placement.",
+      "prereq": [],
+      "recommended": "CSE 122",
+      "offered": "AWSpS",
+      "areas": [
+        "NSc",
+        "RSN"
+      ],
+      "url": "https://www.washington.edu/students/crscat/cse.html#cse123",
+      "notes": null,
+      "source_checked": "2026-11-16"
+    },
+    {
+      "code": "CSE 142",
+      "title": "Computer Programming I",
+      "credits": 4,
+      "credits_max": 4,
+      "description": "Core programming for beginners: methods, control structures, file processing, arrays, objects.",
+      "prereq_text": "None listed.",
+      "prereq": [],
+      "recommended": null,
+      "offered": "AWSpS",
+      "areas": [
+        "NSc",
+        "RSN"
+      ],
+      "url": "https://www.washington.edu/students/crscat/cse.html#cse142",
+      "notes": null,
+      "source_checked": "2026-11-16"
+    },
+    {
+      "code": "CSE 143",
+      "title": "Computer Programming II",
+      "credits": 5,
+      "credits_max": 5,
+      "description": "Data abstraction, linked lists, stacks, queues, binary trees, and recursion.",
+      "prereq_text": "CSE 142.",
+      "prereq": [
+        {
+          "any_of": [
+            "CSE 142"
+          ],
+          "concurrent_ok": false,
+          "min_grade": null,
+          "alt": null
+        }
+      ],
+      "recommended": null,
+      "offered": "AWSpS",
+      "areas": [
+        "NSc",
+        "RSN"
+      ],
+      "url": "https://www.washington.edu/students/crscat/cse.html#cse143",
+      "notes": null,
+      "source_checked": "2026-11-16"
+    },
+    {
+      "code": "CSE 160",
+      "title": "Data Programming",
+      "credits": 4,
+      "credits_max": 4,
+      "description": "Python for data tasks: analysis, file processing, and visualization.",
+      "prereq_text": "None listed.",
+      "prereq": [],
+      "recommended": null,
+      "offered": null,
+      "areas": [
+        "NSc",
+        "RSN"
+      ],
+      "url": "https://www.washington.edu/students/crscat/cse.html#cse160",
+      "notes": null,
+      "source_checked": "2026-11-16"
+    },
+    {
+      "code": "CSE 163",
+      "title": "Intermediate Data Programming",
+      "credits": 4,
+      "credits_max": 4,
+      "description": "Working with varied data types and libraries to write medium-scale programs.",
+      "prereq_text": "Either CSE 122, CSE 123, CSE 142, CSE 143, or CSE 160.",
+      "prereq": [
+        {
+          "any_of": [
+            "CSE 122",
+            "CSE 123",
+            "CSE 142",
+            "CSE 143",
+            "CSE 160"
+          ],
+          "concurrent_ok": false,
+          "min_grade": null,
+          "alt": null
+        }
+      ],
+      "recommended": null,
+      "offered": null,
+      "areas": [
+        "RSN"
+      ],
+      "url": "https://www.washington.edu/students/crscat/cse.html#cse163",
+      "notes": null,
+      "source_checked": "2026-11-16"
+    },
+    {
+      "code": "CSE 373",
+      "title": "Data Structures and Algorithms",
+      "credits": 4,
+      "credits_max": 4,
+      "description": "Trees, graphs, hashing, sorting, and other core data structures and algorithms, for non-majors.",
+      "prereq_text": "CSE 123 or CSE 143.",
+      "prereq": [
+        {
+          "any_of": [
+            "CSE 123",
+            "CSE 143"
+          ],
+          "concurrent_ok": false,
+          "min_grade": null,
+          "alt": null
+        }
+      ],
+      "recommended": null,
+      "offered": null,
+      "areas": [],
+      "url": "https://www.washington.edu/students/crscat/cse.html#cse373",
+      "notes": null,
+      "source_checked": "2026-11-16"
+    },
+    {
+      "code": "CSE 374",
+      "title": "Intermediate Programming Concepts and Tools",
+      "credits": 3,
+      "credits_max": 3,
+      "description": "C/C++ programming, manual memory management, and software development tools.",
+      "prereq_text": "CSE 123 or CSE 143.",
+      "prereq": [
+        {
+          "any_of": [
+            "CSE 123",
+            "CSE 143"
+          ],
+          "concurrent_ok": false,
+          "min_grade": null,
+          "alt": null
+        }
+      ],
+      "recommended": null,
+      "offered": null,
+      "areas": [],
+      "url": "https://www.washington.edu/students/crscat/cse.html#cse374",
+      "notes": null,
+      "source_checked": "2026-11-16"
+    },
+    {
+      "code": "ENGR 101",
+      "title": "Engineering Exploration",
+      "credits": 1,
+      "credits_max": 1,
+      "description": "Talks and discussions introducing engineering disciplines and current research.",
+      "prereq_text": "None listed.",
+      "prereq": [],
+      "recommended": null,
+      "offered": null,
+      "areas": [],
+      "url": "https://www.washington.edu/students/crscat/engr.html#engr101",
+      "notes": null,
+      "source_checked": "2026-11-16"
+    },
+    {
+      "code": "ENGR 321",
+      "title": "Engineering Internship Education",
+      "credits": 1,
+      "credits_max": 13,
+      "description": "Approved engineering internship that applies classroom theory on the job.",
+      "prereq_text": "None listed.",
+      "prereq": [],
+      "recommended": null,
+      "offered": "AWSpS",
+      "areas": [],
+      "url": "https://www.washington.edu/students/crscat/engr.html#engr321",
+      "notes": "Max 4 credits count toward Advanced ECE Electives; max 6 combined with E E 499.",
+      "source_checked": "2026-11-16"
+    },
+    {
+      "code": "E E 200",
+      "title": "Undergraduate Research Exploration Seminar",
+      "credits": 1,
+      "credits_max": 1,
+      "description": "Weekly seminar where researchers present work, connecting students with EE research.",
+      "prereq_text": "None listed.",
+      "prereq": [],
+      "recommended": null,
+      "offered": null,
+      "areas": [],
+      "url": "https://www.washington.edu/students/crscat/ee.html#ee200",
+      "notes": "Credit/no-credit.",
+      "source_checked": "2026-11-16"
+    },
+    {
+      "code": "E E 201",
+      "title": "Computer Hardware Skills",
+      "credits": 2,
+      "credits_max": 2,
+      "description": "Hands-on lab: circuit building, microcontrollers, soldering, sensors, and EE careers.",
+      "prereq_text": "CSE 122, CSE 123, CSE 142, or CSE 143, any of which may be taken concurrently.",
+      "prereq": [
+        {
+          "any_of": [
+            "CSE 122",
+            "CSE 123",
+            "CSE 142",
+            "CSE 143"
+          ],
+          "concurrent_ok": true,
+          "min_grade": null,
+          "alt": null
+        }
+      ],
+      "recommended": null,
+      "offered": "AWSp",
+      "areas": [],
+      "url": "https://www.washington.edu/students/crscat/ee.html#ee201",
+      "notes": null,
+      "source_checked": "2026-11-16"
+    },
+    {
+      "code": "E E 205",
+      "title": "Introduction to Signal Conditioning",
+      "credits": 4,
+      "credits_max": 4,
+      "description": "Analog circuits that connect sensors to digital systems, for non-EE majors.",
+      "prereq_text": "Either MATH 126 or MATH 136; and either PHYS 122 or PHYS 142.",
+      "prereq": [
+        {
+          "any_of": [
+            "MATH 126",
+            "MATH 136"
+          ],
+          "concurrent_ok": false,
+          "min_grade": null,
+          "alt": null
+        },
+        {
+          "any_of": [
+            "PHYS 122",
+            "PHYS 142"
+          ],
+          "concurrent_ok": false,
+          "min_grade": null,
+          "alt": null
+        }
+      ],
+      "recommended": null,
+      "offered": "W",
+      "areas": [],
+      "url": "https://www.washington.edu/students/crscat/ee.html#ee205",
+      "notes": null,
+      "source_checked": "2026-11-16"
+    },
+    {
+      "code": "E E 215",
+      "title": "Fundamentals of Electrical Engineering",
+      "credits": 4,
+      "credits_max": 4,
+      "description": "Basic circuit and systems concepts, component models, and first/second-order circuit equations.",
+      "prereq_text": "Either MATH 136, or MATH 126 and either MATH 207, MATH 307, or AMATH 351, any of which may be taken concurrently; and either PHYS 122 or PHYS 142.",
+      "prereq": [
+        {
+          "any_of": [
+            "MATH 136",
+            [
+              "MATH 126",
+              "MATH 207"
+            ],
+            [
+              "MATH 126",
+              "MATH 307"
+            ],
+            [
+              "MATH 126",
+              "AMATH 351"
+            ]
+          ],
+          "concurrent_ok": true,
+          "min_grade": null,
+          "alt": null
+        },
+        {
+          "any_of": [
+            "PHYS 122",
+            "PHYS 142"
+          ],
+          "concurrent_ok": false,
+          "min_grade": null,
+          "alt": null
+        }
+      ],
+      "recommended": null,
+      "offered": null,
+      "areas": [],
+      "url": "https://www.washington.edu/students/crscat/ee.html#ee215",
+      "notes": null,
+      "source_checked": "2026-11-16"
+    },
+    {
+      "code": "E E 233",
+      "title": "Circuit Theory",
+      "credits": 5,
+      "credits_max": 5,
+      "description": "Sinusoidal circuit analysis with phasors, frequency response, power, and two-port networks, with lab.",
+      "prereq_text": "E E 215.",
+      "prereq": [
+        {
+          "any_of": [
+            "E E 215"
+          ],
+          "concurrent_ok": false,
+          "min_grade": null,
+          "alt": null
+        }
+      ],
+      "recommended": null,
+      "offered": null,
+      "areas": [],
+      "url": "https://www.washington.edu/students/crscat/ee.html#ee233",
+      "notes": null,
+      "source_checked": "2026-11-16"
+    },
+    {
+      "code": "E E 241",
+      "title": "Programming for Signal and Information Processing Applications",
+      "credits": 2,
+      "credits_max": 2,
+      "description": "Programming for signal and information processing: data types, data packages, and visualization.",
+      "prereq_text": "Either CSE 122, CSE 123, CSE 142, CSE 143, or CSE 160.",
+      "prereq": [
+        {
+          "any_of": [
+            "CSE 122",
+            "CSE 123",
+            "CSE 142",
+            "CSE 143",
+            "CSE 160"
+          ],
+          "concurrent_ok": false,
+          "min_grade": null,
+          "alt": null
+        }
+      ],
+      "recommended": null,
+      "offered": null,
+      "areas": [],
+      "url": "https://www.washington.edu/students/crscat/ee.html#ee241",
+      "notes": null,
+      "source_checked": "2026-11-16"
+    },
+    {
+      "code": "E E 242",
+      "title": "Signals, Systems, and Data I",
+      "credits": 5,
+      "credits_max": 5,
+      "description": "Continuous- and discrete-time signals and systems, convolution, Fourier methods, and filters, with lab.",
+      "prereq_text": "Either MATH 135, MATH 207, or AMATH 351, any of which may be taken concurrently; and either E E 241 or CSE 163.",
+      "prereq": [
+        {
+          "any_of": [
+            "MATH 135",
+            "MATH 207",
+            "AMATH 351"
+          ],
+          "concurrent_ok": true,
+          "min_grade": null,
+          "alt": null
+        },
+        {
+          "any_of": [
+            "E E 241",
+            "CSE 163"
+          ],
+          "concurrent_ok": false,
+          "min_grade": null,
+          "alt": null
+        }
+      ],
+      "recommended": null,
+      "offered": "AWSp",
+      "areas": [],
+      "url": "https://www.washington.edu/students/crscat/ee.html#ee242",
+      "notes": null,
+      "source_checked": "2026-11-16"
+    },
+    {
+      "code": "E E 271",
+      "title": "Digital Circuits and Systems",
+      "credits": 5,
+      "credits_max": 5,
+      "description": "Boolean logic, combinational and sequential circuits, and digital computer design, with weekly labs.",
+      "prereq_text": "Either CSE 121, CSE 122, CSE 123, CSE 142, or CSE 143.",
+      "prereq": [
+        {
+          "any_of": [
+            "CSE 121",
+            "CSE 122",
+            "CSE 123",
+            "CSE 142",
+            "CSE 143"
+          ],
+          "concurrent_ok": false,
+          "min_grade": null,
+          "alt": null
+        }
+      ],
+      "recommended": null,
+      "offered": null,
+      "areas": [],
+      "url": "https://www.washington.edu/students/crscat/ee.html#ee271",
+      "notes": null,
+      "source_checked": "2026-11-16"
+    },
+    {
+      "code": "E E 280",
+      "title": "Exploring Devices",
+      "credits": 4,
+      "credits_max": 4,
+      "description": "Electronic and photonic devices in everyday products and the physics used to model them.",
+      "prereq_text": "E E 215, which may be taken concurrently; and either PHYS 122 or PHYS 142; recommended: Python or Matlab programming and Linux.",
+      "prereq": [
+        {
+          "any_of": [
+            "E E 215"
+          ],
+          "concurrent_ok": true,
+          "min_grade": null,
+          "alt": null
+        },
+        {
+          "any_of": [
+            "PHYS 122",
+            "PHYS 142"
+          ],
+          "concurrent_ok": false,
+          "min_grade": null,
+          "alt": null
+        }
+      ],
+      "recommended": null,
+      "offered": "AWSp",
+      "areas": [],
+      "url": "https://www.washington.edu/students/crscat/ee.html#ee280",
+      "notes": null,
+      "source_checked": "2026-11-16"
+    },
+    {
+      "code": "E E 299",
+      "title": "Introductory Topics in Electrical Engineering",
+      "credits": 1,
+      "credits_max": 5,
+      "description": "New and experimental approaches to basic electrical engineering.",
+      "prereq_text": "None listed.",
+      "prereq": [],
+      "recommended": null,
+      "offered": null,
+      "areas": [],
+      "url": "https://www.washington.edu/students/crscat/ee.html#ee299",
+      "notes": null,
+      "source_checked": "2026-11-16"
+    },
+    {
+      "code": "E E 331",
+      "title": "Devices and Circuits",
+      "credits": 4,
+      "credits_max": 4,
+      "description": "Diode and FET circuits with emphasis on large-signal and digital logic behavior, with labs.",
+      "prereq_text": "E E 215 and E E 280.",
+      "prereq": [
+        {
+          "any_of": [
+            "E E 215"
+          ],
+          "concurrent_ok": false,
+          "min_grade": null,
+          "alt": null
+        },
+        {
+          "any_of": [
+            "E E 280"
+          ],
+          "concurrent_ok": false,
+          "min_grade": null,
+          "alt": null
+        }
+      ],
+      "recommended": null,
+      "offered": "AWSp",
+      "areas": [],
+      "url": "https://www.washington.edu/students/crscat/ee.html#ee331",
+      "notes": null,
+      "source_checked": "2026-11-16"
+    },
+    {
+      "code": "E E 332",
+      "title": "Devices and Circuits: Analog",
+      "credits": 5,
+      "credits_max": 5,
+      "description": "FET physics and small-signal analog amplifier design with lab instruments and CAD tools.",
+      "prereq_text": "E E 233 and E E 280; recommended: E E 331.",
+      "prereq": [
+        {
+          "any_of": [
+            "E E 233"
+          ],
+          "concurrent_ok": false,
+          "min_grade": null,
+          "alt": null
+        },
+        {
+          "any_of": [
+            "E E 280"
+          ],
+          "concurrent_ok": false,
+          "min_grade": null,
+          "alt": null
+        }
+      ],
+      "recommended": "E E 331",
+      "offered": "ASp",
+      "areas": [],
+      "url": "https://www.washington.edu/students/crscat/ee.html#ee332",
+      "notes": null,
+      "source_checked": "2026-11-16"
+    },
+    {
+      "code": "E E 333",
+      "title": "Analog Embedded Systems",
+      "credits": 5,
+      "credits_max": 5,
+      "description": "Analog circuit design: op amps, differential amplifiers, active filters, and regulators.",
+      "prereq_text": "E E 233; E E 242; and either E E 280 or E E 331.",
+      "prereq": [
+        {
+          "any_of": [
+            "E E 233"
+          ],
+          "concurrent_ok": false,
+          "min_grade": null,
+          "alt": null
+        },
+        {
+          "any_of": [
+            "E E 242"
+          ],
+          "concurrent_ok": false,
+          "min_grade": null,
+          "alt": null
+        },
+        {
+          "any_of": [
+            "E E 280",
+            "E E 331"
+          ],
+          "concurrent_ok": false,
+          "min_grade": null,
+          "alt": null
+        }
+      ],
+      "recommended": null,
+      "offered": null,
+      "areas": [],
+      "url": "https://www.washington.edu/students/crscat/ee.html#ee333",
+      "notes": null,
+      "source_checked": "2026-11-16"
+    },
+    {
+      "code": "E E 342",
+      "title": "Signals, Systems, and Data II",
+      "credits": 4,
+      "credits_max": 4,
+      "description": "Laplace and z-transforms, sampling, FFT, multirate processing, and machine learning applications.",
+      "prereq_text": "E E 242.",
+      "prereq": [
+        {
+          "any_of": [
+            "E E 242"
+          ],
+          "concurrent_ok": false,
+          "min_grade": null,
+          "alt": null
+        }
+      ],
+      "recommended": null,
+      "offered": null,
+      "areas": [],
+      "url": "https://www.washington.edu/students/crscat/ee.html#ee342",
+      "notes": null,
+      "source_checked": "2026-11-16"
+    },
+    {
+      "code": "E E 344",
+      "title": "Data-Driven Modeling and Machine Learning",
+      "credits": 4,
+      "credits_max": 4,
+      "description": "Practical supervised and unsupervised learning, neural networks, and reinforcement learning.",
+      "prereq_text": "Either MATH 126 or MATH 136; and either E E 241 or CSE 163.",
+      "prereq": [
+        {
+          "any_of": [
+            "MATH 126",
+            "MATH 136"
+          ],
+          "concurrent_ok": false,
+          "min_grade": null,
+          "alt": null
+        },
+        {
+          "any_of": [
+            "E E 241",
+            "CSE 163"
+          ],
+          "concurrent_ok": false,
+          "min_grade": null,
+          "alt": null
+        }
+      ],
+      "recommended": null,
+      "offered": null,
+      "areas": [],
+      "url": "https://www.washington.edu/students/crscat/ee.html#ee344",
+      "notes": null,
+      "source_checked": "2026-11-16"
+    },
+    {
+      "code": "E E 345",
+      "title": "Introduction to Foundations of Machine Learning",
+      "credits": 4,
+      "credits_max": 4,
+      "description": "Mathematical foundations of machine learning: linear algebra, regression, classification, clustering.",
+      "prereq_text": "Either MATH 136, MATH 208, or AMATH 352; and either E E 241 or CSE 163.",
+      "prereq": [
+        {
+          "any_of": [
+            "MATH 136",
+            "MATH 208",
+            "AMATH 352"
+          ],
+          "concurrent_ok": false,
+          "min_grade": null,
+          "alt": null
+        },
+        {
+          "any_of": [
+            "E E 241",
+            "CSE 163"
+          ],
+          "concurrent_ok": false,
+          "min_grade": null,
+          "alt": null
+        }
+      ],
+      "recommended": null,
+      "offered": null,
+      "areas": [],
+      "url": "https://www.washington.edu/students/crscat/ee.html#ee345",
+      "notes": null,
+      "source_checked": "2026-11-16"
+    },
+    {
+      "code": "E E 347",
+      "title": "Introduction to Robotics and Control Systems",
+      "credits": 5,
+      "credits_max": 5,
+      "description": "Robot modeling, kinematics, control, sensing, navigation, and path planning, with labs.",
+      "prereq_text": "E E 241 or CSE 163; and either MATH 136, MATH 208, or AMATH 352.",
+      "prereq": [
+        {
+          "any_of": [
+            "E E 241",
+            "CSE 163"
+          ],
+          "concurrent_ok": false,
+          "min_grade": null,
+          "alt": null
+        },
+        {
+          "any_of": [
+            "MATH 136",
+            "MATH 208",
+            "AMATH 352"
+          ],
+          "concurrent_ok": false,
+          "min_grade": null,
+          "alt": null
+        }
+      ],
+      "recommended": null,
+      "offered": null,
+      "areas": [],
+      "url": "https://www.washington.edu/students/crscat/ee.html#ee347",
+      "notes": null,
+      "source_checked": "2026-11-16"
+    },
+    {
+      "code": "E E 351",
+      "title": "Energy Systems",
+      "credits": 5,
+      "credits_max": 5,
+      "description": "Electric generation, transmission, and use, plus power electronics, renewables, and the grid.",
+      "prereq_text": "A minimum grade of 1.0 in E E 215.",
+      "prereq": [
+        {
+          "any_of": [
+            "E E 215"
+          ],
+          "concurrent_ok": false,
+          "min_grade": 1.0,
+          "alt": null
+        }
+      ],
+      "recommended": null,
+      "offered": null,
+      "areas": [],
+      "url": "https://www.washington.edu/students/crscat/ee.html#ee351",
+      "notes": null,
+      "source_checked": "2026-11-16"
+    },
+    {
+      "code": "E E 361",
+      "title": "Applied Electromagnetics",
+      "credits": 5,
+      "credits_max": 5,
+      "description": "Maxwell's equations, plane waves, guided waves, transmission lines, and electrostatics.",
+      "prereq_text": "A minimum grade of 1.0 in E E 215; and either PHYS 123 or PHYS 143.",
+      "prereq": [
+        {
+          "any_of": [
+            "E E 215"
+          ],
+          "concurrent_ok": false,
+          "min_grade": 1.0,
+          "alt": null
+        },
+        {
+          "any_of": [
+            "PHYS 123",
+            "PHYS 143"
+          ],
+          "concurrent_ok": false,
+          "min_grade": null,
+          "alt": null
+        }
+      ],
+      "recommended": null,
+      "offered": null,
+      "areas": [],
+      "url": "https://www.washington.edu/students/crscat/ee.html#ee361",
+      "notes": null,
+      "source_checked": "2026-11-16"
+    },
+    {
+      "code": "E E 371",
+      "title": "Design of Digital Circuits and Systems",
+      "credits": 5,
+      "credits_max": 5,
+      "description": "Verilog modeling of complex digital systems, signal integrity, and power management.",
+      "prereq_text": "Either E E 205 or E E 215; either E E 271 or CSE 369.",
+      "prereq": [
+        {
+          "any_of": [
+            "E E 205",
+            "E E 215"
+          ],
+          "concurrent_ok": false,
+          "min_grade": null,
+          "alt": null
+        },
+        {
+          "any_of": [
+            "E E 271",
+            "CSE 369"
+          ],
+          "concurrent_ok": false,
+          "min_grade": null,
+          "alt": null
+        }
+      ],
+      "recommended": null,
+      "offered": null,
+      "areas": [],
+      "url": "https://www.washington.edu/students/crscat/ee.html#ee371",
+      "notes": "Offered jointly with CSE 371.",
+      "source_checked": "2026-11-16"
+    },
+    {
+      "code": "E E 391",
+      "title": "Probability for Information and Communication Engineering",
+      "credits": 4,
+      "credits_max": 4,
+      "description": "Probability for signal processing, data science, and communications, with Python labs.",
+      "prereq_text": "E E 242; and MATH 126 or MATH 136.",
+      "prereq": [
+        {
+          "any_of": [
+            "E E 242"
+          ],
+          "concurrent_ok": false,
+          "min_grade": null,
+          "alt": null
+        },
+        {
+          "any_of": [
+            "MATH 126",
+            "MATH 136"
+          ],
+          "concurrent_ok": false,
+          "min_grade": null,
+          "alt": null
+        }
+      ],
+      "recommended": null,
+      "offered": null,
+      "areas": [],
+      "url": "https://www.washington.edu/students/crscat/ee.html#ee391",
+      "notes": null,
+      "source_checked": "2026-11-16"
+    },
+    {
+      "code": "E E 393",
+      "title": "Advanced Technical Communication",
+      "credits": 4,
+      "credits_max": 4,
+      "description": "Practical and persuasive technical writing and presentations for varied audiences.",
+      "prereq_text": "None listed.",
+      "prereq": [],
+      "recommended": null,
+      "offered": null,
+      "areas": [],
+      "url": "https://www.washington.edu/students/crscat/ee.html#ee393",
+      "notes": null,
+      "source_checked": "2026-11-16"
+    },
+    {
+      "code": "E E 397",
+      "title": "Sex and Gender in Engineering",
+      "credits": 3,
+      "credits_max": 3,
+      "description": "Professional issues faced by women and LGBTQ+ people in engineering workplaces.",
+      "prereq_text": "None listed.",
+      "prereq": [],
+      "recommended": null,
+      "offered": null,
+      "areas": [],
+      "url": "https://www.washington.edu/students/crscat/ee.html#ee397",
+      "notes": null,
+      "source_checked": "2026-11-16"
+    },
+    {
+      "code": "E E 398",
+      "title": "Introduction to Professional Issues",
+      "credits": 1,
+      "credits_max": 1,
+      "description": "Career topics: salaries, advanced degrees, engineering ethics, patents, and the global market.",
+      "prereq_text": "None listed.",
+      "prereq": [],
+      "recommended": null,
+      "offered": null,
+      "areas": [],
+      "url": "https://www.washington.edu/students/crscat/ee.html#ee398",
+      "notes": null,
+      "source_checked": "2026-11-16"
+    },
+    {
+      "code": "E E 399",
+      "title": "Special Topics in Electrical Engineering",
+      "credits": 1,
+      "credits_max": 5,
+      "description": "New and experimental approaches to current electrical engineering problems.",
+      "prereq_text": "None listed.",
+      "prereq": [],
+      "recommended": null,
+      "offered": null,
+      "areas": [],
+      "url": "https://www.washington.edu/students/crscat/ee.html#ee399",
+      "notes": null,
+      "source_checked": "2026-11-16"
+    },
+    {
+      "code": "E E 400",
+      "title": "Advanced Topics in Electrical Engineering",
+      "credits": 1,
+      "credits_max": 5,
+      "description": "Advanced elective topics not part of the established curriculum.",
+      "prereq_text": "None listed.",
+      "prereq": [],
+      "recommended": null,
+      "offered": null,
+      "areas": [],
+      "url": "https://www.washington.edu/students/crscat/ee.html#ee400",
+      "notes": null,
+      "source_checked": "2026-11-16"
+    },
+    {
+      "code": "E E 406",
+      "title": "Teaching Engineering",
+      "credits": 3,
+      "credits_max": 3,
+      "description": "Inclusive, effective teaching methods for engineering and STEM.",
+      "prereq_text": "None listed.",
+      "prereq": [],
+      "recommended": null,
+      "offered": null,
+      "areas": [],
+      "url": "https://www.washington.edu/students/crscat/ee.html#ee406",
+      "notes": null,
+      "source_checked": "2026-11-16"
+    },
+    {
+      "code": "E E 416",
+      "title": "Random Signals for Communications and Signal Processing",
+      "credits": 4,
+      "credits_max": 4,
+      "description": "Probability and random processes in communications; statistical filter design.",
+      "prereq_text": "E E 242 or E E 341; and STAT 390, MATH 394/STAT 394, or IND E 315.",
+      "prereq": [
+        {
+          "any_of": [
+            "E E 242",
+            "E E 341"
+          ],
+          "concurrent_ok": false,
+          "min_grade": null,
+          "alt": null
+        },
+        {
+          "any_of": [
+            "STAT 390",
+            "MATH 394",
+            "STAT 394",
+            "IND E 315"
+          ],
+          "concurrent_ok": false,
+          "min_grade": null,
+          "alt": null
+        }
+      ],
+      "recommended": null,
+      "offered": null,
+      "areas": [],
+      "url": "https://www.washington.edu/students/crscat/ee.html#ee416",
+      "notes": null,
+      "source_checked": "2026-11-16"
+    },
+    {
+      "code": "E E 417",
+      "title": "Modern Wireless Communications",
+      "credits": 4,
+      "credits_max": 4,
+      "description": "Modulation, receiver design, error control, fading, and WiFi/WiMax.",
+      "prereq_text": "E E 416.",
+      "prereq": [
+        {
+          "any_of": [
+            "E E 416"
+          ],
+          "concurrent_ok": false,
+          "min_grade": null,
+          "alt": null
+        }
+      ],
+      "recommended": null,
+      "offered": null,
+      "areas": [],
+      "url": "https://www.washington.edu/students/crscat/ee.html#ee417",
+      "notes": null,
+      "source_checked": "2026-11-16"
+    },
+    {
+      "code": "E E 418",
+      "title": "Network Security and Cryptography",
+      "credits": 4,
+      "credits_max": 4,
+      "description": "Cryptographic fundamentals and protocols that secure networks and communications.",
+      "prereq_text": "CSE 163 or E E 241; MATH 136 (or MATH 126 with MATH 208 or AMATH 352); E E 391, IND E 315, MATH 394/STAT 394, or STAT 390.",
+      "prereq": [
+        {
+          "any_of": [
+            "E E 241",
+            "CSE 163"
+          ],
+          "concurrent_ok": false,
+          "min_grade": null,
+          "alt": null
+        },
+        {
+          "any_of": [
+            "MATH 136",
+            [
+              "MATH 126",
+              "MATH 208"
+            ],
+            [
+              "MATH 126",
+              "AMATH 352"
+            ]
+          ],
+          "concurrent_ok": false,
+          "min_grade": null,
+          "alt": null
+        },
+        {
+          "any_of": [
+            "E E 391",
+            "IND E 315",
+            "MATH 394",
+            "STAT 394",
+            "STAT 390"
+          ],
+          "concurrent_ok": false,
+          "min_grade": null,
+          "alt": null
+        }
+      ],
+      "recommended": null,
+      "offered": null,
+      "areas": [],
+      "url": "https://www.washington.edu/students/crscat/ee.html#ee418",
+      "notes": null,
+      "source_checked": "2026-11-16"
+    },
+    {
+      "code": "E E 419",
+      "title": "Introduction to Computer-Communication Networks",
+      "credits": 4,
+      "credits_max": 4,
+      "description": "Network architectures, protocols, routing, congestion control, and transport protocols.",
+      "prereq_text": "E E 391, IND E 315, or STAT 390; E E 241 or CSE 163.",
+      "prereq": [
+        {
+          "any_of": [
+            "E E 391",
+            "IND E 315",
+            "STAT 390"
+          ],
+          "concurrent_ok": false,
+          "min_grade": null,
+          "alt": null
+        },
+        {
+          "any_of": [
+            "E E 241",
+            "CSE 163"
+          ],
+          "concurrent_ok": false,
+          "min_grade": null,
+          "alt": null
+        }
+      ],
+      "recommended": null,
+      "offered": "ASp",
+      "areas": [],
+      "url": "https://www.washington.edu/students/crscat/ee.html#ee419",
+      "notes": null,
+      "source_checked": "2026-11-16"
+    },
+    {
+      "code": "E E 420",
+      "title": "Design in Communications",
+      "credits": 4,
+      "credits_max": 4,
+      "description": "Team communications design projects with reports and presentations.",
+      "prereq_text": "Minimum grade 1.0 in E E 417 (may be concurrent).",
+      "prereq": [
+        {
+          "any_of": [
+            "E E 417"
+          ],
+          "concurrent_ok": true,
+          "min_grade": 1.0,
+          "alt": null
+        }
+      ],
+      "recommended": null,
+      "offered": null,
+      "areas": [],
+      "url": "https://www.washington.edu/students/crscat/ee.html#ee420",
+      "notes": null,
+      "source_checked": "2026-11-16"
+    },
+    {
+      "code": "E E 421",
+      "title": "Quantum Mechanics for Engineers",
+      "credits": 3,
+      "credits_max": 3,
+      "description": "Quantum theory applied to nanomaterials: quantization, band structure, density of states.",
+      "prereq_text": "MATH 135, MATH 207, MATH 307, or AMATH 351.",
+      "prereq": [
+        {
+          "any_of": [
+            "MATH 135",
+            "MATH 207",
+            "MATH 307",
+            "AMATH 351"
+          ],
+          "concurrent_ok": false,
+          "min_grade": null,
+          "alt": null
+        }
+      ],
+      "recommended": null,
+      "offered": null,
+      "areas": [],
+      "url": "https://www.washington.edu/students/crscat/ee.html#ee421",
+      "notes": null,
+      "source_checked": "2026-11-16"
+    },
+    {
+      "code": "E E 423",
+      "title": "Introduction to Synthetic Biology",
+      "credits": 3,
+      "credits_max": 3,
+      "description": "Mathematical models of gene regulation and design of genetic circuits.",
+      "prereq_text": "MATH 136, 207, 307, AMATH 351, or CSE 311; and MATH 208, 308, or AMATH 352.",
+      "prereq": [
+        {
+          "any_of": [
+            "MATH 136",
+            "MATH 207",
+            "MATH 307",
+            "AMATH 351",
+            "CSE 311"
+          ],
+          "concurrent_ok": false,
+          "min_grade": null,
+          "alt": null
+        },
+        {
+          "any_of": [
+            "MATH 208",
+            "MATH 308",
+            "AMATH 352",
+            "MATH 136"
+          ],
+          "concurrent_ok": false,
+          "min_grade": null,
+          "alt": null
+        }
+      ],
+      "recommended": null,
+      "offered": null,
+      "areas": [],
+      "url": "https://www.washington.edu/students/crscat/ee.html#ee423",
+      "notes": "Offered jointly with BIOEN/CHEM E/CSE.",
+      "source_checked": "2026-11-16"
+    },
+    {
+      "code": "E E 424",
+      "title": "Advanced Systems and Synthetic Biology",
+      "credits": 3,
+      "credits_max": 3,
+      "description": "Kinetics, modeling, control, and signaling in biological systems.",
+      "prereq_text": "E E 423 or equivalent.",
+      "prereq": [
+        {
+          "any_of": [
+            "E E 423"
+          ],
+          "concurrent_ok": false,
+          "min_grade": null,
+          "alt": null
+        }
+      ],
+      "recommended": null,
+      "offered": null,
+      "areas": [],
+      "url": "https://www.washington.edu/students/crscat/ee.html#ee424",
+      "notes": null,
+      "source_checked": "2026-11-16"
+    },
+    {
+      "code": "E E 425",
+      "title": "Laboratory Methods in Synthetic Biology",
+      "credits": 4,
+      "credits_max": 4,
+      "description": "Build and evaluate transgenic bacteria from genetic parts.",
+      "prereq_text": "E E 423 or equivalent; CHEM 142, 143, or 145.",
+      "prereq": [
+        {
+          "any_of": [
+            "E E 423"
+          ],
+          "concurrent_ok": false,
+          "min_grade": null,
+          "alt": null
+        },
+        {
+          "any_of": [
+            "CHEM 142",
+            "CHEM 143",
+            "CHEM 145"
+          ],
+          "concurrent_ok": false,
+          "min_grade": null,
+          "alt": null
+        }
+      ],
+      "recommended": null,
+      "offered": null,
+      "areas": [],
+      "url": "https://www.washington.edu/students/crscat/ee.html#ee425",
+      "notes": null,
+      "source_checked": "2026-11-16"
+    },
+    {
+      "code": "E E 435",
+      "title": "Linear Integrated Circuits",
+      "credits": 5,
+      "credits_max": 5,
+      "description": "Linear IC analysis and design: amplifiers, op-amp architectures, feedback, and compensation.",
+      "prereq_text": "E E 332 and E E 333; recommended: E E 331 and E E 361.",
+      "prereq": [
+        {
+          "any_of": [
+            "E E 332"
+          ],
+          "concurrent_ok": false,
+          "min_grade": null,
+          "alt": null
+        },
+        {
+          "any_of": [
+            "E E 333"
+          ],
+          "concurrent_ok": false,
+          "min_grade": null,
+          "alt": null
+        }
+      ],
+      "recommended": null,
+      "offered": "A",
+      "areas": [],
+      "url": "https://www.washington.edu/students/crscat/ee.html#ee435",
+      "notes": null,
+      "source_checked": "2026-11-16"
+    },
+    {
+      "code": "E E 436",
+      "title": "Integrated Systems Capstone I",
+      "credits": 5,
+      "credits_max": 5,
+      "description": "Team design of analog/mixed-signal systems-on-chip, leading toward tapeout (part 1 of 2).",
+      "prereq_text": "E E 435; recommended: E E 331 and E E 361.",
+      "prereq": [
+        {
+          "any_of": [
+            "E E 435"
+          ],
+          "concurrent_ok": false,
+          "min_grade": null,
+          "alt": null
+        }
+      ],
+      "recommended": null,
+      "offered": "W",
+      "areas": [],
+      "url": "https://www.washington.edu/students/crscat/ee.html#ee436",
+      "notes": null,
+      "source_checked": "2026-11-16"
+    },
+    {
+      "code": "E E 437",
+      "title": "Integrated Systems Capstone II",
+      "credits": 5,
+      "credits_max": 5,
+      "description": "Continues the chip design project through verification, tapeout, and fabrication (part 2 of 2).",
+      "prereq_text": "E E 436.",
+      "prereq": [
+        {
+          "any_of": [
+            "E E 436"
+          ],
+          "concurrent_ok": false,
+          "min_grade": null,
+          "alt": null
+        }
+      ],
+      "recommended": null,
+      "offered": "Sp",
+      "areas": [],
+      "url": "https://www.washington.edu/students/crscat/ee.html#ee437",
+      "notes": null,
+      "source_checked": "2026-11-16"
+    },
+    {
+      "code": "E E 440",
+      "title": "Introduction to Digital Imaging Systems",
+      "credits": 4,
+      "credits_max": 4,
+      "description": "Image representation, filtering, restoration, transforms, coding, and camera models.",
+      "prereq_text": "E E 341 or E E 342.",
+      "prereq": [
+        {
+          "any_of": [
+            "E E 341",
+            "E E 342"
+          ],
+          "concurrent_ok": false,
+          "min_grade": null,
+          "alt": null
+        }
+      ],
+      "recommended": null,
+      "offered": null,
+      "areas": [],
+      "url": "https://www.washington.edu/students/crscat/ee.html#ee440",
+      "notes": null,
+      "source_checked": "2026-11-16"
+    },
+    {
+      "code": "E E 442",
+      "title": "Digital Signals and Filtering",
+      "credits": 3,
+      "credits_max": 3,
+      "description": "Sampling, z-transforms, digital filter design, and the FFT.",
+      "prereq_text": "Minimum grade 1.0 in E E 341 or E E 342.",
+      "prereq": [
+        {
+          "any_of": [
+            "E E 341",
+            "E E 342"
+          ],
+          "concurrent_ok": false,
+          "min_grade": 1.0,
+          "alt": null
+        }
+      ],
+      "recommended": null,
+      "offered": null,
+      "areas": [],
+      "url": "https://www.washington.edu/students/crscat/ee.html#ee442",
+      "notes": null,
+      "source_checked": "2026-11-16"
+    },
+    {
+      "code": "E E 443",
+      "title": "Machine Learning for Signal Processing Applications",
+      "credits": 4,
+      "credits_max": 4,
+      "description": "Machine and deep learning for signal, image, and video processing.",
+      "prereq_text": "Minimum grade 1.0 in E E 242; MATH 136 (or MATH 126 with MATH 208 or AMATH 352); E E 391, IND E 315, MATH 394/STAT 394, or STAT 390.",
+      "prereq": [
+        {
+          "any_of": [
+            "E E 242"
+          ],
+          "concurrent_ok": false,
+          "min_grade": 1.0,
+          "alt": null
+        },
+        {
+          "any_of": [
+            "MATH 136",
+            [
+              "MATH 126",
+              "MATH 208"
+            ],
+            [
+              "MATH 126",
+              "AMATH 352"
+            ]
+          ],
+          "concurrent_ok": false,
+          "min_grade": null,
+          "alt": null
+        },
+        {
+          "any_of": [
+            "E E 391",
+            "IND E 315",
+            "MATH 394",
+            "STAT 394",
+            "STAT 390"
+          ],
+          "concurrent_ok": false,
+          "min_grade": null,
+          "alt": null
+        }
+      ],
+      "recommended": null,
+      "offered": null,
+      "areas": [],
+      "url": "https://www.washington.edu/students/crscat/ee.html#ee443",
+      "notes": null,
+      "source_checked": "2026-11-16"
+    },
+    {
+      "code": "E E 445",
+      "title": "Fundamentals of Optimization and Machine Learning",
+      "credits": 4,
+      "credits_max": 4,
+      "description": "Convex optimization and its use in regression and classification models.",
+      "prereq_text": "E E 345.",
+      "prereq": [
+        {
+          "any_of": [
+            "E E 345"
+          ],
+          "concurrent_ok": false,
+          "min_grade": null,
+          "alt": null
+        }
+      ],
+      "recommended": null,
+      "offered": null,
+      "areas": [],
+      "url": "https://www.washington.edu/students/crscat/ee.html#ee445",
+      "notes": null,
+      "source_checked": "2026-11-16"
+    },
+    {
+      "code": "E E 446",
+      "title": "Tiny Machine Learning for Ultra Low-Power Edge Computing",
+      "credits": 4,
+      "credits_max": 4,
+      "description": "Designing and deploying compact ML models on microcontrollers and sensors.",
+      "prereq_text": "E E 242; AMATH 352, MATH 136, or MATH 208; IND E 315, MATH 394/STAT 394, STAT 390, or E E 391; recommended: E E 344.",
+      "prereq": [
+        {
+          "any_of": [
+            "E E 242"
+          ],
+          "concurrent_ok": false,
+          "min_grade": null,
+          "alt": null
+        },
+        {
+          "any_of": [
+            "MATH 136",
+            "MATH 208",
+            "AMATH 352"
+          ],
+          "concurrent_ok": false,
+          "min_grade": null,
+          "alt": null
+        },
+        {
+          "any_of": [
+            "E E 391",
+            "IND E 315",
+            "MATH 394",
+            "STAT 394",
+            "STAT 390"
+          ],
+          "concurrent_ok": false,
+          "min_grade": null,
+          "alt": null
+        }
+      ],
+      "recommended": "E E 344",
+      "offered": "Sp",
+      "areas": [],
+      "url": "https://www.washington.edu/students/crscat/ee.html#ee446",
+      "notes": null,
+      "source_checked": "2026-11-16"
+    },
+    {
+      "code": "E E 447",
+      "title": "Control System Analysis I",
+      "credits": 4,
+      "credits_max": 4,
+      "description": "Feedback stability analysis, Bode and Nichols design methods, and state variables.",
+      "prereq_text": "E E 233; E E 235 or E E 242; MATH 136, 208, or 308.",
+      "prereq": [
+        {
+          "any_of": [
+            "E E 233"
+          ],
+          "concurrent_ok": false,
+          "min_grade": null,
+          "alt": null
+        },
+        {
+          "any_of": [
+            "E E 235",
+            "E E 242"
+          ],
+          "concurrent_ok": false,
+          "min_grade": null,
+          "alt": null
+        },
+        {
+          "any_of": [
+            "MATH 136",
+            "MATH 208",
+            "MATH 308"
+          ],
+          "concurrent_ok": false,
+          "min_grade": null,
+          "alt": null
+        }
+      ],
+      "recommended": null,
+      "offered": null,
+      "areas": [],
+      "url": "https://www.washington.edu/students/crscat/ee.html#ee447",
+      "notes": null,
+      "source_checked": "2026-11-16"
+    },
+    {
+      "code": "E E 448",
+      "title": "Control Systems Laboratory",
+      "credits": 4,
+      "credits_max": 4,
+      "description": "Control design applied to electromechanical systems such as DC motors.",
+      "prereq_text": "E E 447.",
+      "prereq": [
+        {
+          "any_of": [
+            "E E 447"
+          ],
+          "concurrent_ok": false,
+          "min_grade": null,
+          "alt": null
+        }
+      ],
+      "recommended": null,
+      "offered": "W",
+      "areas": [],
+      "url": "https://www.washington.edu/students/crscat/ee.html#ee448",
+      "notes": null,
+      "source_checked": "2026-11-16"
+    },
+    {
+      "code": "E E 449",
+      "title": "Robotics and Controls Capstone",
+      "credits": 4,
+      "credits_max": 4,
+      "description": "Team project building and testing robotic hardware with feedback control.",
+      "prereq_text": "E E 447.",
+      "prereq": [
+        {
+          "any_of": [
+            "E E 447"
+          ],
+          "concurrent_ok": false,
+          "min_grade": null,
+          "alt": null
+        }
+      ],
+      "recommended": null,
+      "offered": "Sp",
+      "areas": [],
+      "url": "https://www.washington.edu/students/crscat/ee.html#ee449",
+      "notes": null,
+      "source_checked": "2026-11-16"
+    },
+    {
+      "code": "E E 451",
+      "title": "Wind Energy",
+      "credits": 4,
+      "credits_max": 4,
+      "description": "Wind energy operation, generators and converters, and grid impacts.",
+      "prereq_text": "E E 351.",
+      "prereq": [
+        {
+          "any_of": [
+            "E E 351"
+          ],
+          "concurrent_ok": false,
+          "min_grade": null,
+          "alt": null
+        }
+      ],
+      "recommended": null,
+      "offered": null,
+      "areas": [],
+      "url": "https://www.washington.edu/students/crscat/ee.html#ee451",
+      "notes": "Offered in odd years.",
+      "source_checked": "2026-11-16"
+    },
+    {
+      "code": "E E 452",
+      "title": "Power Electronics Design",
+      "credits": 5,
+      "credits_max": 5,
+      "description": "Switching devices, converter circuits, magnetics design, and converter control.",
+      "prereq_text": "E E 331 and E E 351; recommended: E E 361.",
+      "prereq": [
+        {
+          "any_of": [
+            "E E 331"
+          ],
+          "concurrent_ok": false,
+          "min_grade": null,
+          "alt": null
+        },
+        {
+          "any_of": [
+            "E E 351"
+          ],
+          "concurrent_ok": false,
+          "min_grade": null,
+          "alt": null
+        }
+      ],
+      "recommended": null,
+      "offered": null,
+      "areas": [],
+      "url": "https://www.washington.edu/students/crscat/ee.html#ee452",
+      "notes": null,
+      "source_checked": "2026-11-16"
+    },
+    {
+      "code": "E E 453",
+      "title": "Electric Drives",
+      "credits": 5,
+      "credits_max": 5,
+      "description": "Motor speed-torque characteristics and speed control with solid-state drives.",
+      "prereq_text": "Minimum grade 1.0 in E E 452 and in E E 458.",
+      "prereq": [
+        {
+          "any_of": [
+            "E E 452"
+          ],
+          "concurrent_ok": false,
+          "min_grade": 1.0,
+          "alt": null
+        },
+        {
+          "any_of": [
+            "E E 458"
+          ],
+          "concurrent_ok": false,
+          "min_grade": 1.0,
+          "alt": null
+        }
+      ],
+      "recommended": null,
+      "offered": null,
+      "areas": [],
+      "url": "https://www.washington.edu/students/crscat/ee.html#ee453",
+      "notes": null,
+      "source_checked": "2026-11-16"
+    },
+    {
+      "code": "E E 454",
+      "title": "Power System Analysis",
+      "credits": 4,
+      "credits_max": 4,
+      "description": "Symmetrical components, line parameters, and power flow.",
+      "prereq_text": "Minimum grade 1.0 in E E 351.",
+      "prereq": [
+        {
+          "any_of": [
+            "E E 351"
+          ],
+          "concurrent_ok": false,
+          "min_grade": 1.0,
+          "alt": null
+        }
+      ],
+      "recommended": null,
+      "offered": null,
+      "areas": [],
+      "url": "https://www.washington.edu/students/crscat/ee.html#ee454",
+      "notes": null,
+      "source_checked": "2026-11-16"
+    },
+    {
+      "code": "E E 455",
+      "title": "Power System Dynamics and Protection",
+      "credits": 4,
+      "credits_max": 4,
+      "description": "Fault analysis and stability of balanced and unbalanced power networks.",
+      "prereq_text": "Minimum grade 1.0 in E E 351.",
+      "prereq": [
+        {
+          "any_of": [
+            "E E 351"
+          ],
+          "concurrent_ok": false,
+          "min_grade": 1.0,
+          "alt": null
+        }
+      ],
+      "recommended": null,
+      "offered": null,
+      "areas": [],
+      "url": "https://www.washington.edu/students/crscat/ee.html#ee455",
+      "notes": null,
+      "source_checked": "2026-11-16"
+    },
+    {
+      "code": "E E 456",
+      "title": "Computer-Aided Design in Power Systems",
+      "credits": 4,
+      "credits_max": 4,
+      "description": "Power system design projects using existing software.",
+      "prereq_text": "Minimum grade 1.0 in E E 454 or E E 455.",
+      "prereq": [
+        {
+          "any_of": [
+            "E E 454",
+            "E E 455"
+          ],
+          "concurrent_ok": false,
+          "min_grade": 1.0,
+          "alt": null
+        }
+      ],
+      "recommended": null,
+      "offered": null,
+      "areas": [],
+      "url": "https://www.washington.edu/students/crscat/ee.html#ee456",
+      "notes": null,
+      "source_checked": "2026-11-16"
+    },
+    {
+      "code": "E E 457",
+      "title": "Electric Energy Distribution Systems",
+      "credits": 4,
+      "credits_max": 4,
+      "description": "Distribution network analysis and design, substations, transformers, and reliability.",
+      "prereq_text": "Minimum grade 1.0 in E E 351.",
+      "prereq": [
+        {
+          "any_of": [
+            "E E 351"
+          ],
+          "concurrent_ok": false,
+          "min_grade": 1.0,
+          "alt": null
+        }
+      ],
+      "recommended": null,
+      "offered": null,
+      "areas": [],
+      "url": "https://www.washington.edu/students/crscat/ee.html#ee457",
+      "notes": null,
+      "source_checked": "2026-11-16"
+    },
+    {
+      "code": "E E 458",
+      "title": "Power Electronics Controls",
+      "credits": 5,
+      "credits_max": 5,
+      "description": "Closed-loop control of power converters using averaged and small-signal models.",
+      "prereq_text": "E E 447 and E E 452.",
+      "prereq": [
+        {
+          "any_of": [
+            "E E 447"
+          ],
+          "concurrent_ok": false,
+          "min_grade": null,
+          "alt": null
+        },
+        {
+          "any_of": [
+            "E E 452"
+          ],
+          "concurrent_ok": false,
+          "min_grade": null,
+          "alt": null
+        }
+      ],
+      "recommended": null,
+      "offered": null,
+      "areas": [],
+      "url": "https://www.washington.edu/students/crscat/ee.html#ee458",
+      "notes": null,
+      "source_checked": "2026-11-16"
+    },
+    {
+      "code": "E E 460",
+      "title": "Neural Engineering",
+      "credits": 3,
+      "credits_max": 3,
+      "description": "Neurobiology, neural recording and stimulation, brain-machine interfaces, and neuroethics.",
+      "prereq_text": "BIOL 130, 162, or 220; MATH 208, AMATH 301, or AMATH 352.",
+      "prereq": [
+        {
+          "any_of": [
+            "BIOL 130",
+            "BIOL 162",
+            "BIOL 220"
+          ],
+          "concurrent_ok": false,
+          "min_grade": null,
+          "alt": null
+        },
+        {
+          "any_of": [
+            "MATH 208",
+            "AMATH 301",
+            "AMATH 352"
+          ],
+          "concurrent_ok": false,
+          "min_grade": null,
+          "alt": null
+        }
+      ],
+      "recommended": null,
+      "offered": "A",
+      "areas": [],
+      "url": "https://www.washington.edu/students/crscat/ee.html#ee460",
+      "notes": null,
+      "source_checked": "2026-11-16"
+    },
+    {
+      "code": "E E 461",
+      "title": "Neural Engineering Tech Studio",
+      "credits": 4,
+      "credits_max": 4,
+      "description": "Team design and presentation of a neural engineering prototype.",
+      "prereq_text": "BIOEN 460/E E 460.",
+      "prereq": [
+        {
+          "any_of": [
+            "E E 460",
+            "BIOEN 460"
+          ],
+          "concurrent_ok": false,
+          "min_grade": null,
+          "alt": null
+        }
+      ],
+      "recommended": null,
+      "offered": null,
+      "areas": [],
+      "url": "https://www.washington.edu/students/crscat/ee.html#ee461",
+      "notes": "Offered jointly with BIOEN 461.",
+      "source_checked": "2026-11-16"
+    },
+    {
+      "code": "E E 462",
+      "title": "Electromagnetics I: Microwave Engineering",
+      "credits": 4,
+      "credits_max": 4,
+      "description": "Microwave transmission lines, waveguides, resonators, and layered media.",
+      "prereq_text": "Minimum grade 1.0 in E E 361.",
+      "prereq": [
+        {
+          "any_of": [
+            "E E 361"
+          ],
+          "concurrent_ok": false,
+          "min_grade": 1.0,
+          "alt": null
+        }
+      ],
+      "recommended": null,
+      "offered": null,
+      "areas": [],
+      "url": "https://www.washington.edu/students/crscat/ee.html#ee462",
+      "notes": null,
+      "source_checked": "2026-11-16"
+    },
+    {
+      "code": "E E 463",
+      "title": "Microwave Electronic Design",
+      "credits": 4,
+      "credits_max": 4,
+      "description": "Microwave circuit design with S-parameters, measurement, CAD, and an amplifier build.",
+      "prereq_text": "E E 361; E E 332 (may be concurrent).",
+      "prereq": [
+        {
+          "any_of": [
+            "E E 361"
+          ],
+          "concurrent_ok": false,
+          "min_grade": null,
+          "alt": null
+        },
+        {
+          "any_of": [
+            "E E 332"
+          ],
+          "concurrent_ok": true,
+          "min_grade": null,
+          "alt": null
+        }
+      ],
+      "recommended": null,
+      "offered": null,
+      "areas": [],
+      "url": "https://www.washington.edu/students/crscat/ee.html#ee463",
+      "notes": null,
+      "source_checked": "2026-11-16"
+    },
+    {
+      "code": "E E 464",
+      "title": "Antennas: Analysis and Design",
+      "credits": 4,
+      "credits_max": 4,
+      "description": "Radiation patterns, directivity, impedance, arrays, and horn and reflector antennas.",
+      "prereq_text": "Minimum grade 1.0 in E E 361.",
+      "prereq": [
+        {
+          "any_of": [
+            "E E 361"
+          ],
+          "concurrent_ok": false,
+          "min_grade": 1.0,
+          "alt": null
+        }
+      ],
+      "recommended": null,
+      "offered": null,
+      "areas": [],
+      "url": "https://www.washington.edu/students/crscat/ee.html#ee464",
+      "notes": null,
+      "source_checked": "2026-11-16"
+    },
+    {
+      "code": "E E 465",
+      "title": "Network and Web Security",
+      "credits": 4,
+      "credits_max": 4,
+      "description": "Network and web security principles, attacks, defenses, and protocol weaknesses.",
+      "prereq_text": "CSE 163 or E E 241; E E 418; recommended: E E 419.",
+      "prereq": [
+        {
+          "any_of": [
+            "E E 241",
+            "CSE 163"
+          ],
+          "concurrent_ok": false,
+          "min_grade": null,
+          "alt": null
+        },
+        {
+          "any_of": [
+            "E E 418"
+          ],
+          "concurrent_ok": false,
+          "min_grade": null,
+          "alt": null
+        }
+      ],
+      "recommended": "E E 419",
+      "offered": null,
+      "areas": [],
+      "url": "https://www.washington.edu/students/crscat/ee.html#ee465",
+      "notes": null,
+      "source_checked": "2026-11-16"
+    },
+    {
+      "code": "E E 466",
+      "title": "Neural Computation and Engineering Laboratory",
+      "credits": 4,
+      "credits_max": 4,
+      "description": "Neural recording and quantitative analysis techniques.",
+      "prereq_text": "BIOL 130, 162, 220, or AMATH 342; MATH 208, AMATH 301, or AMATH 352.",
+      "prereq": [
+        {
+          "any_of": [
+            "BIOL 130",
+            "BIOL 162",
+            "BIOL 220",
+            "AMATH 342"
+          ],
+          "concurrent_ok": false,
+          "min_grade": null,
+          "alt": null
+        },
+        {
+          "any_of": [
+            "MATH 208",
+            "AMATH 301",
+            "AMATH 352"
+          ],
+          "concurrent_ok": false,
+          "min_grade": null,
+          "alt": null
+        }
+      ],
+      "recommended": null,
+      "offered": null,
+      "areas": [],
+      "url": "https://www.washington.edu/students/crscat/ee.html#ee466",
+      "notes": null,
+      "source_checked": "2026-11-16"
+    },
+    {
+      "code": "E E 467",
+      "title": "Machine Learning for Cybersecurity",
+      "credits": 4,
+      "credits_max": 4,
+      "description": "Machine learning for anomaly detection, spam detection, and adversarial inputs.",
+      "prereq_text": "CSE 163 or E E 241; AMATH 352, MATH 208, 308, or 136; IND E 315, MATH 394/STAT 394, or STAT 390; recommended: E E 445.",
+      "prereq": [
+        {
+          "any_of": [
+            "E E 241",
+            "CSE 163"
+          ],
+          "concurrent_ok": false,
+          "min_grade": null,
+          "alt": null
+        },
+        {
+          "any_of": [
+            "AMATH 352",
+            "MATH 208",
+            "MATH 308",
+            "MATH 136"
+          ],
+          "concurrent_ok": false,
+          "min_grade": null,
+          "alt": null
+        },
+        {
+          "any_of": [
+            "IND E 315",
+            "MATH 394",
+            "STAT 394",
+            "STAT 390"
+          ],
+          "concurrent_ok": false,
+          "min_grade": null,
+          "alt": null
+        }
+      ],
+      "recommended": "E E 445",
+      "offered": null,
+      "areas": [],
+      "url": "https://www.washington.edu/students/crscat/ee.html#ee467",
+      "notes": null,
+      "source_checked": "2026-11-16"
+    },
+    {
+      "code": "E E 468",
+      "title": "Software and Embedded Systems Security",
+      "credits": 4,
+      "credits_max": 4,
+      "description": "Security principles and tools for software, embedded systems, and their networks.",
+      "prereq_text": "E E 241 or CSE 163; recommended: E E 469/CSE 469 or E E 472.",
+      "prereq": [
+        {
+          "any_of": [
+            "E E 241",
+            "CSE 163"
+          ],
+          "concurrent_ok": false,
+          "min_grade": null,
+          "alt": null
+        }
+      ],
+      "recommended": null,
+      "offered": null,
+      "areas": [],
+      "url": "https://www.washington.edu/students/crscat/ee.html#ee468",
+      "notes": null,
+      "source_checked": "2026-11-16"
+    },
+    {
+      "code": "E E 469",
+      "title": "Computer Architecture I",
+      "credits": 5,
+      "credits_max": 5,
+      "description": "Assembly language, processor organization, arithmetic, memory systems, and caching.",
+      "prereq_text": "E E 271 or CSE 369; CSE 123 or CSE 143.",
+      "prereq": [
+        {
+          "any_of": [
+            "E E 271",
+            "CSE 369"
+          ],
+          "concurrent_ok": false,
+          "min_grade": null,
+          "alt": null
+        },
+        {
+          "any_of": [
+            "CSE 123",
+            "CSE 143"
+          ],
+          "concurrent_ok": false,
+          "min_grade": null,
+          "alt": null
+        }
+      ],
+      "recommended": null,
+      "offered": null,
+      "areas": [],
+      "url": "https://www.washington.edu/students/crscat/ee.html#ee469",
+      "notes": "Offered jointly with CSE 469.",
+      "source_checked": "2026-11-16"
+    },
+    {
+      "code": "E E 470",
+      "title": "Computer Architecture II",
+      "credits": 4,
+      "credits_max": 4,
+      "description": "Instruction- and thread-level parallelism, cache coherence, and GPU design.",
+      "prereq_text": "CSE 469 or E E 469.",
+      "prereq": [
+        {
+          "any_of": [
+            "E E 469",
+            "CSE 469"
+          ],
+          "concurrent_ok": false,
+          "min_grade": null,
+          "alt": null
+        }
+      ],
+      "recommended": null,
+      "offered": null,
+      "areas": [],
+      "url": "https://www.washington.edu/students/crscat/ee.html#ee470",
+      "notes": "Offered jointly with CSE 470.",
+      "source_checked": "2026-11-16"
+    },
+    {
+      "code": "E E 474",
+      "title": "Introduction to Embedded Systems",
+      "credits": 4,
+      "credits_max": 4,
+      "description": "Designing and testing real-time embedded software on a microcontroller.",
+      "prereq_text": "CSE 123 or CSE 143.",
+      "prereq": [
+        {
+          "any_of": [
+            "CSE 123",
+            "CSE 143"
+          ],
+          "concurrent_ok": false,
+          "min_grade": null,
+          "alt": null
+        }
+      ],
+      "recommended": null,
+      "offered": "AWSpS",
+      "areas": [],
+      "url": "https://www.washington.edu/students/crscat/ee.html#ee474",
+      "notes": "Offered jointly with CSE 474.",
+      "source_checked": "2026-11-16"
+    },
+    {
+      "code": "E E 475",
+      "title": "Embedded Systems Capstone",
+      "credits": 5,
+      "credits_max": 5,
+      "description": "Prototype a substantial project combining hardware, software, and communications.",
+      "prereq_text": "E E 271 or CSE 369; E E 472 or CSE 474/E E 474.",
+      "prereq": [
+        {
+          "any_of": [
+            "E E 271",
+            "CSE 369"
+          ],
+          "concurrent_ok": false,
+          "min_grade": null,
+          "alt": null
+        },
+        {
+          "any_of": [
+            "E E 472",
+            "E E 474",
+            "CSE 474"
+          ],
+          "concurrent_ok": false,
+          "min_grade": null,
+          "alt": null
+        }
+      ],
+      "recommended": null,
+      "offered": null,
+      "areas": [],
+      "url": "https://www.washington.edu/students/crscat/ee.html#ee475",
+      "notes": "Offered jointly with CSE 475.",
+      "source_checked": "2026-11-16"
+    },
+    {
+      "code": "E E 476",
+      "title": "Digital VLSI: Transistors to Gates",
+      "credits": 5,
+      "credits_max": 5,
+      "description": "CMOS logic design, delay and power analysis, and IC layout.",
+      "prereq_text": "E E 215; E E 271 or CSE 369; recommended: basic circuit theory.",
+      "prereq": [
+        {
+          "any_of": [
+            "E E 215"
+          ],
+          "concurrent_ok": false,
+          "min_grade": null,
+          "alt": null
+        },
+        {
+          "any_of": [
+            "E E 271",
+            "CSE 369"
+          ],
+          "concurrent_ok": false,
+          "min_grade": null,
+          "alt": null
+        }
+      ],
+      "recommended": null,
+      "offered": "AWSp",
+      "areas": [],
+      "url": "https://www.washington.edu/students/crscat/ee.html#ee476",
+      "notes": null,
+      "source_checked": "2026-11-16"
+    },
+    {
+      "code": "E E 477",
+      "title": "Digital VLSI: Gates to Systems",
+      "credits": 5,
+      "credits_max": 5,
+      "description": "Memory and datapath design in static and dynamic CMOS with industry CAD tools.",
+      "prereq_text": "E E 469/CSE 469.",
+      "prereq": [
+        {
+          "any_of": [
+            "E E 469",
+            "CSE 469"
+          ],
+          "concurrent_ok": false,
+          "min_grade": null,
+          "alt": null
+        }
+      ],
+      "recommended": null,
+      "offered": "W",
+      "areas": [],
+      "url": "https://www.washington.edu/students/crscat/ee.html#ee477",
+      "notes": null,
+      "source_checked": "2026-11-16"
+    },
+    {
+      "code": "E E 478",
+      "title": "Capstone Integrated Digital Design Projects",
+      "credits": 5,
+      "credits_max": 5,
+      "description": "High-performance or low-energy IC design: wires, timing, clocking, and low-power design.",
+      "prereq_text": "E E 476 and E E 477.",
+      "prereq": [
+        {
+          "any_of": [
+            "E E 476"
+          ],
+          "concurrent_ok": false,
+          "min_grade": null,
+          "alt": null
+        },
+        {
+          "any_of": [
+            "E E 477"
+          ],
+          "concurrent_ok": false,
+          "min_grade": null,
+          "alt": null
+        }
+      ],
+      "recommended": null,
+      "offered": "Sp",
+      "areas": [],
+      "url": "https://www.washington.edu/students/crscat/ee.html#ee478",
+      "notes": null,
+      "source_checked": "2026-11-16"
+    },
+    {
+      "code": "E E 482",
+      "title": "Semiconductor Devices",
+      "credits": 4,
+      "credits_max": 4,
+      "description": "Diodes, LEDs, solar cells, photodetectors, and MOSFETs via carrier transport.",
+      "prereq_text": "E E 280, E E 331, MSE 351, or PHYS 324; MATH 135, 207, or AMATH 351.",
+      "prereq": [
+        {
+          "any_of": [
+            "E E 280",
+            "E E 331",
+            "MSE 351",
+            "PHYS 324"
+          ],
+          "concurrent_ok": false,
+          "min_grade": null,
+          "alt": null
+        },
+        {
+          "any_of": [
+            "MATH 135",
+            "MATH 207",
+            "AMATH 351"
+          ],
+          "concurrent_ok": false,
+          "min_grade": null,
+          "alt": null
+        }
+      ],
+      "recommended": null,
+      "offered": "A",
+      "areas": [],
+      "url": "https://www.washington.edu/students/crscat/ee.html#ee482",
+      "notes": null,
+      "source_checked": "2026-11-16"
+    },
+    {
+      "code": "E E 484",
+      "title": "Sensors and Sensor Systems",
+      "credits": 4,
+      "credits_max": 4,
+      "description": "Optical and solid-state chemical and physical sensors and their applications.",
+      "prereq_text": "E E 331.",
+      "prereq": [
+        {
+          "any_of": [
+            "E E 331"
+          ],
+          "concurrent_ok": false,
+          "min_grade": null,
+          "alt": null
+        }
+      ],
+      "recommended": null,
+      "offered": null,
+      "areas": [],
+      "url": "https://www.washington.edu/students/crscat/ee.html#ee484",
+      "notes": null,
+      "source_checked": "2026-11-16"
+    },
+    {
+      "code": "E E 486",
+      "title": "Fundamentals of Integrated Circuit Technology",
+      "credits": 3,
+      "credits_max": 3,
+      "description": "IC fabrication: deposition, diffusion, ion implantation, oxidation, and photoresists.",
+      "prereq_text": "E E 331 or MSE 351.",
+      "prereq": [
+        {
+          "any_of": [
+            "E E 331",
+            "MSE 351"
+          ],
+          "concurrent_ok": false,
+          "min_grade": null,
+          "alt": null
+        }
+      ],
+      "recommended": null,
+      "offered": "AW",
+      "areas": [],
+      "url": "https://www.washington.edu/students/crscat/ee.html#ee486",
+      "notes": "Offered jointly with MSE 486.",
+      "source_checked": "2026-11-16"
+    },
+    {
+      "code": "E E 487",
+      "title": "Introduction to Photonics",
+      "credits": 4,
+      "credits_max": 4,
+      "description": "Light as electromagnetic waves: interference, diffraction, polarization, and waveguides.",
+      "prereq_text": "E E 361, PHYS 123, or PHYS 143.",
+      "prereq": [
+        {
+          "any_of": [
+            "E E 361",
+            "PHYS 123",
+            "PHYS 143"
+          ],
+          "concurrent_ok": false,
+          "min_grade": null,
+          "alt": null
+        }
+      ],
+      "recommended": null,
+      "offered": null,
+      "areas": [],
+      "url": "https://www.washington.edu/students/crscat/ee.html#ee487",
+      "notes": null,
+      "source_checked": "2026-11-16"
+    },
+    {
+      "code": "E E 488",
+      "title": "Advanced Photonics",
+      "credits": 4,
+      "credits_max": 4,
+      "description": "Optical resonance, quantum properties of light, amplification, lasers, and photodetection.",
+      "prereq_text": "E E 485 or E E 487.",
+      "prereq": [
+        {
+          "any_of": [
+            "E E 485",
+            "E E 487"
+          ],
+          "concurrent_ok": false,
+          "min_grade": null,
+          "alt": null
+        }
+      ],
+      "recommended": null,
+      "offered": null,
+      "areas": [],
+      "url": "https://www.washington.edu/students/crscat/ee.html#ee488",
+      "notes": null,
+      "source_checked": "2026-11-16"
+    },
+    {
+      "code": "E E 489",
+      "title": "Electronic-Photonic Integrated Systems",
+      "credits": 4,
+      "credits_max": 4,
+      "description": "Integrating electronic and photonic technologies in large-scale system design.",
+      "prereq_text": "E E 331, E E 332, or E E 487.",
+      "prereq": [
+        {
+          "any_of": [
+            "E E 331",
+            "E E 332",
+            "E E 487"
+          ],
+          "concurrent_ok": false,
+          "min_grade": null,
+          "alt": null
+        }
+      ],
+      "recommended": null,
+      "offered": null,
+      "areas": [],
+      "url": "https://www.washington.edu/students/crscat/ee.html#ee489",
+      "notes": null,
+      "source_checked": "2026-11-16"
+    },
+    {
+      "code": "E E 490",
+      "title": "Reading and Research",
+      "credits": 1,
+      "credits_max": 5,
+      "description": "Independent reading and research supervised by an E E faculty member.",
+      "prereq_text": "Supervision by an E E faculty member.",
+      "prereq": [],
+      "recommended": null,
+      "offered": null,
+      "areas": [],
+      "url": "https://www.washington.edu/students/crscat/ee.html#ee490",
+      "notes": "Credit/no-credit; counts only as free elective credit for BSECE.",
+      "source_checked": "2026-11-16"
+    },
+    {
+      "code": "E E 491",
+      "title": "Undergraduate Seminar",
+      "credits": 1,
+      "credits_max": 1,
+      "description": "Departmental colloquium seminar.",
+      "prereq_text": "None listed.",
+      "prereq": [],
+      "recommended": null,
+      "offered": null,
+      "areas": [],
+      "url": "https://www.washington.edu/students/crscat/ee.html#ee491",
+      "notes": "Credit/no-credit; max 2 credits. Approved seminar for electives (max 2 seminar credits).",
+      "source_checked": "2026-11-16"
+    },
+    {
+      "code": "E E 492",
+      "title": "Electrical Engineering Leadership Seminar",
+      "credits": 1,
+      "credits_max": 1,
+      "description": "Leadership seminar for EE students.",
+      "prereq_text": "None listed.",
+      "prereq": [],
+      "recommended": null,
+      "offered": null,
+      "areas": [],
+      "url": "https://www.washington.edu/students/crscat/ee.html#ee492",
+      "notes": "Credit/no-credit. Approved seminar for electives (max 2 seminar credits).",
+      "source_checked": "2026-11-16"
+    },
+    {
+      "code": "E E 496",
+      "title": "Engineering Entrepreneurial Systems and Design",
+      "credits": 2,
+      "credits_max": 2,
+      "description": "Entrepreneurial engineering systems and design.",
+      "prereq_text": "None listed.",
+      "prereq": [],
+      "recommended": null,
+      "offered": null,
+      "areas": [],
+      "url": "https://www.washington.edu/students/crscat/ee.html#ee496",
+      "notes": null,
+      "source_checked": "2026-11-16"
+    },
+    {
+      "code": "E E 497",
+      "title": "Engineering Entrepreneurial Capstone",
+      "credits": 4,
+      "credits_max": 4,
+      "description": "Entrepreneurial capstone (part 1 of 2).",
+      "prereq_text": "None listed.",
+      "prereq": [],
+      "recommended": null,
+      "offered": null,
+      "areas": [],
+      "url": "https://www.washington.edu/students/crscat/ee.html#ee497",
+      "notes": null,
+      "source_checked": "2026-11-16"
+    },
+    {
+      "code": "E E 498",
+      "title": "Engineering Entrepreneurial Capstone",
+      "credits": 4,
+      "credits_max": 4,
+      "description": "Entrepreneurial capstone (part 2 of 2).",
+      "prereq_text": "E E 497.",
+      "prereq": [
+        {
+          "any_of": [
+            "E E 497"
+          ],
+          "concurrent_ok": false,
+          "min_grade": null,
+          "alt": null
+        }
+      ],
+      "recommended": null,
+      "offered": null,
+      "areas": [],
+      "url": "https://www.washington.edu/students/crscat/ee.html#ee498",
+      "notes": null,
+      "source_checked": "2026-11-16"
+    },
+    {
+      "code": "E E 499",
+      "title": "Undergraduate Research and Special Projects",
+      "credits": 1,
+      "credits_max": 5,
+      "description": "Undergraduate research and special projects.",
+      "prereq_text": "None listed.",
+      "prereq": [],
+      "recommended": null,
+      "offered": null,
+      "areas": [],
+      "url": "https://www.washington.edu/students/crscat/ee.html#ee499",
+      "notes": "Max 6 credits count toward Advanced ECE Electives (max 6 combined with ENGR 321).",
+      "source_checked": "2026-11-16"
+    }
+  ]
+}

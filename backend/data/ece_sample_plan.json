@@ -1,0 +1,218 @@
+{
+  "source": "https://www.engr.washington.edu/current/academics/4-year-plans/ece-degree-requirements (updated 2026-10-14)",
+  "note": "Sample plan for ENGRUD students; students build their own plan with an adviser.",
+  "years": [
+    {
+      "year": 1,
+      "autumn": [
+        {
+          "item": "MATH 124",
+          "credits": 5
+        },
+        {
+          "item": "CHEM 142",
+          "credits": 5
+        },
+        {
+          "item": "ENGR 101 & GEN ST 199",
+          "credits": 2
+        },
+        {
+          "item": "A&H / SSc",
+          "credits": 5
+        }
+      ],
+      "winter": [
+        {
+          "item": "MATH 125",
+          "credits": 5
+        },
+        {
+          "item": "English Composition",
+          "credits": 5
+        },
+        {
+          "item": "CSE 121",
+          "credits": 4
+        }
+      ],
+      "spring": [
+        {
+          "item": "MATH 126",
+          "credits": 5
+        },
+        {
+          "item": "PHYS 121",
+          "credits": 5
+        },
+        {
+          "item": "DIV",
+          "credits": 5
+        }
+      ]
+    },
+    {
+      "year": 2,
+      "autumn": [
+        {
+          "item": "PHYS 122",
+          "credits": 5
+        },
+        {
+          "item": "MATH 207",
+          "credits": 4
+        },
+        {
+          "item": "CSE 122",
+          "credits": 4
+        },
+        {
+          "item": "Writing",
+          "credits": 3
+        }
+      ],
+      "winter": [
+        {
+          "item": "MATH 208",
+          "credits": 4
+        },
+        {
+          "item": "E E 215",
+          "credits": 4
+        },
+        {
+          "item": "Free elective",
+          "credits": 2
+        },
+        {
+          "item": "CSE 123",
+          "credits": 4
+        }
+      ],
+      "spring": [
+        {
+          "item": "E E 280",
+          "credits": 4
+        },
+        {
+          "item": "E E 241",
+          "credits": 2
+        },
+        {
+          "item": "Free elective",
+          "credits": 3
+        },
+        {
+          "item": "A&H / SSc",
+          "credits": 5
+        }
+      ]
+    },
+    {
+      "year": 3,
+      "autumn": [
+        {
+          "item": "E E 242",
+          "credits": 5
+        },
+        {
+          "item": "E E 271",
+          "credits": 5
+        },
+        {
+          "item": "IND E 315",
+          "credits": 3
+        },
+        {
+          "item": "Free elective",
+          "credits": 2
+        }
+      ],
+      "winter": [
+        {
+          "item": "E E 201",
+          "credits": 2
+        },
+        {
+          "item": "E E 393",
+          "credits": 4
+        },
+        {
+          "item": "Advanced ECE Elective",
+          "credits": 5
+        },
+        {
+          "item": "Additional approved NSc course",
+          "credits": 5
+        }
+      ],
+      "spring": [
+        {
+          "item": "Advanced ECE Elective",
+          "credits": 4
+        },
+        {
+          "item": "Advanced ECE Elective",
+          "credits": 4
+        },
+        {
+          "item": "A&H / SSc",
+          "credits": 4
+        },
+        {
+          "item": "Free elective",
+          "credits": 3
+        }
+      ]
+    },
+    {
+      "year": 4,
+      "autumn": [
+        {
+          "item": "Advanced ECE Elective",
+          "credits": 5
+        },
+        {
+          "item": "Advanced ECE Elective",
+          "credits": 5
+        },
+        {
+          "item": "Advanced ECE Elective (Professional Issues)",
+          "credits": 1
+        },
+        {
+          "item": "A&H / SSc",
+          "credits": 5
+        }
+      ],
+      "winter": [
+        {
+          "item": "Capstone",
+          "credits": 4
+        },
+        {
+          "item": "Advanced ECE Elective",
+          "credits": 5
+        },
+        {
+          "item": "Advanced ECE Elective",
+          "credits": 5
+        }
+      ],
+      "spring": [
+        {
+          "item": "Capstone",
+          "credits": 4
+        },
+        {
+          "item": "Advanced ECE Elective",
+          "credits": 5
+        },
+        {
+          "item": "A&H / SSc",
+          "credits": 5
+        }
+      ]
+    }
+  ]
+}

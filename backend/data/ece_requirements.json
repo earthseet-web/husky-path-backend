@@ -1,0 +1,419 @@
+{
+  "program": "B.S. Electrical and Computer Engineering (BSECE), UW Seattle",
+  "applies_to": "Engineering Undeclared (ENGRUD) students who entered Autumn 2026; major rules for students admitted Autumn 2025 or later",
+  "total_credits": 180,
+  "sources": [
+    "https://www.engr.washington.edu/current/academics/4-year-plans/ece-degree-requirements (updated 2026-10-14)",
+    "https://www.ece.uw.edu/academics/bachelor-of-science/bsece/degree-requirements/"
+  ],
+  "source_checked": "2026-11-16",
+  "placement": {
+    "label": "Placement into ECE (Engineering Undeclared students)",
+    "deadline": "Placement decision July 15 after the first year",
+    "min_grade_note": "ECE's audit lists a minimum grade of 2.0 in each placement course.",
+    "items": [
+      {
+        "id": "engr101",
+        "label": "ENGR 101",
+        "type": "one_of",
+        "courses": [
+          "ENGR 101"
+        ]
+      },
+      {
+        "id": "calc1",
+        "label": "MATH 124 (or MATH 134)",
+        "type": "one_of",
+        "courses": [
+          "MATH 124",
+          "MATH 134"
+        ],
+        "min_grade": 2.0
+      },
+      {
+        "id": "calc2",
+        "label": "MATH 125 (or MATH 135)",
+        "type": "one_of",
+        "courses": [
+          "MATH 125",
+          "MATH 135"
+        ],
+        "min_grade": 2.0
+      },
+      {
+        "id": "calc3",
+        "label": "MATH 126 (or MATH 136)",
+        "type": "one_of",
+        "courses": [
+          "MATH 126",
+          "MATH 136"
+        ],
+        "min_grade": 2.0
+      },
+      {
+        "id": "chem",
+        "label": "CHEM 142 (or CHEM 143/145)",
+        "type": "one_of",
+        "courses": [
+          "CHEM 142",
+          "CHEM 143",
+          "CHEM 145"
+        ],
+        "min_grade": 2.0
+      },
+      {
+        "id": "phys1",
+        "label": "PHYS 121 (or PHYS 141)",
+        "type": "one_of",
+        "courses": [
+          "PHYS 121",
+          "PHYS 141"
+        ],
+        "min_grade": 2.0
+      },
+      {
+        "id": "comp",
+        "label": "English Composition",
+        "type": "category",
+        "category": "english_comp",
+        "known_courses": [
+          "ENGL 131"
+        ]
+      },
+      {
+        "id": "pick",
+        "label": "One of CSE 121, CSE 122, CSE 123, PHYS 122, PHYS 123",
+        "type": "one_of",
+        "courses": [
+          "CSE 121",
+          "CSE 122",
+          "CSE 123",
+          "PHYS 122",
+          "PHYS 123",
+          "PHYS 142",
+          "PHYS 143"
+        ],
+        "min_grade": 2.0
+      }
+    ]
+  },
+  "graduation": [
+    {
+      "group": "E-FIG",
+      "items": [
+        {
+          "id": "efig",
+          "label": "ENGR 101 and GEN ST 199",
+          "type": "all",
+          "courses": [
+            "ENGR 101",
+            "GEN ST 199"
+          ]
+        }
+      ]
+    },
+    {
+      "group": "Mathematics (24-27 cr)",
+      "items": [
+        {
+          "id": "calc",
+          "label": "MATH 124, 125, 126 (or honors MATH 134, 135, 136)",
+          "type": "sequence",
+          "options": [
+            [
+              "MATH 124",
+              "MATH 125",
+              "MATH 126"
+            ],
+            [
+              "MATH 134",
+              "MATH 135",
+              "MATH 136"
+            ]
+          ]
+        },
+        {
+          "id": "diffeq",
+          "label": "MATH 207 or AMATH 351",
+          "type": "one_of",
+          "courses": [
+            "MATH 207",
+            "AMATH 351"
+          ]
+        },
+        {
+          "id": "linalg",
+          "label": "MATH 208 or AMATH 352",
+          "type": "one_of",
+          "courses": [
+            "MATH 208",
+            "AMATH 352"
+          ]
+        },
+        {
+          "id": "stats",
+          "label": "IND E 315 or STAT 390",
+          "type": "one_of",
+          "courses": [
+            "IND E 315",
+            "STAT 390"
+          ]
+        }
+      ]
+    },
+    {
+      "group": "Sciences (19-20 cr)",
+      "items": [
+        {
+          "id": "chem142",
+          "label": "CHEM 142",
+          "type": "one_of",
+          "courses": [
+            "CHEM 142",
+            "CHEM 143",
+            "CHEM 145"
+          ]
+        },
+        {
+          "id": "phys121",
+          "label": "PHYS 121",
+          "type": "one_of",
+          "courses": [
+            "PHYS 121",
+            "PHYS 141"
+          ]
+        },
+        {
+          "id": "phys122",
+          "label": "PHYS 122",
+          "type": "one_of",
+          "courses": [
+            "PHYS 122",
+            "PHYS 142"
+          ]
+        },
+        {
+          "id": "sci_pick",
+          "label": "One of BIOL 130, BIOL 220, MATH 224, PHYS 123",
+          "type": "one_of",
+          "courses": [
+            "PHYS 123",
+            "PHYS 143",
+            "MATH 224",
+            "BIOL 130",
+            "BIOL 220"
+          ]
+        }
+      ]
+    },
+    {
+      "group": "Programming (min 2.0)",
+      "items": [
+        {
+          "id": "prog",
+          "label": "CSE 123 or CSE 143",
+          "type": "one_of",
+          "courses": [
+            "CSE 123",
+            "CSE 143"
+          ],
+          "min_grade": 2.0
+        }
+      ]
+    },
+    {
+      "group": "ECE Core (min 2.0 each)",
+      "items": [
+        {
+          "id": "ee201",
+          "label": "E E 201",
+          "type": "one_of",
+          "courses": [
+            "E E 201"
+          ],
+          "min_grade": 2.0
+        },
+        {
+          "id": "ee215",
+          "label": "E E 215",
+          "type": "one_of",
+          "courses": [
+            "E E 215"
+          ],
+          "min_grade": 2.0
+        },
+        {
+          "id": "ee241",
+          "label": "E E 241 or CSE 163",
+          "type": "one_of",
+          "courses": [
+            "E E 241",
+            "CSE 163"
+          ],
+          "min_grade": 2.0
+        },
+        {
+          "id": "ee242",
+          "label": "E E 242",
+          "type": "one_of",
+          "courses": [
+            "E E 242"
+          ],
+          "min_grade": 2.0
+        },
+        {
+          "id": "ee271",
+          "label": "E E 271",
+          "type": "one_of",
+          "courses": [
+            "E E 271"
+          ],
+          "min_grade": 2.0
+        },
+        {
+          "id": "ee280",
+          "label": "E E 280",
+          "type": "one_of",
+          "courses": [
+            "E E 280"
+          ],
+          "min_grade": 2.0
+        }
+      ]
+    },
+    {
+      "group": "Written communication and general education",
+      "items": [
+        {
+          "id": "comp",
+          "label": "English Composition (5 cr)",
+          "type": "category",
+          "category": "english_comp",
+          "known_courses": [
+            "ENGL 131"
+          ]
+        },
+        {
+          "id": "ee393",
+          "label": "E E 393 Advanced Technical Communication (or department-approved alternative)",
+          "type": "one_of",
+          "courses": [
+            "E E 393"
+          ],
+          "min_grade": 1.0
+        },
+        {
+          "id": "writing",
+          "label": "Additional writing (3 cr)",
+          "type": "category",
+          "category": "W",
+          "credits": 3
+        },
+        {
+          "id": "ah",
+          "label": "Arts & Humanities (10 cr)",
+          "type": "category",
+          "category": "A&H",
+          "credits": 10
+        },
+        {
+          "id": "ssc",
+          "label": "Social Sciences (10 cr)",
+          "type": "category",
+          "category": "SSc",
+          "credits": 10
+        },
+        {
+          "id": "ah_ssc",
+          "label": "Additional A&H or SSc (4 cr)",
+          "type": "category",
+          "category": "A&H or SSc",
+          "credits": 4
+        },
+        {
+          "id": "div",
+          "label": "Diversity (5 cr)",
+          "type": "category",
+          "category": "DIV",
+          "credits": 5
+        },
+        {
+          "id": "nsc45",
+          "label": "Natural sciences to reach 45 cr (approved list; see adviser)",
+          "type": "advisor"
+        }
+      ]
+    },
+    {
+      "group": "Advanced ECE Electives (39 cr, min 1.0 each)",
+      "items": [
+        {
+          "id": "prof",
+          "label": "Professional Issues (1-4 cr)",
+          "type": "one_of",
+          "courses": [
+            "E E 397",
+            "E E 398",
+            "E E 406",
+            "E E 418"
+          ]
+        },
+        {
+          "id": "electives",
+          "label": "300- and 400-level E E courses to reach 39 credits",
+          "type": "electives",
+          "credits": 39,
+          "rules": [
+            "At least 20 credits at the 400 level",
+            "Max 2 credits of seminars (E E 491, E E 492)",
+            "Max 6 credits of E E 499",
+            "E E 233, CSE 373, CSE 374, and ENGR 321 may also count (ENGR 321 max 4 credits)",
+            "Max 6 credits combined of ENGR 321 and E E 499",
+            "E E 393 and capstone courses do not count",
+            "E E 490 counts only as a free elective"
+          ]
+        }
+      ]
+    },
+    {
+      "group": "Capstone (4-8 cr, min 1.0)",
+      "items": [
+        {
+          "id": "capstone",
+          "label": "One approved capstone (complete every course in a sequence)",
+          "type": "sequence",
+          "options": [
+            [
+              "E E 436",
+              "E E 437"
+            ],
+            [
+              "E E 449"
+            ],
+            [
+              "E E 461"
+            ],
+            [
+              "E E 475"
+            ],
+            [
+              "E E 478"
+            ],
+            [
+              "E E 497",
+              "E E 498"
+            ]
+          ]
+        }
+      ]
+    }
+  ],
+  "grade_rules": {
+    "ECE core and programming": 2.0,
+    "Advanced technical communication, capstone, electives": 1.0,
+    "Other requirements": 0.7,
+    "Major GPA": "Minimum 2.0 cumulative in courses applied to the major; no grade below 1.0",
+    "S/NS": "Courses used for requirements must be graded"
+  },
+  "older_rules_note": "Students admitted before Autumn 2025 have 36 elective credits with the capstone counted inside them. This app uses the Autumn 2025+ rules."
+}
