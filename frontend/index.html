@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#4b2e83">
+  <title>Husky Path — Your academic next step</title><link rel="stylesheet" href="chat.css"><link rel="stylesheet" href="taste.css"><link rel="stylesheet" href="enhancements.css">
+</head>
+<body>
+  <div class="layout">
+    <aside class="rail">
+      <a class="logo" href="#" id="homeLogo"><span>H</span><b>Husky Path<small>YOUR UW PLANNING SPACE</small></b></a>
+      <div class="rail-label nav-title">WORKSPACE</div>
+      <nav class="app-nav" aria-label="Main navigation">
+        <button class="nav-item selected" data-view="chat" aria-current="page"><span class="nav-symbol">✳</span> AI Assistant</button>
+        <button class="nav-item" data-view="profile"><span class="nav-symbol">◫</span> My Courses <small>Import transcript</small></button>
+        <button class="nav-item" data-view="schedule"><span class="nav-symbol">▦</span> My Schedule</button>
+        <button class="nav-item audit-nav" id="navDegree"><span class="nav-symbol">◉</span> Sample Audit <small>Demo</small></button>
+      </nav>
+      <div class="rail-label recent-title">PLANNING</div>
+      <button class="new-chat" id="newChat">＋ <span>New conversation</span></button>
+      <div class="rail-bottom"><span>◈</span><div><b>Privacy first</b><small>Profile saved only in this browser</small></div></div>
+    </aside>
+    <main class="main">
+      <header class="topbar"><div><strong id="topbarTitle">Planning assistant</strong><small id="topbarQuarter">Winter 2027 · Demo course data</small></div><button class="profile" id="topbarProfile" type="button" title="Edit student profile"><span id="profileInitial">J</span><b id="profileName">Jordan Lee</b> <small>My profile</small></button></header>
+      <div class="workspace">
+        <section class="conversation">
+          <div class="chat-head"><div><span class="eyebrow">QUARTER PLANNING</span><h1>Ask about your next step.</h1><p>Graduation requirements, course sequencing, and quarter planning — in one conversation.</p></div><span class="term">❄ Winter 2027</span></div>
+          <div class="messages" id="messages" aria-live="polite">
+            <div class="welcome"><div class="assistant-avatar">✳</div><div class="bubble assistant"><b>Hi Jordan! What would you like help with?</b><p>Ask about your graduation path and course order. I will distinguish the fictional demo audit from verified UW information.</p><div class="starter-prompts"><button class="prompt">What do I still need to graduate?</button><button class="prompt">Which quarter are these courses offered?</button><button class="prompt">What order should I take my remaining courses?</button></div></div></div>
+            <div id="thread"></div>
+          </div>
+          <div class="composer-wrap"><div class="composer"><textarea id="messageInput" rows="1" placeholder="Ask about courses, requirements, or schedule preferences…" aria-label="Message the planning assistant"></textarea><button id="sendMessage" aria-label="Send message">↑</button></div><div class="composer-note"><span>↳</span> Suggestions are planning aids built on sample data. Confirm details in official UW systems.</div></div>
+        </section>
+        <section class="full-page hidden" id="profilePage" aria-labelledby="profileHeading">
+          <div class="page-heading"><span class="eyebrow">MY COURSES</span><h1 id="profileHeading">Start with what you’ve taken.</h1><p>Import an unofficial transcript and review the detected classes, then personalize your plan.</p></div>
+          <section class="import-card" aria-labelledby="importHeading">
+            <div class="import-heading"><div><span class="eyebrow">STEP 01 · IMPORT</span><h2 id="importHeading">Bring your coursework in</h2><p>PDF or .txt transcript · extracted locally in your browser · no upload to a server</p></div><span class="import-symbol" aria-hidden="true">↥</span></div>
+            <label for="transcriptFile" class="upload-zone"><span class="upload-icon" aria-hidden="true">↑</span><strong>Choose unofficial transcript</strong><small>PDF (selectable text) or plain text · 10 MB max</small><input type="file" id="transcriptFile" accept=".pdf,.txt,application/pdf,text/plain"></label>
+            <details class="paste-fallback"><summary>Or paste transcript text</summary><label for="transcriptPaste">Transcript text</label><textarea id="transcriptPaste" rows="5" placeholder="CSE 122 4.0 3.7&#10;MATH 124 5.0 4.0"></textarea><button type="button" id="parsePasted" class="secondary-action">Detect courses</button></details>
+            <p class="privacy-note">Your file is read in this browser session. Only courses you explicitly confirm will be copied to the profile saved on this device. A scanned/image-only PDF may require OCR, which this version does not provide.</p>
+            <div id="importStatus" role="status" aria-live="polite"></div>
+            <div id="importReview" class="hidden"><div class="review-head"><h3>Review detected courses</h3><span id="detectedSummary"></span></div><p class="review-description">Edit codes or credits and uncheck uncertain matches before importing. These are detected records, not verified UW transfer or graduation credits.</p><div class="review-table-scroll"><table class="review-table"><thead><tr><th>Use</th><th>Course</th><th>Credits</th><th>Grade / status</th></tr></thead><tbody id="detectedRows"></tbody></table></div><div class="review-actions"><button id="confirmTranscript" type="button" class="primary action-primary">Add selected courses to profile</button><button id="cancelTranscript" type="button" class="secondary-action">Cancel</button></div></div>
+          </section>
+          <div class="profile-section-label"><span class="eyebrow">STEP 02 · PERSONALIZE</span><h2>Your planning preferences</h2></div>
+          <form id="studentForm" class="student-form">
+            <div class="field-row"><label>Preferred name<input id="studentName" maxlength="60" required placeholder="Your name"></label><label>Major / program<input id="studentMajor" maxlength="100" required placeholder="e.g. Applied Mathematics"></label></div>
+            <div class="field-row"><label>Target quarter<select id="studentQuarter"><option>Winter 2027</option><option>Spring 2027</option><option>Summer 2027</option><option>Autumn 2027</option></select></label><label>Preferred credits<input id="studentCredits" type="number" min="1" max="25" required value="15"></label></div>
+            <label>Completed courses <span class="field-help">Comma or newline separated UW course codes</span><textarea id="studentCompleted" rows="3" placeholder="CSE 122, MATH 124"></textarea></label>
+            <label>Interests and career goals<textarea id="studentGoals" rows="3" placeholder="Software engineering, interaction design, research..."></textarea></label>
+            <div class="form-actions"><button class="primary action-primary" type="submit">Save profile</button><button class="secondary-action" type="button" id="backToChat">Back to assistant</button><span id="profileSaved" role="status"></span></div>
+          </form>
+          <div class="info-note"><b>How this affects the demo</b><p>Your target credits and completed courses influence scripted recommendations. The major and goals appear as context, but do not yet enforce degree rules. Real eligibility and course offerings still require official UW data.</p></div>
+        </section>
+        <section class="full-page hidden" id="schedulePage" aria-labelledby="scheduleHeading">
+          <div class="page-heading"><span class="eyebrow">WEEKLY SCHEDULE</span><h1 id="scheduleHeading">Make room for what matters.</h1><p>Draft timetable based on courses added in the assistant. Lecture and quiz times are fictional samples.</p></div>
+          <div class="schedule-toolbar"><div><b id="scheduleQuarter">Winter 2027</b><span id="scheduleTotal">0 credits · 0 courses</span></div><button class="secondary-action" id="scheduleToChat" type="button">＋ Explore courses</button></div>
+          <div id="scheduleAlerts" aria-live="polite"></div>
+          <div class="timetable-scroll"><div class="timetable" id="timetable" aria-label="Weekly timetable"></div></div>
+          <div class="calendar-legend"><span><i class="dot lec-dot"></i> Lecture</span><span><i class="dot quiz-dot"></i> Quiz / discussion</span><span><i class="dot conflict-dot"></i> Overlapping meeting</span></div>
+          <h2 class="course-list-heading">Courses in your draft</h2><div id="scheduleCourseList" class="schedule-course-list"></div>
+          <p class="disclaimer">Fictional demo sections and times, not live registration information. Verify all course offerings, conflicts, prerequisites, and seats through UW.</p>
+        </section>
+        <aside class="context" aria-label="Your context">
+          <div class="context-title"><div><span class="eyebrow">YOUR CONTEXT</span><h2 id="contextQuarter">Winter 2027</h2></div></div>
+          <div class="context-section"><div class="context-label">DEGREE PROGRESS <button id="openDegree">View details ↗</button></div><div class="major"><span class="major-icon">⌘</span><div><b id="contextMajor">Computer Science</b><small>Your profile · degree audit is sample-only</small></div></div><p class="mini-note">The degree progress popup shows a separate fictional CS audit; it is not calculated from your profile.</p></div>
+          <div class="context-section"><div class="context-label">YOUR PREFERENCES <button id="addPref">＋ Add preference</button></div><div id="prefChips"></div><p class="mini-note">Used only for this demo's suggestions. Does not change MyPlan settings.</p></div>
+          <div class="context-section"><div class="context-label">PLAN SO FAR <button id="clearPlan">Clear</button></div><div class="empty-plan" id="emptyPlan"><span>＋</span><p>No courses added yet.<br>Ask for options, then choose “Add to plan”.</p></div><div id="planItems"></div><div id="planSummary"></div></div>
+          <div class="context-foot">Fictional demo data · Not connected to MyPlan<br>Check prerequisites, restrictions, and seats with UW.</div>
+        </aside>
+      </div>
+    </main>
+  </div>
+  <div class="toast hidden" id="toast" role="status"></div>
+  <div class="modal-layer hidden" id="modal"><section class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><button class="close" id="closeModal" aria-label="Close">×</button><div id="modalBody"></div></section></div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+  <script>if(window.pdfjsLib) pdfjsLib.GlobalWorkerOptions.workerSrc = "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";</script>
+  <script src="data.js"></script>
+  <script src="chat.js"></script>
+  <script src="enhancements.js"></script>
+</body>
+</html>
