@@ -18,10 +18,12 @@ The first commit that added this folder is her code unchanged, so `git diff` aga
 - **Chat:** sends the question, profile, preferences, draft plan and recent conversation to `POST /chat`,
   and shows the AI's answer as course cards with prerequisites, warnings and a catalog link.
   If the backend can't be reached, it shows Adeline's scripted reply instead, with a note saying so.
-- **Course details:** real UW courses show the catalog description, credits, prerequisites, usual quarters
-  and a catalog link. Fictional section times, instructors and syllabi aren't shown for real courses.
-- **Plan and weekly schedule:** real courses can be added to the plan and count toward the credit total.
-  They aren't drawn on the calendar because real section times aren't in the prototype; a note says so.
+- **Course details:** real UW courses show the catalog description, credits, prerequisites, usual quarters,
+  a catalog link, and a Winter 2027 sections table (SLN, time, instructor, Rate My Professors link).
+- **Plan and weekly schedule:** real courses use Winter 2027 sections (team data from the Time Schedule).
+  Adding a course picks a section that doesn't overlap the rest of the plan; "Switch section" tries another.
+  Her calendar, time-conflict warnings and Rate My Professors links work with the real times and instructors.
+  Courses with no Winter section in the data say so and aren't drawn on the calendar.
 - **Degree progress:** calculated by `POST /check` from the student's courses against UW ECE requirements,
   replacing the fictional Computer Science audit (still available if the backend is down).
 - **Starting student:** a fictional first-year Engineering Undeclared student aiming for ECE, unless the

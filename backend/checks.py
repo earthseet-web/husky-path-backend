@@ -19,6 +19,15 @@ def _load(name: str):
 COURSES: dict[str, dict] = {c["code"]: c for c in _load("ece_courses.json")["courses"]}
 REQUIREMENTS: dict = _load("ece_requirements.json")
 SAMPLE_PLAN: dict = _load("ece_sample_plan.json")
+_SECTIONS_DATA: dict = _load("sections_winter2027.json")
+SECTIONS_QUARTER: str = _SECTIONS_DATA["quarter"]
+SECTIONS: dict[str, list[dict]] = {}
+for _s in _SECTIONS_DATA["sections"]:
+    SECTIONS.setdefault(_s["code"], []).append(_s)
+for _code, _q in _SECTIONS_DATA.get("offered_fill", {}).items():   # team data fills catalog gaps only
+    if _code in COURSES and not COURSES[_code].get("offered"):
+        COURSES[_code]["offered"] = _q
+        COURSES[_code]["offered_source"] = "team"
 
 # Department prefixes that are written with a space inside them at UW.
 _SPACED_DEPTS = {"EE": "E E", "INDE": "IND E", "GENST": "GEN ST", "BBIO": "B BIO", "TBIOL": "T BIOL", "CHEME": "CHEM E"}
@@ -46,6 +55,7 @@ class Student:
     english_comp_done: bool = False
     target_credits: int = 15
     in_major: bool = False  # admitted/placed into ECE (otherwise: working toward placement)
+    target_quarter: str | None = None
 
     def has(self, code: str, min_grade: float | None = None, include_in_progress: bool = False) -> bool:
         if code in self.completed:
@@ -91,6 +101,7 @@ def student_from_profile(profile: dict | None) -> Student:
         s.target_credits = int(float(profile.get("credits") or 15))
     except (TypeError, ValueError):
         s.target_credits = 15
+    s.target_quarter = (str(profile.get("quarter") or "").strip() or None)
     major = str(profile.get("major") or "").lower()
     says_ece = bool(re.search(r"\bece\b|electrical", major))
     not_yet = any(w in major for w in ("undeclared", "aiming", "pre-", "intended", "want"))
@@ -397,5 +408,91 @@ def check_plan(s: Student, planned: list[str]) -> dict:
         load = f"{total} credits is below your ~{target}-credit target" + (" and under 12 (full-time)." if total < 12 else ".")
     else:
         load = f"{total} credits fits your ~{target}-credit target."
+    picked = pick_sections(codes)
+    sections = {
+        "quarter": SECTIONS_QUARTER,
+        "suggested": {c: section_text(sec) for c, sec in picked["assignment"].items()},
+        "time_conflict": picked["conflict"],
+        "no_section_data": picked["no_sections"],
+    }
     return {"courses": results, "total_credits": total, "target_credits": target,
-            "workload": load, "unknown_courses": unknown}
+            "workload": load, "unknown_courses": unknown, "sections": sections}
+
+
+# ---------------------------------------------------------------- Winter sections
+
+def clock(m: int) -> str:
+    h, mm = divmod(m, 60)
+    return f"{(h - 1) % 12 + 1}:{mm:02d}"
+
+
+def section_text(s: dict) -> str:
+    """'A · MWF 9:30–10:20 · Smith, J.'"""
+    return f"{s['section']} · {''.join(s['days'])} {clock(s['start'])}–{clock(s['end'])} · {s['instructor']}"
+
+
+def sections_for(code: str) -> list[dict]:
+    return SECTIONS.get(code, [])
+
+
+def _overlap(a: dict, b: dict) -> bool:
+    return bool(set(a["days"]) & set(b["days"])) and a["start"] < b["end"] and b["start"] < a["end"]
+
+
+def wants_no_friday(prefs: list[str] | None, message: str = "") -> bool:
+    text = " ".join(prefs or []) + " " + (message or "")
+    return bool(re.search(r"no\s+friday|fridays?\s+(?:off|open|free)|keep\s+fridays", text, re.I))
+
+
+def pick_sections(codes: list[str], avoid_friday: bool = False) -> dict:
+    """Choose one Winter section per course so nothing overlaps (and, if asked, nothing meets on Friday).
+
+    Returns {"assignment": {code: section}, "conflict": bool, "friday_ok": bool, "no_sections": [codes]}.
+    """
+    with_sections = [c for c in codes if sections_for(c)]
+    no_sections = [c for c in codes if not sections_for(c)]
+
+    def search(i, chosen, friday_rule):
+        if i == len(with_sections):
+            return dict(chosen)
+        code = with_sections[i]
+        for s in sections_for(code):
+            if friday_rule and "F" in s["days"]:
+                continue
+            if any(_overlap(s, other) for other in chosen.values()):
+                continue
+            chosen[code] = s
+            found = search(i + 1, chosen, friday_rule)
+            if found:
+                return found
+            del chosen[code]
+        return None
+
+    best = search(0, {}, avoid_friday) if avoid_friday else None
+    friday_ok = best is not None
+    if best is None:
+        best = search(0, {}, False)
+    conflict = best is None
+    if conflict:   # no clean combination: show each course's first section so the clash is visible
+        best = {c: sections_for(c)[0] for c in with_sections}
+    return {"assignment": best, "conflict": conflict, "friday_ok": friday_ok if avoid_friday else True,
+            "no_sections": no_sections}
+
+
+def section_notes(code: str, s: Student, avoid_friday: bool = False) -> tuple[list[str], list[str]]:
+    """(fits, warns) about Winter sections for one course card."""
+    secs = sections_for(code)
+    quarter = (s.target_quarter or SECTIONS_QUARTER)
+    if quarter != SECTIONS_QUARTER:
+        return [], []
+    if not secs:
+        return [], [f"Not in our {SECTIONS_QUARTER} section list. Check the Time Schedule before planning on it."]
+    fits = [f"{SECTIONS_QUARTER}: " + "; ".join(section_text(x) for x in secs)]
+    warns = []
+    if avoid_friday:
+        if all("F" in x["days"] for x in secs):
+            warns.append("Every Winter section meets on Friday, which doesn't fit your no-Friday preference.")
+        elif any("F" in x["days"] for x in secs):
+            ok = [x["section"] for x in secs if "F" not in x["days"]]
+            fits.append(f"Section {', '.join(ok)} avoids Friday")
+    return fits, warns

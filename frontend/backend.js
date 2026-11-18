@@ -1,4 +1,5 @@
-/* Husky Path: connects Adeline's front end to the Husky Path backend (POST /chat, /check).
+/* Husky Path: connects Adeline's front end to the Husky Path backend (POST /chat, /check),
+   including Winter 2027 sections (times, SLNs, instructors) on the calendar and in the plan.
    Loaded after chat.js and enhancements.js. Her scripted replies stay as the fallback when the
    backend can't be reached. Real UW courses come from the backend; the fictional sample courses in
    data.js are only used by that fallback. */
@@ -17,8 +18,8 @@
   });
   profileField.in_progress = 'studentInProgress';
   studentProfile = readProfile();
-  prefs = ['~15 credits', 'No Friday classes', 'Interested in robotics'];
-  D.suggestedPrefs = ['~12 credits', 'Mornings preferred', 'In-person only', 'Interested in machine learning',
+  prefs = ['~15 credits', 'Interested in robotics'];
+  D.suggestedPrefs = ['No Friday classes', '~12 credits', 'Mornings preferred', 'In-person only', 'Interested in machine learning',
     'Interested in embedded systems', 'Interested in energy systems', 'Balance technical and writing-heavy courses'];
 
   const prevSync = syncProfile;
@@ -27,13 +28,43 @@
     $('topbarQuarter').textContent = `${studentProfile.quarter} · UW ECE catalog data`;
   };
 
+  /* ---------- Winter 2027 sections (team data from the Time Schedule) ---------- */
+  const DAYNAME = { M: 'Mon', T: 'Tue', W: 'Wed', Th: 'Thu', F: 'Fri' };
+  const clock12 = m => `${(Math.floor(m / 60) + 11) % 12 + 1}:${String(m % 60).padStart(2, '0')}`;
+  const half = m => (m < 12 * 60 ? 'AM' : 'PM');
+  const timeText = s => `${s.days.map(d => DAYNAME[d]).join(' · ')}, ${clock12(s.start)}${half(s.start) === half(s.end) ? '' : ' ' + half(s.start)}–${clock12(s.end)} ${half(s.end)}`;
+  const toMeeting = s => ({ id: s.section, days: s.days, s: s.start, e: s.end, sln: s.sln,
+    time: timeText(s), location: `SLN ${s.sln}`, instructor: s.instructor });
+  const RMP = 'https://www.ratemyprofessors.com/search/professors/1530?q=';
+  const isStaff = name => !name || /^(staff|tba)$/i.test(name.trim());
+  const rmpLink = name => isStaff(name) ? '' : `<a href="${RMP}${encodeURIComponent(name.split(',')[0].trim())}" target="_blank" rel="noopener noreferrer">Rate My Professors ↗</a>`;
+  const chosen = {};   // course code -> chosen section letter
+  const noFriday = () => prefs.some(p => /friday/i.test(p));
+
+  function setSection(c, letter) {
+    const sec = (c.sections || []).find(x => x.section === letter) || (c.sections || [])[0];
+    c.lecture = sec ? toMeeting(sec) : null;
+    if (sec) chosen[c.code] = sec.section;
+  }
+
+  // Pick a section that doesn't overlap anything already in the plan (and avoids Friday if preferred).
+  function autoPick(c) {
+    if (!c.sections || !c.sections.length) { c.lecture = null; return; }
+    if (chosen[c.code]) return setSection(c, chosen[c.code]);
+    const others = plan.filter(code => code !== c.code).map(course).filter(Boolean).flatMap(meetings);
+    const clash = x => others.some(m => m.days.some(d => x.days.includes(d)) && x.start < m.e && m.s < x.end);
+    const order = [...c.sections].sort((a, b) => (noFriday() && a.days.includes('F')) - (noFriday() && b.days.includes('F')));
+    setSection(c, (order.find(x => !clash(x)) || order[0]).section);
+  }
+
   /* ---------- real courses from the backend, stored alongside the sample ones ---------- */
   function upsert(card) {
     const real = {
       code: card.code, title: card.title, credits: parseInt(card.credits, 10) || 0, creditsText: String(card.credits),
       reqLabel: card.reqLabel, reason: card.reason, description: card.description, prereq: card.prereq_text,
-      url: card.url, offered: card.offered, lecture: null, quiz: null, tags: [], real: true
+      url: card.url, offered: card.offered, sections: card.sections || [], lecture: null, quiz: null, tags: [], real: true
     };
+    if (chosen[real.code]) setSection(real, chosen[real.code]);
     const i = D.courses.findIndex(c => c.code === card.code);
     if (i >= 0) D.courses[i] = real; else D.courses.push(real);
   }
@@ -43,7 +74,8 @@
     const c = course(card.code);
     if (!c || !c.real) return prevCard(card);
     const inPlan = plan.includes(c.code);
-    const when = c.offered ? `Usually ${quarters(c.offered)}` : 'Quarters: check MyPlan';
+    const when = c.sections.length ? `Winter 2027 · ${c.sections.length} section${c.sections.length > 1 ? 's' : ''}`
+      : c.offered ? `Usually ${quarters(c.offered)}` : 'Quarters: check MyPlan';
     return `<article class="recommendation real-course"><div class="rec-top"><b>${esc(c.code)} · ${esc(c.title)}</b><small>${esc(c.creditsText)} credits</small></div>
       <p class="rec-why">${esc(card.reason || c.reason || '')}</p>
       <div class="rec-tags"><span>${esc(c.reqLabel)}</span><span>${esc(when)}</span></div>
@@ -114,7 +146,9 @@
       <p class="detail-text"><b>${esc(c.creditsText)} credits</b> · Counts toward: ${esc(c.reqLabel)}</p>
       <p class="detail-text"><b>Prerequisites:</b> ${esc(c.prereq)}</p>
       <p class="detail-text"><b>Usually offered:</b> ${esc(quarters(c.offered) || 'not listed in the catalog')} (not a promise for a specific quarter)</p>
-      <p class="sample-banner">Section times, instructors, seats and syllabi aren't part of this prototype. Check the UW Time Schedule or MyPlan.</p>
+      ${c.sections.length ? `<table class="sections"><caption>Winter 2027 sections</caption><thead><tr><th>Section</th><th>SLN</th><th>Time</th><th>Instructor</th></tr></thead><tbody>${c.sections.map(x => `<tr><th scope="row">${esc(x.section)}</th><td>${esc(x.sln)}</td><td>${esc(timeText(x))}</td><td>${esc(x.instructor)} ${rmpLink(x.instructor)}</td></tr>`).join('')}</tbody></table>
+        <p class="sample-banner">Winter 2027 sections from the UW Time Schedule, provided by our team. Confirm the SLN and seats in MyPlan before registering. Syllabi aren't part of this prototype.</p>`
+        : `<p class="sample-banner">No Winter 2027 section in our data for this course. Check the UW Time Schedule or MyPlan. Syllabi aren't part of this prototype.</p>`}
       <p class="detail-text"><a href="${esc(c.url)}" target="_blank" rel="noopener noreferrer">Open in the UW course catalog ↗</a></p>
       <button class="primary" data-add="${esc(c.code)}">${plan.includes(c.code) ? '✓ Added to plan' : '＋ Add to plan'}</button>`, true);
   };
@@ -124,7 +158,10 @@
     $('emptyPlan').classList.toggle('hidden', plan.length > 0);
     $('planItems').innerHTML = plan.map(code => {
       const c = course(code); if (!c) return '';
-      const sections = c.real ? '<div class="sect none">Section times: check MyPlan (not in this prototype)</div>'
+      if (c.real) autoPick(c);
+      const sections = c.real
+        ? (c.lecture ? sectionLine('lec', c.lecture) + (c.sections.length > 1 ? `<button class="switch-section" data-switch="${esc(c.code)}">Switch section (${c.sections.length} options)</button>` : '')
+          : '<div class="sect none">No Winter 2027 section in our data · check the Time Schedule</div>')
         : sectionLine('lec', c.lecture) + (c.quiz ? sectionLine('quiz', c.quiz) : '<div class="sect none">No quiz/discussion section (sample)</div>');
       return `<div class="plan-course"><div class="plan-item"><b>${esc(c.code)}</b><span>${esc(c.creditsText || c.credits)} cr</span><button data-details="${esc(c.code)}">View details</button><button data-remove="${esc(c.code)}" aria-label="Remove ${esc(c.code)}">×</button></div>${sections}</div>`;
     }).join('');
@@ -138,18 +175,28 @@
   const prevTimetable = renderTimetable;
   renderTimetable = function () {
     prevTimetable();
-    const realInPlan = plan.map(course).filter(c => c && c.real);
+    const realInPlan = plan.map(course).filter(c => c && c.real && !c.lecture);
     $('scheduleCourseList').querySelectorAll('.schedule-list-item').forEach(item => {
       const c = course(item.querySelector('[data-details]')?.dataset.details);
-      if (c && c.real) {
-        const small = item.querySelector('small');
-        if (small) small.textContent = `${c.creditsText} credits · section times not in prototype, check MyPlan`;
-        item.querySelector('.rmp-strip')?.remove();
-      }
+      if (!c || !c.real) return;
+      const small = item.querySelector('small');
+      if (small) small.textContent = c.lecture
+        ? `${c.creditsText} credits · Winter 2027 section ${c.lecture.id} · ${c.lecture.time} · SLN ${c.lecture.sln}`
+        : `${c.creditsText} credits · no Winter 2027 section in our data, check the Time Schedule`;
+      if (!c.lecture) item.querySelector('.rmp-strip')?.remove();
     });
     if (realInPlan.length) $('scheduleAlerts').insertAdjacentHTML('beforeend',
-      `<div class="calendar-note">${realInPlan.map(c => esc(c.code)).join(', ')} ${realInPlan.length === 1 ? 'is a' : 'are'} real UW course${realInPlan.length === 1 ? '' : 's'} without section times in this prototype, so ${realInPlan.length === 1 ? 'it isn\'t' : 'they aren\'t'} drawn on the calendar.</div>`);
+      `<div class="calendar-note">${realInPlan.map(c => esc(c.code)).join(', ')} ${realInPlan.length === 1 ? 'is a' : 'are'} course${realInPlan.length === 1 ? '' : 's'} with no Winter 2027 section in our data, so ${realInPlan.length === 1 ? 'it isn\'t' : 'they aren\'t'} drawn on the calendar.</div>`);
   };
+
+  document.addEventListener('click', event => {
+    const b = event.target.closest('[data-switch]'); if (!b) return;
+    const c = course(b.dataset.switch); if (!c || !c.sections.length) return;
+    const i = c.sections.findIndex(x => x.section === chosen[c.code]);
+    setSection(c, c.sections[(i + 1) % c.sections.length].section);
+    renderPlan();
+    notify(`${c.code}: section ${c.lecture.id} · ${c.lecture.time}`);
+  });
 
   /* ---------- degree progress from the backend's ECE requirement checks ---------- */
   const ICON = { done: '✓', in_progress: '◐', partial: '◐', missing: '○', not_tracked: '…' };

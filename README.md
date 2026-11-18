@@ -87,6 +87,7 @@ Each card has `code`, `title`, `credits`, `reason` (from the AI), `reqLabel`, `d
 | `backend/data/ece_courses.json` | 118 courses: all E E courses plus required MATH, PHYS, CHEM, CSE, STAT, IND E, BIOL, ENGR |
 | `backend/data/ece_requirements.json` | ECE placement and graduation requirements (Autumn 2025+ rules) |
 | `backend/data/ece_sample_plan.json` | Official sample four-year plan for Engineering Undeclared students |
+| `backend/data/sections_winter2027.json` | Winter 2027 sections (SLN, days, times, instructor), built from the team's file by `tools/build_sections.py` |
 | `backend/tools/build_data.py` | Rebuilds the three data files; edit course facts here |
 | `backend/test_checks.py` | Tests |
 | `DATA_GAPS.md` | What the sources didn't say, and what to verify |

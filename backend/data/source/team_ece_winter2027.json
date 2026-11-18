@@ -1,0 +1,385 @@
+{
+  "degree_requirements": {
+    "program": "B.S. in Electrical and Computer Engineering (UW Seattle)",
+    "e_fig": ["ENGR 101", "GEN ST 199"],
+    "mathematics": {
+      "required": ["MATH 124", "MATH 125", "MATH 126"],
+      "differential_equations_choose_1": ["MATH 207", "AMATH 351"],
+      "linear_algebra_choose_1": ["MATH 208", "AMATH 352"],
+      "statistics_choose_1": ["IND E 315", "STAT 390"]
+    },
+    "sciences": {
+      "required": ["CHEM 142", "PHYS 121", "PHYS 122"],
+      "additional_choose_1": ["BIOL 130", "BIOL 220", "MATH 224", "PHYS 123"]
+    },
+    "general_education": {
+      "english_composition_credits": 5,
+      "technical_communication": ["EE 393"],
+      "additional_writing_credits": 3,
+      "areas_of_inquiry": {
+        "A_and_H_credits": 10,
+        "SSc_credits": 10,
+        "A_and_H_or_SSc_credits": 4,
+        "NSc_total_credits_target": 45
+      },
+      "diversity_credits": 5
+    },
+    "engineering_fundamentals_choose_1": ["CSE 123", "CSE 143"],
+    "major_core": {
+      "required": ["EE 201", "EE 215", "EE 242", "EE 271", "EE 280"],
+      "data_programming_choose_1": ["EE 241", "CSE 163"]
+    }
+  },
+  "courses": [
+    {
+      "code": "ENGR 101",
+      "title": "Engineering Exploration",
+      "credits": 1,
+      "category": "E-FIG",
+      "description": "Presentations and discussions on topics of current interest in engineering. Explores various areas of engineering research, engineering disciplines, and relevance to students.",
+      "prerequisites": { "and": [], "or": [] },
+      "concurrent_allowed": [],
+      "offered": ["Autumn"]
+    },
+    {
+      "code": "GEN ST 199",
+      "title": "The University Community",
+      "credits": 1,
+      "category": "E-FIG",
+      "description": "Introduces students to various aspects of the University of Washington community, university resources, opportunities, and academic skill development.",
+      "prerequisites": { "and": [], "or": [] },
+      "concurrent_allowed": [],
+      "offered": ["Autumn"]
+    },
+    {
+      "code": "MATH 124",
+      "title": "Calculus with Analytic Geometry I",
+      "credits": 5,
+      "category": "Mathematics",
+      "description": "Differential calculus, limits, continuity, definition of derivative, differentiation techniques, and applications.",
+      "prerequisites": { "and": [], "or": [] },
+      "concurrent_allowed": [],
+      "offered": ["Autumn", "Winter", "Spring", "Summer"]
+    },
+    {
+      "code": "MATH 125",
+      "title": "Calculus with Analytic Geometry II",
+      "credits": 5,
+      "category": "Mathematics",
+      "description": "Integral calculus, definite integrals, integration techniques, applications, and introductory differential equations.",
+      "prerequisites": { "and": ["MATH 124"], "or": [] },
+      "concurrent_allowed": [],
+      "offered": ["Autumn", "Winter", "Spring", "Summer"]
+    },
+    {
+      "code": "MATH 126",
+      "title": "Calculus with Analytic Geometry III",
+      "credits": 5,
+      "category": "Mathematics",
+      "description": "Taylor series, vector geometry, parametric equations, and introductory multivariable calculus.",
+      "prerequisites": { "and": ["MATH 125"], "or": [] },
+      "concurrent_allowed": [],
+      "offered": ["Autumn", "Winter", "Spring", "Summer"]
+    },
+    {
+      "code": "MATH 207",
+      "title": "Introduction to Differential Equations",
+      "credits": 4,
+      "category": "Mathematics",
+      "description": "Ordinary differential equations, initial value problems, first- and second-order linear equations, and Laplace transforms.",
+      "prerequisites": { "and": ["MATH 125"], "or": [] },
+      "concurrent_allowed": [],
+      "offered": ["Autumn", "Winter", "Spring", "Summer"]
+    },
+    {
+      "code": "AMATH 351",
+      "title": "Introduction to Differential Equations and Applications",
+      "credits": 3,
+      "category": "Mathematics",
+      "description": "Introductory survey of ordinary differential equations, linear and nonlinear equations, Taylor series, and Laplace transforms with science and engineering examples.",
+      "prerequisites": { "and": ["MATH 125"], "or": [] },
+      "concurrent_allowed": [],
+      "offered": ["Autumn", "Winter", "Spring", "Summer"]
+    },
+    {
+      "code": "MATH 208",
+      "title": "Matrix Algebra with Applications",
+      "credits": 4,
+      "category": "Mathematics",
+      "description": "Systems of linear equations, vector spaces, matrices, subspaces, orthogonality, least squares, eigenvalues, and eigenvectors.",
+      "prerequisites": { "and": ["MATH 126"], "or": [] },
+      "concurrent_allowed": [],
+      "offered": ["Autumn", "Winter", "Spring", "Summer"]
+    },
+    {
+      "code": "AMATH 352",
+      "title": "Applied Linear Algebra and Numerical Analysis",
+      "credits": 3,
+      "category": "Mathematics",
+      "description": "Analysis and application of numerical methods and algorithms to problems in applied sciences and engineering using MATLAB or Python.",
+      "prerequisites": { "and": ["MATH 126"], "or": [] },
+      "concurrent_allowed": [],
+      "offered": ["Autumn", "Winter", "Spring", "Summer"]
+    },
+    {
+      "code": "IND E 315",
+      "title": "Probability and Statistics for Engineers",
+      "credits": 3,
+      "category": "Mathematics",
+      "description": "Application of probability theory and statistics to engineering problems, distribution theory, statistical inference, quality control, and linear regression.",
+      "prerequisites": { "and": [], "or": [["MATH 207", "AMATH 351"]] },
+      "concurrent_allowed": [],
+      "offered": ["Autumn", "Winter", "Summer"]
+    },
+    {
+      "code": "STAT 390",
+      "title": "Statistical Methods in Engineering and Science",
+      "credits": 4,
+      "category": "Mathematics",
+      "description": "Concepts of probability and statistics, conditional probability, random variables, sampling errors, confidence intervals, and least squares.",
+      "prerequisites": { "and": ["MATH 126"], "or": [] },
+      "concurrent_allowed": [],
+      "offered": ["Autumn", "Winter", "Spring", "Summer"]
+    },
+    {
+      "code": "CHEM 142",
+      "title": "General Chemistry I",
+      "credits": 5,
+      "category": "Sciences",
+      "description": "Atomic nature of matter, quantum mechanics, ionic and covalent bonding, molecular geometry, stoichiometry, solution stoichiometry, and gas laws.",
+      "prerequisites": { "and": [], "or": [] },
+      "concurrent_allowed": [],
+      "offered": ["Autumn", "Winter", "Spring", "Summer"]
+    },
+    {
+      "code": "PHYS 121",
+      "title": "Mechanics",
+      "credits": 5,
+      "category": "Sciences",
+      "description": "Basic principles of mechanics and experiments in mechanics for physical science and engineering majors.",
+      "prerequisites": { "and": ["MATH 124"], "or": [] },
+      "concurrent_allowed": ["MATH 124"],
+      "offered": ["Autumn", "Winter", "Spring", "Summer"]
+    },
+    {
+      "code": "PHYS 122",
+      "title": "Electromagnetism",
+      "credits": 5,
+      "category": "Sciences",
+      "description": "Basic principles of electromagnetism, electric fields, Gauss's law, circuits, magnetic fields, and electromagnetic induction.",
+      "prerequisites": { "and": ["PHYS 121", "MATH 125"], "or": [] },
+      "concurrent_allowed": ["MATH 125"],
+      "offered": ["Autumn", "Winter", "Spring", "Summer"]
+    },
+    {
+      "code": "PHYS 123",
+      "title": "Waves, Light, and Heat",
+      "credits": 5,
+      "category": "Sciences",
+      "description": "Oscillations, waves, sound, geometric and wave optics, interference, diffraction, and thermodynamics.",
+      "prerequisites": { "and": ["PHYS 122", "MATH 126"], "or": [] },
+      "concurrent_allowed": ["MATH 126"],
+      "offered": ["Autumn", "Winter", "Spring", "Summer"]
+    },
+    {
+      "code": "BIOL 130",
+      "title": "Introduction to Neuroscience",
+      "credits": 4,
+      "category": "Sciences",
+      "description": "Provides a broad introduction to the study of brain function, emphasizing how circuits within the brain process sensory information and generate movement.",
+      "prerequisites": { "and": [], "or": [] },
+      "concurrent_allowed": [],
+      "offered": ["Spring"]
+    },
+    {
+      "code": "BIOL 220",
+      "title": "Introductory Biology",
+      "credits": 5,
+      "category": "Sciences",
+      "description": "Animal and plant physiology, comparative anatomy, transport, gas exchange, nutrition, and homeostasis.",
+      "prerequisites": { "and": ["BIOL 200"], "or": [] },
+      "concurrent_allowed": [],
+      "offered": ["Autumn", "Winter", "Spring", "Summer"]
+    },
+    {
+      "code": "MATH 224",
+      "title": "Advanced Multivariable Calculus",
+      "credits": 4,
+      "category": "Sciences",
+      "description": "Multivariate integration including double and triple integrals, vector fields, line and surface integrals, and theorems of Green, Stokes, and Gauss.",
+      "prerequisites": { "and": ["MATH 126"], "or": [] },
+      "concurrent_allowed": [],
+      "offered": ["Autumn", "Winter", "Spring", "Summer"]
+    },
+    {
+      "code": "CSE 121",
+      "title": "Introduction to Computer Programming I",
+      "credits": 4,
+      "category": "Engineering Fundamentals",
+      "description": "Introduction to computer programming for students without previous programming experience using procedural constructs and control structures.",
+      "prerequisites": { "and": [], "or": [] },
+      "concurrent_allowed": [],
+      "offered": ["Autumn", "Winter", "Spring", "Summer"]
+    },
+    {
+      "code": "CSE 122",
+      "title": "Introduction to Computer Programming II",
+      "credits": 4,
+      "category": "Engineering Fundamentals",
+      "description": "Emphasizes program design, style, decomposition, and data structures like lists, dictionaries, and sets.",
+      "prerequisites": { "and": ["CSE 121"], "or": [] },
+      "concurrent_allowed": [],
+      "offered": ["Autumn", "Winter", "Spring", "Summer"]
+    },
+    {
+      "code": "CSE 123",
+      "title": "Introduction to Computer Programming III",
+      "credits": 4,
+      "category": "Engineering Fundamentals",
+      "description": "Introduction to data abstraction, object-oriented programming, recursion, and implementation of core data structures.",
+      "prerequisites": { "and": ["CSE 122"], "or": [] },
+      "concurrent_allowed": [],
+      "offered": ["Autumn", "Winter", "Spring", "Summer"]
+    },
+    {
+      "code": "CSE 142",
+      "title": "Computer Programming I",
+      "credits": 4,
+      "category": "Engineering Fundamentals",
+      "description": "Basic programming concepts, conditional execution, loops, methods, arrays, and objects.",
+      "prerequisites": { "and": [], "or": [] },
+      "concurrent_allowed": [],
+      "offered": ["Autumn", "Winter", "Spring", "Summer"]
+    },
+    {
+      "code": "CSE 143",
+      "title": "Computer Programming II",
+      "credits": 5,
+      "category": "Engineering Fundamentals",
+      "description": "Continuation of CSE 142. Core data structures, recursive programming, sorting, and searching.",
+      "prerequisites": { "and": ["CSE 142"], "or": [] },
+      "concurrent_allowed": [],
+      "offered": ["Autumn", "Winter", "Spring", "Summer"]
+    },
+    {
+      "code": "CSE 163",
+      "title": "Intermediate Data Programming",
+      "credits": 4,
+      "category": "Major Core",
+      "description": "Intermediate programming concepts in Python, including data structures, file processing, data visualization, and tabular/geospatial data analysis.",
+      "prerequisites": { "and": [], "or": [["CSE 122", "CSE 123", "CSE 142", "CSE 143", "CSE 160"]] },
+      "concurrent_allowed": [],
+      "offered": ["Autumn", "Winter", "Spring"]
+    },
+    {
+      "code": "EE 201",
+      "title": "Computer Hardware Skills",
+      "credits": 2,
+      "category": "Major Core",
+      "description": "Introduction to computer hardware skills, soldering, circuit prototyping, and laboratory instrumentation.",
+      "prerequisites": { "and": [], "or": [["CSE 122", "CSE 123", "CSE 142", "CSE 143"]] },
+      "concurrent_allowed": ["CSE 122", "CSE 123", "CSE 142", "CSE 143"],
+      "offered": ["Autumn", "Winter", "Spring"]
+    },
+    {
+      "code": "EE 215",
+      "title": "Fundamentals of Electrical Engineering",
+      "credits": 4,
+      "category": "Major Core",
+      "description": "Basic circuit and systems concepts, Kirchhoff's laws, resistors, sources, capacitors, inductors, and operational amplifiers.",
+      "prerequisites": { "and": ["MATH 126", "PHYS 122", "MATH 207"], "or": [] },
+      "concurrent_allowed": ["MATH 207"],
+      "offered": ["Autumn", "Winter", "Spring", "Summer"]
+    },
+    {
+      "code": "EE 241",
+      "title": "Programming for Signal and Information Processing Applications",
+      "credits": 2,
+      "category": "Major Core",
+      "description": "Introduction to programming tailored for signal processing, numerical computation, and data manipulation in Python.",
+      "prerequisites": { "and": [], "or": [["CSE 121", "CSE 122", "CSE 123", "CSE 142", "CSE 143"]] },
+      "concurrent_allowed": [],
+      "offered": ["Autumn", "Winter", "Spring"]
+    },
+    {
+      "code": "EE 242",
+      "title": "Signals, Systems, and Data I",
+      "credits": 5,
+      "category": "Major Core",
+      "description": "Continuous- and discrete-time signals and systems, impulses, unit steps, convolution, and Fourier series and transforms.",
+      "prerequisites": { "and": [], "or": [["MATH 207", "AMATH 351"], ["EE 241", "CSE 163"]] },
+      "concurrent_allowed": ["MATH 207", "AMATH 351"],
+      "offered": ["Autumn", "Winter", "Spring"]
+    },
+    {
+      "code": "EE 271",
+      "title": "Digital Circuits and Systems",
+      "credits": 5,
+      "category": "Major Core",
+      "description": "Overview of digital computer systems, Boolean algebra, combinational and sequential circuits, logic design, and programmable logic devices.",
+      "prerequisites": { "and": [], "or": [["CSE 121", "CSE 122", "CSE 123", "CSE 142", "CSE 143"]] },
+      "concurrent_allowed": [],
+      "offered": ["Autumn", "Winter", "Spring", "Summer"]
+    },
+    {
+      "code": "EE 280",
+      "title": "Exploring Devices",
+      "credits": 4,
+      "category": "Major Core",
+      "description": "Overview of modern electronic and photonic devices underlying modern electronic products, semiconductors, diodes, and transistors.",
+      "prerequisites": { "and": ["PHYS 122", "EE 215"], "or": [] },
+      "concurrent_allowed": ["EE 215"],
+      "offered": ["Spring"]
+    },
+    {
+      "code": "EE 393",
+      "title": "Advanced Technical Communication",
+      "credits": 4,
+      "category": "General Education",
+      "description": "Practical skills for day-to-day engineering communication and preparing persuasive documents and presentations for technical and non-technical audiences.",
+      "prerequisites": { "and": [], "or": [] },
+      "concurrent_allowed": [],
+      "offered": ["Autumn", "Winter", "Spring"]
+    }
+  ],
+  "sections": [
+    { "line_number": "17101", "code": "MATH 124", "term": "Winter", "section": "A", "time": "MWF 9:30-10:20", "instructor": "Smith, J." },
+    { "line_number": "17102", "code": "MATH 124", "term": "Winter", "section": "B", "time": "MWF 11:30-12:20", "instructor": "Conroy, M." },
+    { "line_number": "17115", "code": "MATH 125", "term": "Winter", "section": "A", "time": "TTh 10:30-11:50", "instructor": "Jones, M." },
+    { "line_number": "17116", "code": "MATH 125", "term": "Winter", "section": "B", "time": "TTh 1:30-2:50", "instructor": "Ostroff, J." },
+    { "line_number": "17130", "code": "MATH 126", "term": "Winter", "section": "A", "time": "MWF 8:30-9:20", "instructor": "Loveless, A." },
+    { "line_number": "17131", "code": "MATH 126", "term": "Winter", "section": "B", "time": "MWF 10:30-11:20", "instructor": "Loveless, A." },
+    { "line_number": "17145", "code": "MATH 207", "term": "Winter", "section": "A", "time": "MWF 10:30-11:20", "instructor": "Tuncel, S." },
+    { "line_number": "17146", "code": "MATH 207", "term": "Winter", "section": "B", "time": "MWF 1:30-2:20", "instructor": "Bekyel, E." },
+    { "line_number": "10210", "code": "AMATH 351", "term": "Winter", "section": "A", "time": "MWF 9:30-10:20", "instructor": "Kutz, J." },
+    { "line_number": "17160", "code": "MATH 208", "term": "Winter", "section": "A", "time": "MWF 11:30-12:20", "instructor": "Bilu, Y." },
+    { "line_number": "17161", "code": "MATH 208", "term": "Winter", "section": "B", "time": "MWF 2:30-3:20", "instructor": "Pezzoli, E." },
+    { "line_number": "10215", "code": "AMATH 352", "term": "Winter", "section": "A", "time": "MWF 12:30-1:20", "instructor": "Greenbaum, A." },
+    { "line_number": "15810", "code": "IND E 315", "term": "Winter", "section": "A", "time": "MWF 11:30-12:20", "instructor": "Choe, Y." },
+    { "line_number": "20410", "code": "STAT 390", "term": "Winter", "section": "A", "time": "MWF 1:30-2:20", "instructor": "Meila, M." },
+    { "line_number": "12101", "code": "CHEM 142", "term": "Winter", "section": "A", "time": "MWF 9:30-10:20", "instructor": "Craig, C." },
+    { "line_number": "12102", "code": "CHEM 142", "term": "Winter", "section": "B", "time": "MWF 12:30-1:20", "instructor": "Wiegand, D." },
+    { "line_number": "19101", "code": "PHYS 121", "term": "Winter", "section": "A", "time": "MWF 10:30-11:20", "instructor": "Pedigo, R." },
+    { "line_number": "19102", "code": "PHYS 121", "term": "Winter", "section": "B", "time": "MWF 1:30-2:20", "instructor": "Tolich, N." },
+    { "line_number": "19115", "code": "PHYS 122", "term": "Winter", "section": "A", "time": "MWF 9:30-10:20", "instructor": "Schick, M." },
+    { "line_number": "19116", "code": "PHYS 122", "term": "Winter", "section": "B", "time": "MWF 11:30-12:20", "instructor": "Hsu, S." },
+    { "line_number": "19130", "code": "PHYS 123", "term": "Winter", "section": "A", "time": "MWF 12:30-1:20", "instructor": "Olmstead, M." },
+    { "line_number": "11420", "code": "BIOL 220", "term": "Winter", "section": "A", "time": "MTWThF 10:30-11:20", "instructor": "Crowe, A." },
+    { "line_number": "17175", "code": "MATH 224", "term": "Winter", "section": "A", "time": "MWF 9:30-10:20", "instructor": "Perkins, T." },
+    { "line_number": "13010", "code": "CSE 121", "term": "Winter", "section": "A", "time": "MWF 11:30-12:20", "instructor": "Natsuhara, M." },
+    { "line_number": "13020", "code": "CSE 122", "term": "Winter", "section": "A", "time": "MWF 12:30-1:20", "instructor": "Wortzman, B." },
+    { "line_number": "13030", "code": "CSE 123", "term": "Winter", "section": "A", "time": "MWF 1:30-2:20", "instructor": "Wortzman, B." },
+    { "line_number": "13040", "code": "CSE 163", "term": "Winter", "section": "A", "time": "MWF 2:30-3:20", "instructor": "Salguero, A." },
+    { "line_number": "13801", "code": "EE 201", "term": "Winter", "section": "A", "time": "W 1:30-4:20", "instructor": "Staff" },
+    { "line_number": "13802", "code": "EE 201", "term": "Winter", "section": "B", "time": "Th 1:30-4:20", "instructor": "Staff" },
+    { "line_number": "13810", "code": "EE 215", "term": "Winter", "section": "A", "time": "MWF 10:30-11:20", "instructor": "Stultz, C." },
+    { "line_number": "13811", "code": "EE 215", "term": "Winter", "section": "B", "time": "MWF 1:30-2:20", "instructor": "Chizeck, H." },
+    { "line_number": "13820", "code": "EE 241", "term": "Winter", "section": "A", "time": "TTh 11:30-12:20", "instructor": "Liu, S." },
+    { "line_number": "13830", "code": "EE 242", "term": "Winter", "section": "A", "time": "MWF 9:30-10:20", "instructor": "Atlas, L." },
+    { "line_number": "13831", "code": "EE 242", "term": "Winter", "section": "B", "time": "TTh 1:30-3:20", "instructor": "Atlas, L." },
+    { "line_number": "13840", "code": "EE 271", "term": "Winter", "section": "A", "time": "MWF 11:30-12:20", "instructor": "Najmabadi, H." },
+    { "line_number": "13841", "code": "EE 271", "term": "Winter", "section": "B", "time": "MWF 2:30-3:20", "instructor": "Sun, C." },
+    { "line_number": "13890", "code": "EE 393", "term": "Winter", "section": "A", "time": "TTh 10:30-12:20", "instructor": "Staff" }
+  ]
+}
+

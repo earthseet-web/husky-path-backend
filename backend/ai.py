@@ -40,6 +40,11 @@ Rules:
    Recommend 2-4 courses, and say the total in the intro.
 8. Keep it short and friendly: a one-line title, 1-3 sentences of intro, and a one-sentence reason per course
    tied to the student's goals and requirements.
+10. "winter_2027_sections" lists real Winter 2027 sections (section · days time · instructor). When planning
+   Winter 2027, prefer courses that have sections there, mention a section time when it helps, and pick
+   sections that don't overlap. If wants_no_friday is true, prefer sections without F and say plainly when a
+   required course only meets on Fridays. A course missing from that list has no Winter section in our data:
+   say so instead of guessing. Never invent sections, times or instructors.
 9. "follow" = 2-3 short questions THE STUDENT might ask you next (written as the student), e.g.
    "Can I take PHYS 122 in spring?" Never questions addressed to the student.
 
@@ -110,6 +115,11 @@ def build_context(message: str, profile: dict, student: checks.Student, prefs: l
         "eligible_next": checks.eligible_next(student),
         "eligible_electives_now": checks.eligible_electives(student),
         "asked_about": [checks.prereq_status(c, student) for c in asked],
+        "winter_2027_sections": {c: [checks.section_text(x) for x in checks.sections_for(c)]
+                                 for c in dict.fromkeys(asked + [e["code"] for e in checks.eligible_next(student)]
+                                                        + [e["code"] for e in checks.eligible_electives(student)] + plan)
+                                 if checks.sections_for(c)},
+        "wants_no_friday": checks.wants_no_friday(prefs, message),
         "draft_plan_check": checks.check_plan(student, plan) if plan else None,
     }
 

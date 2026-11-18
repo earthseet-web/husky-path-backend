@@ -222,3 +222,40 @@ def test_label_for_in_major_student_is_not_placement():
     s = student(ML_STUDENT)
     assert checks.requirement_label("PHYS 123", s) == "Sciences"
     assert checks.requirement_label("PHYS 123", student(FIRST_YEAR)) == "ECE placement"
+
+
+# ---------- Winter 2027 sections (team data)
+
+def test_section_times_parsed():
+    ee201 = {s["section"]: s for s in checks.sections_for("E E 201")}
+    assert ee201["A"]["days"] == ["W"] and checks.clock(ee201["A"]["start"]) == "1:30" and ee201["A"]["end"] == 16 * 60 + 20
+    m126a = checks.sections_for("MATH 126")[0]
+    assert m126a["start"] == 8 * 60 + 30 and m126a["days"] == ["M", "W", "F"]
+
+
+def test_pick_sections_avoids_overlap():
+    # MATH 126 B and PHYS 121 A are both MWF 10:30, so the picker must not choose both
+    got = checks.pick_sections(["MATH 126", "PHYS 121"])["assignment"]
+    assert not checks._overlap(got["MATH 126"], got["PHYS 121"])
+
+
+def test_no_friday_reported_honestly():
+    r = checks.pick_sections(["MATH 126", "E E 393"], avoid_friday=True)
+    assert r["friday_ok"] is False          # MATH 126 only meets MWF
+    assert checks.wants_no_friday(["No Friday classes"]) and not checks.wants_no_friday(["Mornings preferred"])
+
+
+def test_card_shows_winter_sections_or_says_missing(monkeypatch):
+    monkeypatch.setattr(ai, "call_model", lambda p: {"title": "t", "intro": "i", "courses": [
+        {"code": "MATH 126", "reason": "r"}, {"code": "E E 344", "reason": "r"}]})
+    r = client.post("/chat", json={"message": "plan", "profile": ML_STUDENT | {"quarter": "Winter 2027"}}).json()
+    m126 = next(c for c in r["cards"] if c["code"] == "MATH 126")
+    ee344 = next(c for c in r["cards"] if c["code"] == "E E 344")
+    assert len(m126["sections"]) == 2 and any("Winter 2027: A · MWF 8:30" in f for f in m126["fits"])
+    assert ee344["sections"] == [] and any("Not in our Winter 2027 section list" in w for w in ee344["warns"])
+    assert "sections_plan" in r
+
+
+def test_check_plan_includes_sections():
+    r = checks.check_plan(student(FIRST_YEAR), ["MATH 126", "PHYS 121"])
+    assert r["sections"]["time_conflict"] is False and set(r["sections"]["suggested"]) == {"MATH 126", "PHYS 121"}

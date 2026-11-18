@@ -64,7 +64,7 @@ def quarters_text(code: str | None) -> str:
     return ", ".join(QUARTERS[q] for q in re.findall(r"Sp|A|W|S", code or ""))
 
 
-def course_card(code: str, reason: str, student: checks.Student) -> dict:
+def course_card(code: str, reason: str, student: checks.Student, avoid_friday: bool = False) -> dict:
     c = checks.COURSES[code]
     st = checks.prereq_status(code, student)
     fits, warns = [], []
@@ -81,19 +81,24 @@ def course_card(code: str, reason: str, student: checks.Student) -> dict:
         fits.append("No prerequisites listed")
     else:
         warns.append("Prerequisites not met yet: " + "; ".join(st["missing"]))
+    sec_fits, sec_warns = checks.section_notes(code, student, avoid_friday)
+    fits += sec_fits
+    warns += sec_warns
     note = checks.timing_note(code, student)
     if note:
         warns.insert(0, note)
     warns += st["notes"]
-    warns.append(f"Usually offered: {quarters_text(c['offered'])} (not confirmed for a specific quarter)" if c.get("offered")
-                 else "Quarters offered not listed in the catalog; check MyPlan")
+    if not checks.sections_for(code):
+        warns.append(f"Usually offered: {quarters_text(c['offered'])} (not confirmed for a specific quarter)" if c.get("offered")
+                     else "Quarters offered not listed in the catalog; check MyPlan")
     credits = c["credits"] if c["credits"] == c["credits_max"] else f"{c['credits']}-{c['credits_max']}"
     return {"code": code, "title": c["title"], "credits": credits, "reason": reason, "reqLabel": label,
             "description": c["description"], "prereq_text": c["prereq_text"], "url": c["url"],
-            "offered": c.get("offered"), "fits": fits, "warns": warns}
+            "offered": c.get("offered"), "fits": fits, "warns": warns,
+            "sections": [{**s, "text": checks.section_text(s)} for s in checks.sections_for(code)]}
 
 
-def shape_reply(raw: dict, student: checks.Student, source: str) -> dict:
+def shape_reply(raw: dict, student: checks.Student, source: str, avoid_friday: bool = False) -> dict:
     """Validate the AI's answer: keep only real course codes from our data, attach checked facts."""
     cards, dropped = [], []
     for item in (raw.get("courses") or [])[:6]:
@@ -101,7 +106,7 @@ def shape_reply(raw: dict, student: checks.Student, source: str) -> dict:
             continue
         code = checks.normalize_code(item.get("code", ""))
         if code in checks.COURSES and all(cd["code"] != code for cd in cards):
-            cards.append(course_card(code, str(item.get("reason", ""))[:400], student))
+            cards.append(course_card(code, str(item.get("reason", ""))[:400], student, avoid_friday))
         elif item.get("code"):
             dropped.append(str(item.get("code")))
     intro = str(raw.get("intro", ""))[:1200]
@@ -136,7 +141,8 @@ def get_course(code: str):
     norm = checks.normalize_code(code)
     if norm not in checks.COURSES:
         raise HTTPException(404, f"{code} is not in our ECE course data.")
-    return {**checks.COURSES[norm], "requirement": checks.requirement_label(norm)}
+    return {**checks.COURSES[norm], "requirement": checks.requirement_label(norm),
+            "sections": [{**s, "text": checks.section_text(s)} for s in checks.sections_for(norm)]}
 
 
 @app.post("/check")
@@ -163,7 +169,7 @@ def chat(req: ChatRequest):
     except ai.AIUnavailable as e:
         raw = ai.fallback_reply(req.message, context, str(e))
         source = "fallback"
-    reply = shape_reply(raw, s, source)
+    reply = shape_reply(raw, s, source, checks.wants_no_friday(req.preferences, req.message))
     reply["seconds"] = round(time.monotonic() - started, 1)
     if raw.get("ai_error"):
         reply["ai_error"] = raw["ai_error"]  # for debugging; the front end doesn't need to show it
@@ -171,6 +177,11 @@ def chat(req: ChatRequest):
     new_cards = [cd for cd in reply["cards"] if cd["code"] not in s.completed and cd["code"] not in s.in_progress]
     total = sum(checks.credits_of(cd["code"]) for cd in new_cards)
     reply["total_credits"] = total
+    picked = checks.pick_sections([cd["code"] for cd in new_cards], checks.wants_no_friday(req.preferences, req.message))
+    reply["sections_plan"] = {"quarter": checks.SECTIONS_QUARTER,
+                              "suggested": {c: checks.section_text(x) for c, x in picked["assignment"].items()},
+                              "time_conflict": picked["conflict"], "friday_free": picked["friday_ok"],
+                              "no_section_data": picked["no_sections"]}
     if new_cards and total > s.target_credits + 2:
         reply["workload_warning"] = (f"These courses add up to {total} credits, more than your ~{s.target_credits}-credit "
                                      "target. Pick the ones that matter most for placement.")

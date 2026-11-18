@@ -7,3 +7,6 @@
 .req-icon{display:inline-block;width:20px;font-weight:700}
 .req-done .req-icon{color:#438760}.req-in_progress .req-icon,.req-partial .req-icon{color:#b07d1a}
 .req-missing .req-icon{color:#b5403a}.req-not_tracked .req-icon{color:#8a8597}
+.switch-section{margin:4px 0 0;border:0;background:none;color:#4b2e83;font:600 11px 'DM Sans',sans-serif;cursor:pointer;padding:2px 0}
+.switch-section:hover{text-decoration:underline}
+table.sections td a{font-size:11px;margin-left:6px}

@@ -1,0 +1,563 @@
+{
+ "source": "Team-provided Winter 2027 sections (from the UW Time Schedule), received 2026-11-17. Not independently verified: the Time Schedule requires a UW NetID.",
+ "quarter": "Winter 2027",
+ "sections": [
+  {
+   "code": "MATH 124",
+   "quarter": "Winter 2027",
+   "section": "A",
+   "sln": "17101",
+   "days": [
+    "M",
+    "W",
+    "F"
+   ],
+   "start": 570,
+   "end": 620,
+   "time": "MWF 9:30-10:20",
+   "instructor": "Smith, J."
+  },
+  {
+   "code": "MATH 124",
+   "quarter": "Winter 2027",
+   "section": "B",
+   "sln": "17102",
+   "days": [
+    "M",
+    "W",
+    "F"
+   ],
+   "start": 690,
+   "end": 740,
+   "time": "MWF 11:30-12:20",
+   "instructor": "Conroy, M."
+  },
+  {
+   "code": "MATH 125",
+   "quarter": "Winter 2027",
+   "section": "A",
+   "sln": "17115",
+   "days": [
+    "T",
+    "Th"
+   ],
+   "start": 630,
+   "end": 710,
+   "time": "TTh 10:30-11:50",
+   "instructor": "Jones, M."
+  },
+  {
+   "code": "MATH 125",
+   "quarter": "Winter 2027",
+   "section": "B",
+   "sln": "17116",
+   "days": [
+    "T",
+    "Th"
+   ],
+   "start": 810,
+   "end": 890,
+   "time": "TTh 1:30-2:50",
+   "instructor": "Ostroff, J."
+  },
+  {
+   "code": "MATH 126",
+   "quarter": "Winter 2027",
+   "section": "A",
+   "sln": "17130",
+   "days": [
+    "M",
+    "W",
+    "F"
+   ],
+   "start": 510,
+   "end": 560,
+   "time": "MWF 8:30-9:20",
+   "instructor": "Loveless, A."
+  },
+  {
+   "code": "MATH 126",
+   "quarter": "Winter 2027",
+   "section": "B",
+   "sln": "17131",
+   "days": [
+    "M",
+    "W",
+    "F"
+   ],
+   "start": 630,
+   "end": 680,
+   "time": "MWF 10:30-11:20",
+   "instructor": "Loveless, A."
+  },
+  {
+   "code": "MATH 207",
+   "quarter": "Winter 2027",
+   "section": "A",
+   "sln": "17145",
+   "days": [
+    "M",
+    "W",
+    "F"
+   ],
+   "start": 630,
+   "end": 680,
+   "time": "MWF 10:30-11:20",
+   "instructor": "Tuncel, S."
+  },
+  {
+   "code": "MATH 207",
+   "quarter": "Winter 2027",
+   "section": "B",
+   "sln": "17146",
+   "days": [
+    "M",
+    "W",
+    "F"
+   ],
+   "start": 810,
+   "end": 860,
+   "time": "MWF 1:30-2:20",
+   "instructor": "Bekyel, E."
+  },
+  {
+   "code": "AMATH 351",
+   "quarter": "Winter 2027",
+   "section": "A",
+   "sln": "10210",
+   "days": [
+    "M",
+    "W",
+    "F"
+   ],
+   "start": 570,
+   "end": 620,
+   "time": "MWF 9:30-10:20",
+   "instructor": "Kutz, J."
+  },
+  {
+   "code": "MATH 208",
+   "quarter": "Winter 2027",
+   "section": "A",
+   "sln": "17160",
+   "days": [
+    "M",
+    "W",
+    "F"
+   ],
+   "start": 690,
+   "end": 740,
+   "time": "MWF 11:30-12:20",
+   "instructor": "Bilu, Y."
+  },
+  {
+   "code": "MATH 208",
+   "quarter": "Winter 2027",
+   "section": "B",
+   "sln": "17161",
+   "days": [
+    "M",
+    "W",
+    "F"
+   ],
+   "start": 870,
+   "end": 920,
+   "time": "MWF 2:30-3:20",
+   "instructor": "Pezzoli, E."
+  },
+  {
+   "code": "AMATH 352",
+   "quarter": "Winter 2027",
+   "section": "A",
+   "sln": "10215",
+   "days": [
+    "M",
+    "W",
+    "F"
+   ],
+   "start": 750,
+   "end": 800,
+   "time": "MWF 12:30-1:20",
+   "instructor": "Greenbaum, A."
+  },
+  {
+   "code": "IND E 315",
+   "quarter": "Winter 2027",
+   "section": "A",
+   "sln": "15810",
+   "days": [
+    "M",
+    "W",
+    "F"
+   ],
+   "start": 690,
+   "end": 740,
+   "time": "MWF 11:30-12:20",
+   "instructor": "Choe, Y."
+  },
+  {
+   "code": "STAT 390",
+   "quarter": "Winter 2027",
+   "section": "A",
+   "sln": "20410",
+   "days": [
+    "M",
+    "W",
+    "F"
+   ],
+   "start": 810,
+   "end": 860,
+   "time": "MWF 1:30-2:20",
+   "instructor": "Meila, M."
+  },
+  {
+   "code": "CHEM 142",
+   "quarter": "Winter 2027",
+   "section": "A",
+   "sln": "12101",
+   "days": [
+    "M",
+    "W",
+    "F"
+   ],
+   "start": 570,
+   "end": 620,
+   "time": "MWF 9:30-10:20",
+   "instructor": "Craig, C."
+  },
+  {
+   "code": "CHEM 142",
+   "quarter": "Winter 2027",
+   "section": "B",
+   "sln": "12102",
+   "days": [
+    "M",
+    "W",
+    "F"
+   ],
+   "start": 750,
+   "end": 800,
+   "time": "MWF 12:30-1:20",
+   "instructor": "Wiegand, D."
+  },
+  {
+   "code": "PHYS 121",
+   "quarter": "Winter 2027",
+   "section": "A",
+   "sln": "19101",
+   "days": [
+    "M",
+    "W",
+    "F"
+   ],
+   "start": 630,
+   "end": 680,
+   "time": "MWF 10:30-11:20",
+   "instructor": "Pedigo, R."
+  },
+  {
+   "code": "PHYS 121",
+   "quarter": "Winter 2027",
+   "section": "B",
+   "sln": "19102",
+   "days": [
+    "M",
+    "W",
+    "F"
+   ],
+   "start": 810,
+   "end": 860,
+   "time": "MWF 1:30-2:20",
+   "instructor": "Tolich, N."
+  },
+  {
+   "code": "PHYS 122",
+   "quarter": "Winter 2027",
+   "section": "A",
+   "sln": "19115",
+   "days": [
+    "M",
+    "W",
+    "F"
+   ],
+   "start": 570,
+   "end": 620,
+   "time": "MWF 9:30-10:20",
+   "instructor": "Schick, M."
+  },
+  {
+   "code": "PHYS 122",
+   "quarter": "Winter 2027",
+   "section": "B",
+   "sln": "19116",
+   "days": [
+    "M",
+    "W",
+    "F"
+   ],
+   "start": 690,
+   "end": 740,
+   "time": "MWF 11:30-12:20",
+   "instructor": "Hsu, S."
+  },
+  {
+   "code": "PHYS 123",
+   "quarter": "Winter 2027",
+   "section": "A",
+   "sln": "19130",
+   "days": [
+    "M",
+    "W",
+    "F"
+   ],
+   "start": 750,
+   "end": 800,
+   "time": "MWF 12:30-1:20",
+   "instructor": "Olmstead, M."
+  },
+  {
+   "code": "BIOL 220",
+   "quarter": "Winter 2027",
+   "section": "A",
+   "sln": "11420",
+   "days": [
+    "M",
+    "T",
+    "W",
+    "Th",
+    "F"
+   ],
+   "start": 630,
+   "end": 680,
+   "time": "MTWThF 10:30-11:20",
+   "instructor": "Crowe, A."
+  },
+  {
+   "code": "MATH 224",
+   "quarter": "Winter 2027",
+   "section": "A",
+   "sln": "17175",
+   "days": [
+    "M",
+    "W",
+    "F"
+   ],
+   "start": 570,
+   "end": 620,
+   "time": "MWF 9:30-10:20",
+   "instructor": "Perkins, T."
+  },
+  {
+   "code": "CSE 121",
+   "quarter": "Winter 2027",
+   "section": "A",
+   "sln": "13010",
+   "days": [
+    "M",
+    "W",
+    "F"
+   ],
+   "start": 690,
+   "end": 740,
+   "time": "MWF 11:30-12:20",
+   "instructor": "Natsuhara, M."
+  },
+  {
+   "code": "CSE 122",
+   "quarter": "Winter 2027",
+   "section": "A",
+   "sln": "13020",
+   "days": [
+    "M",
+    "W",
+    "F"
+   ],
+   "start": 750,
+   "end": 800,
+   "time": "MWF 12:30-1:20",
+   "instructor": "Wortzman, B."
+  },
+  {
+   "code": "CSE 123",
+   "quarter": "Winter 2027",
+   "section": "A",
+   "sln": "13030",
+   "days": [
+    "M",
+    "W",
+    "F"
+   ],
+   "start": 810,
+   "end": 860,
+   "time": "MWF 1:30-2:20",
+   "instructor": "Wortzman, B."
+  },
+  {
+   "code": "CSE 163",
+   "quarter": "Winter 2027",
+   "section": "A",
+   "sln": "13040",
+   "days": [
+    "M",
+    "W",
+    "F"
+   ],
+   "start": 870,
+   "end": 920,
+   "time": "MWF 2:30-3:20",
+   "instructor": "Salguero, A."
+  },
+  {
+   "code": "E E 201",
+   "quarter": "Winter 2027",
+   "section": "A",
+   "sln": "13801",
+   "days": [
+    "W"
+   ],
+   "start": 810,
+   "end": 980,
+   "time": "W 1:30-4:20",
+   "instructor": "Staff"
+  },
+  {
+   "code": "E E 201",
+   "quarter": "Winter 2027",
+   "section": "B",
+   "sln": "13802",
+   "days": [
+    "Th"
+   ],
+   "start": 810,
+   "end": 980,
+   "time": "Th 1:30-4:20",
+   "instructor": "Staff"
+  },
+  {
+   "code": "E E 215",
+   "quarter": "Winter 2027",
+   "section": "A",
+   "sln": "13810",
+   "days": [
+    "M",
+    "W",
+    "F"
+   ],
+   "start": 630,
+   "end": 680,
+   "time": "MWF 10:30-11:20",
+   "instructor": "Stultz, C."
+  },
+  {
+   "code": "E E 215",
+   "quarter": "Winter 2027",
+   "section": "B",
+   "sln": "13811",
+   "days": [
+    "M",
+    "W",
+    "F"
+   ],
+   "start": 810,
+   "end": 860,
+   "time": "MWF 1:30-2:20",
+   "instructor": "Chizeck, H."
+  },
+  {
+   "code": "E E 241",
+   "quarter": "Winter 2027",
+   "section": "A",
+   "sln": "13820",
+   "days": [
+    "T",
+    "Th"
+   ],
+   "start": 690,
+   "end": 740,
+   "time": "TTh 11:30-12:20",
+   "instructor": "Liu, S."
+  },
+  {
+   "code": "E E 242",
+   "quarter": "Winter 2027",
+   "section": "A",
+   "sln": "13830",
+   "days": [
+    "M",
+    "W",
+    "F"
+   ],
+   "start": 570,
+   "end": 620,
+   "time": "MWF 9:30-10:20",
+   "instructor": "Atlas, L."
+  },
+  {
+   "code": "E E 242",
+   "quarter": "Winter 2027",
+   "section": "B",
+   "sln": "13831",
+   "days": [
+    "T",
+    "Th"
+   ],
+   "start": 810,
+   "end": 920,
+   "time": "TTh 1:30-3:20",
+   "instructor": "Atlas, L."
+  },
+  {
+   "code": "E E 271",
+   "quarter": "Winter 2027",
+   "section": "A",
+   "sln": "13840",
+   "days": [
+    "M",
+    "W",
+    "F"
+   ],
+   "start": 690,
+   "end": 740,
+   "time": "MWF 11:30-12:20",
+   "instructor": "Najmabadi, H."
+  },
+  {
+   "code": "E E 271",
+   "quarter": "Winter 2027",
+   "section": "B",
+   "sln": "13841",
+   "days": [
+    "M",
+    "W",
+    "F"
+   ],
+   "start": 870,
+   "end": 920,
+   "time": "MWF 2:30-3:20",
+   "instructor": "Sun, C."
+  },
+  {
+   "code": "E E 393",
+   "quarter": "Winter 2027",
+   "section": "A",
+   "sln": "13890",
+   "days": [
+    "T",
+    "Th"
+   ],
+   "start": 630,
+   "end": 740,
+   "time": "TTh 10:30-12:20",
+   "instructor": "Staff"
+  }
+ ],
+ "offered_fill": {
+  "ENGR 101": "A",
+  "CSE 163": "AWSp",
+  "E E 215": "AWSpS",
+  "E E 241": "AWSp",
+  "E E 271": "AWSpS",
+  "E E 393": "AWSp"
+ },
+ "offered_fill_note": "Usual quarters from the team's file, used only where the UW catalog lists none."
+}

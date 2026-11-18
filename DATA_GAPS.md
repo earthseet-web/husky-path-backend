@@ -16,7 +16,11 @@ E E 418, E E 475.
   lists no courses. Not included in this demo.
 - **Quarters offered:** most E E courses don't list offered quarters in the catalog. Cards say
   "check MyPlan" instead of guessing.
-- **Section times, instructors, seats:** not in the catalog. The backend doesn't provide them.
+- **Winter 2027 sections** (37 sections for 25 courses: SLN, days, times, instructor) come from our team's file
+  (`backend/data/source/team_ece_winter2027.json`). We couldn't verify them ourselves because the Time Schedule
+  requires a UW NetID. The app labels them and tells students to confirm SLNs and seats in MyPlan.
+  No locations, seats, quiz sections, or other quarters. Most 300/400-level E E courses have no Winter section in
+  the file, so the app says "not in our Winter 2027 section list" for them.
 - **English Composition:** only ENGL 131 is recognized automatically. Students can set
   `english_comp_done: true` in their profile for other approved courses.
 - **Gen-ed categories (A&H, SSc, DIV, W):** not tracked; the app tells students to check DARS.
@@ -39,3 +43,22 @@ STAT 394, T BIOL 140. Also GEN ST 199 and ENGL 131 (requirements only).
 | E E 215 prerequisites | Plan page is shorter than the catalog | Catalog |
 | Elective credits | 39 (admitted Autumn 2025+) vs 36 (earlier) | 39 |
 | Gen-ed total | Header says 41 cr; NSc row says "to reach 45" | Shows both, refers to adviser |
+
+## Where the team's Winter 2027 file disagrees with the UW catalog
+
+The app uses the catalog for prerequisites and only takes **sections** (and "usually offered" quarters where the
+catalog lists none: ENGR 101, CSE 163, E E 215, E E 241, E E 271, E E 393) from the team's file.
+Please check these with the department:
+
+| Course | Team file | UW catalog (used by the app) |
+| --- | --- | --- |
+| E E 280 | Offered Spring only | Autumn, Winter, Spring |
+| E E 241 | CSE 121 counts as a prerequisite | CSE 122, 123, 142, 143, or 160 |
+| MATH 208 | Requires MATH 126 | No prerequisite listed |
+| CSE 122, CSE 123 | Require CSE 121, CSE 122 | Recommended, not required |
+| CHEM 142 | No prerequisite | CHEM 110, placement exam, or AP Chemistry |
+| IND E 315 | MATH 207 or AMATH 351 | Also MATH 135 or MATH 136 |
+| E E 215 | MATH 126 + PHYS 122 + MATH 207 (concurrent) | Also allows MATH 136, MATH 307, AMATH 351, PHYS 142 |
+
+The team's first file (25 mostly Computer Science courses) wasn't used: it's cut off mid-file, and its
+prerequisites can't express "or".
