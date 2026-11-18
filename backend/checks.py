@@ -219,6 +219,23 @@ def placement_progress(s: Student) -> dict:
             "done": done, "total": len(items), "items": items}
 
 
+def placement_summary(s: Student) -> dict:
+    """Plain-language placement status so the AI doesn't have to interpret raw data."""
+    p = placement_progress(s)
+    done = [i["label"] + (f" ({i['detail']})" if i["detail"] else "") for i in p["items"] if i["status"] == "done"]
+    ip = [i["label"] + (f" ({i['detail']})" if i["detail"] else "") for i in p["items"] if i["status"] == "in_progress"]
+    missing = [i["label"] for i in p["items"] if i["status"] not in ("done", "in_progress")]
+    if not missing and not ip:
+        verdict = "All placement requirements are complete."
+    elif not missing:
+        verdict = (f"All {p['total']} placement requirements will be complete once the in-progress courses finish "
+                   "(with the minimum grades). Nothing else is needed for placement.")
+    else:
+        verdict = f"Still needed for placement: {'; '.join(missing)}."
+    return {"done_count": p["done"], "total": p["total"], "done": done, "in_progress": ip,
+            "still_needed": missing, "verdict": verdict, "deadline": p["deadline"]}
+
+
 def graduation_progress(s: Student) -> list[dict]:
     return [{"group": grp["group"], "items": [_item_status(i, s) for i in grp["items"]]}
             for grp in REQUIREMENTS["graduation"]]
@@ -258,9 +275,13 @@ def _requirement_courses() -> dict[str, str]:
 
 
 REQ_LABEL = _requirement_courses()
+GRAD_LABEL = {c: grp["group"].split(" (")[0] for grp in REQUIREMENTS["graduation"] for i in grp["items"]
+              for c in (i.get("courses") or [x for o in i.get("options", []) for x in o])}
 
 
-def requirement_label(code: str) -> str:
+def requirement_label(code: str, s: Student | None = None) -> str:
+    if s is not None and s.in_major and REQ_LABEL.get(code) == "ECE placement":
+        return GRAD_LABEL.get(code, "ECE requirement")
     if code in REQ_LABEL:
         return REQ_LABEL[code]
     if code.startswith("E E ") and int(code.split()[-1][:3]) >= 300:
@@ -332,6 +353,23 @@ def timing_note(code: str, s: Student) -> str | None:
         when = f"year {year}" if year else "later in the degree"
         return f"The official ECE plan schedules this in {when}, after placement into ECE. Focus on placement courses first."
     return None
+
+
+def eligible_electives(s: Student, limit: int = 25) -> list[dict]:
+    """300/400-level E E courses (and approved extras) the student is ready for now. In-major students only."""
+    if not s.in_major:
+        return []
+    extras = {"E E 233", "CSE 373", "CSE 374"}
+    capstones = {"E E 436", "E E 437", "E E 449", "E E 461", "E E 475", "E E 478", "E E 497", "E E 498"}
+    out = []
+    for code, c in COURSES.items():
+        if not ((code.startswith("E E ") and _level(code) >= 300) or code in extras):
+            continue
+        if code in s.completed or code in s.in_progress or code in ("E E 393", "E E 490", "E E 491", "E E 492", "E E 499"):
+            continue
+        if prereq_status(code, s)["status"] in ("met", "no_prereqs") and c["prereq"]:
+            out.append({"code": code, "title": c["title"], "capstone": code in capstones})
+    return out[:limit]
 
 
 def credits_of(code: str) -> int:

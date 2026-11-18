@@ -68,11 +68,13 @@ def course_card(code: str, reason: str, student: checks.Student) -> dict:
     c = checks.COURSES[code]
     st = checks.prereq_status(code, student)
     fits, warns = [], []
-    label = checks.requirement_label(code)
+    label = checks.requirement_label(code, student)
     if label != "Not a listed ECE requirement":
         fits.append(f"Counts toward: {label}")
     if code in student.completed:
         warns.append("You've already completed this course.")
+    elif code in student.in_progress:
+        warns.append("You're taking this now.")
     elif st["status"] == "met":
         fits.append("Prerequisites met (based on what you entered)")
     elif st["status"] == "no_prereqs":
@@ -165,10 +167,11 @@ def chat(req: ChatRequest):
     reply["seconds"] = round(time.monotonic() - started, 1)
     if raw.get("ai_error"):
         reply["ai_error"] = raw["ai_error"]  # for debugging; the front end doesn't need to show it
-    reply["placement"] = {"done": context["placement_progress"]["done"], "total": context["placement_progress"]["total"]}
-    total = sum(checks.credits_of(cd["code"]) for cd in reply["cards"])
+    reply["placement"] = {"done": context["placement_status"]["done_count"], "total": context["placement_status"]["total"]}
+    new_cards = [cd for cd in reply["cards"] if cd["code"] not in s.completed and cd["code"] not in s.in_progress]
+    total = sum(checks.credits_of(cd["code"]) for cd in new_cards)
     reply["total_credits"] = total
-    if reply["cards"] and total > s.target_credits + 2:
+    if new_cards and total > s.target_credits + 2:
         reply["workload_warning"] = (f"These courses add up to {total} credits, more than your ~{s.target_credits}-credit "
                                      "target. Pick the ones that matter most for placement.")
     return reply

@@ -22,8 +22,13 @@ Rules:
 1. Use ONLY the courses and requirements given to you below. Never invent course codes, titles,
    credits, prerequisites, quarters offered, instructors or links.
 2. Prerequisite and placement results were computed by code and are correct. Use them; do not recompute.
-3. Only recommend courses from the "Eligible next" list or that the student asked about by name.
+3. Only recommend courses from "eligible_next", "eligible_electives_now", or that the student asked about by name.
    If a course they ask about is not eligible yet, say what is missing.
+   NEVER recommend a course the student has completed or is taking now (in_progress).
+   For "what do I still need" questions, use placement_status.verdict exactly; describe in-progress courses in the
+   intro and only put courses from placement_status.still_needed (if any) in "courses". The "pick one" requirement
+   needs just ONE of its courses.
+   If the student is in the major and a course is in eligible_electives_now, they can take it now; don't call it "later".
 4. If something is not in the data (a course outside this list, section times, seats, transfer credit,
    whether a course counts for graduation in an unusual case), say you don't have it and point the student
    to MyPlan, their DARS audit, or an adviser (undergradece@uw.edu for ECE; engradv@uw.edu for Engineering advising).
@@ -101,8 +106,9 @@ def build_context(message: str, profile: dict, student: checks.Student, prefs: l
             "preferences": prefs,
             "draft_plan": plan,
         },
-        "placement_progress": checks.placement_progress(student),
+        "placement_status": checks.placement_summary(student),
         "eligible_next": checks.eligible_next(student),
+        "eligible_electives_now": checks.eligible_electives(student),
         "asked_about": [checks.prereq_status(c, student) for c in asked],
         "draft_plan_check": checks.check_plan(student, plan) if plan else None,
     }
@@ -176,10 +182,10 @@ def fallback_reply(message: str, context: dict, reason: str) -> dict:
         intro = "Here is what our prerequisite check says about the course(s) you mentioned."
         title = "Prerequisite check"
     else:
-        p = context["placement_progress"]
+        p = context["placement_status"]
         courses = [{"code": e["code"], "reason": f"Counts toward {e['requirement']}, and you meet its prerequisites."}
-                   for e in context["eligible_next"][:4]]
-        intro = (f"You've finished {p['done']} of {p['total']} ECE placement requirements. "
+                   for e in context["eligible_next"][:3]]
+        intro = (f"You've finished {p['done_count']} of {p['total']} ECE placement requirements. {p['verdict']} "
                  "These required courses are ones you're ready for next.")
         title = "Courses you're ready for next"
     return {"title": title, "intro": intro + " (The AI isn't connected right now, so this answer comes from rule checks only.)",

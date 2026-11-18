@@ -185,3 +185,40 @@ def test_card_warns_first_year_about_ee271_and_credit_total(monkeypatch):
     ee = next(c for c in r["cards"] if c["code"] == "E E 271")
     assert "year 3" in ee["warns"][0]
     assert r["total_credits"] == 19 and "workload_warning" in r
+
+
+# ---------- review fixes (2026-11-17)
+
+ALMOST_PLACED = {"major": "Engineering Undeclared, aiming for ECE",
+                 "completed": "MATH 124 3.5, MATH 125 3.2, CHEM 142, ENGR 101, ENGL 131",
+                 "in_progress": "MATH 126, PHYS 121, CSE 121", "credits": 15}
+ML_STUDENT = {"major": "Electrical and Computer Engineering",
+              "completed": "MATH 124, MATH 125, MATH 126, MATH 207, MATH 208, CHEM 142, PHYS 121, PHYS 122, "
+                           "CSE 121, CSE 122, CSE 123, E E 215, E E 241",
+              "in_progress": "E E 242, E E 271", "credits": 15}
+
+
+def test_placement_summary_counts_cse121_as_enough():
+    sm = checks.placement_summary(student(ALMOST_PLACED))
+    assert sm["still_needed"] == []
+    assert "will be complete once the in-progress courses finish" in sm["verdict"]
+
+
+def test_in_progress_cards_flagged_and_not_counted(monkeypatch):
+    monkeypatch.setattr(ai, "call_model", lambda p: {"title": "t", "intro": "i", "courses": [
+        {"code": "MATH 126", "reason": "r"}, {"code": "PHYS 121", "reason": "r"},
+        {"code": "CSE 121", "reason": "r"}, {"code": "PHYS 122", "reason": "r"}]})
+    r = client.post("/chat", json={"message": "status", "profile": ALMOST_PLACED}).json()
+    assert "You're taking this now." in r["cards"][0]["warns"]
+    assert r["total_credits"] == 5 and "workload_warning" not in r
+
+
+def test_ml_student_sees_ml_electives_now():
+    codes = [e["code"] for e in checks.eligible_electives(student(ML_STUDENT))]
+    assert "E E 344" in codes and "E E 345" in codes
+
+
+def test_label_for_in_major_student_is_not_placement():
+    s = student(ML_STUDENT)
+    assert checks.requirement_label("PHYS 123", s) == "Sciences"
+    assert checks.requirement_label("PHYS 123", student(FIRST_YEAR)) == "ECE placement"
