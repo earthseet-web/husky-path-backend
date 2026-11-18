@@ -1,0 +1,9 @@
+/* Styles for the parts added by backend.js */
+.real-course .rec-notes li.prereq{color:#5f5b6e;list-style:none}
+.source-line{margin:10px 0 0;font-size:11px;color:#8a8597}
+.req-list{list-style:none;padding:0 0 0 4px;margin:8px 0 12px}
+.req-list li{padding:5px 0;border-bottom:1px solid #f0edf5;font-size:13px}
+.req-list li small{color:#858294;margin-left:4px}
+.req-icon{display:inline-block;width:20px;font-weight:700}
+.req-done .req-icon{color:#438760}.req-in_progress .req-icon,.req-partial .req-icon{color:#b07d1a}
+.req-missing .req-icon{color:#b5403a}.req-not_tracked .req-icon{color:#8a8597}

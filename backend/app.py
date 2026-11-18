@@ -177,7 +177,8 @@ def chat(req: ChatRequest):
     return reply
 
 
-# Optional: serve the front end from the same address (set FRONTEND_DIR in .env).
-_frontend = os.getenv("FRONTEND_DIR", "").strip()
-if _frontend and Path(_frontend).is_dir():
+# Serve the Husky Path front end at http://127.0.0.1:8000/ (the repo's frontend/ folder by default;
+# set FRONTEND_DIR in .env to use a different folder). Registered last so the API routes above win.
+_frontend = os.getenv("FRONTEND_DIR", "").strip() or str(Path(__file__).resolve().parent.parent / "frontend")
+if Path(_frontend).is_dir():
     app.mount("/", StaticFiles(directory=_frontend, html=True), name="frontend")

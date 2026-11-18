@@ -26,7 +26,11 @@ cp .env.example .env          # then open .env and paste your Gemini key
 uvicorn app:app --reload
 ```
 
-Then open **http://127.0.0.1:8000/docs** to try every endpoint in the browser.
+Then open **http://127.0.0.1:8000** for the full Husky Path app (Adeline's front end connected to this backend),
+or **http://127.0.0.1:8000/docs** to try each endpoint directly.
+
+On Windows with Smart App Control, run tools through Python: `python -m pip ...`, `python -m pytest -q`,
+`python -m uvicorn app:app --reload`.
 
 **Getting a Gemini key (free):** go to https://aistudio.google.com/apikey, sign in, click
 **Create API key**, and paste it after `GEMINI_API_KEY=` in `backend/.env`. Never commit `.env`.
@@ -37,8 +41,9 @@ If chat answers say *"The AI isn't connected right now"*, the response's `ai_err
 
 **Run the tests:** `pytest -q` inside `backend/`. They use a fake AI, so no key is needed.
 
-**Serve the front end too:** set `FRONTEND_DIR` in `.env` to the front-end folder, restart, and open
-http://127.0.0.1:8000/. Then the page and the API run on one address.
+**The front end** lives in `frontend/` and is served at http://127.0.0.1:8000/ automatically. See
+`frontend/CHANGES.md` for what changed from Adeline's version. If the backend is off, the page still opens
+from `frontend/index.html` and falls back to her scripted demo replies.
 
 ## Endpoints
 
@@ -75,7 +80,8 @@ Each card has `code`, `title`, `credits`, `reason` (from the AI), `reqLabel`, `d
 
 | File | Purpose |
 | --- | --- |
-| `backend/app.py` | The API |
+| `frontend/` | Adeline's Husky Path front end, connected to the backend by `frontend/backend.js` |
+| `backend/app.py` | The API (also serves `frontend/`) |
 | `backend/checks.py` | Prerequisite, placement, requirement and credit checks (no AI) |
 | `backend/ai.py` | The only file that talks to Gemini; swap providers here |
 | `backend/data/ece_courses.json` | 118 courses: all E E courses plus required MATH, PHYS, CHEM, CSE, STAT, IND E, BIOL, ENGR |

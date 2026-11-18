@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#4b2e83">
-  <title>Husky Path — Your academic next step</title><link rel="stylesheet" href="chat.css"><link rel="stylesheet" href="taste.css"><link rel="stylesheet" href="enhancements.css">
+  <title>Husky Path — Your academic next step</title><link rel="stylesheet" href="chat.css"><link rel="stylesheet" href="taste.css"><link rel="stylesheet" href="enhancements.css"><link rel="stylesheet" href="backend.css">
 </head>
 <body>
   <div class="layout">
@@ -13,22 +13,22 @@
         <button class="nav-item selected" data-view="chat" aria-current="page"><span class="nav-symbol">✳</span> AI Assistant</button>
         <button class="nav-item" data-view="profile"><span class="nav-symbol">◫</span> My Courses <small>Import transcript</small></button>
         <button class="nav-item" data-view="schedule"><span class="nav-symbol">▦</span> My Schedule</button>
-        <button class="nav-item audit-nav" id="navDegree"><span class="nav-symbol">◉</span> Sample Audit <small>Demo</small></button>
+        <button class="nav-item audit-nav" id="navDegree"><span class="nav-symbol">◉</span> Degree Progress <small>ECE estimate</small></button>
       </nav>
       <div class="rail-label recent-title">PLANNING</div>
       <button class="new-chat" id="newChat">＋ <span>New conversation</span></button>
       <div class="rail-bottom"><span>◈</span><div><b>Privacy first</b><small>Profile saved only in this browser</small></div></div>
     </aside>
     <main class="main">
-      <header class="topbar"><div><strong id="topbarTitle">Planning assistant</strong><small id="topbarQuarter">Winter 2027 · Demo course data</small></div><button class="profile" id="topbarProfile" type="button" title="Edit student profile"><span id="profileInitial">J</span><b id="profileName">Jordan Lee</b> <small>My profile</small></button></header>
+      <header class="topbar"><div><strong id="topbarTitle">Planning assistant</strong><small id="topbarQuarter">Winter 2027 · UW ECE catalog data</small></div><button class="profile" id="topbarProfile" type="button" title="Edit student profile"><span id="profileInitial">J</span><b id="profileName">Jordan Lee</b> <small>My profile</small></button></header>
       <div class="workspace">
         <section class="conversation">
           <div class="chat-head"><div><span class="eyebrow">QUARTER PLANNING</span><h1>Ask about your next step.</h1><p>Graduation requirements, course sequencing, and quarter planning — in one conversation.</p></div><span class="term">❄ Winter 2027</span></div>
           <div class="messages" id="messages" aria-live="polite">
-            <div class="welcome"><div class="assistant-avatar">✳</div><div class="bubble assistant"><b>Hi Jordan! What would you like help with?</b><p>Ask about your graduation path and course order. I will distinguish the fictional demo audit from verified UW information.</p><div class="starter-prompts"><button class="prompt">What do I still need to graduate?</button><button class="prompt">Which quarter are these courses offered?</button><button class="prompt">What order should I take my remaining courses?</button></div></div></div>
+            <div class="welcome"><div class="assistant-avatar">✳</div><div class="bubble assistant"><b>Hi Jordan! What would you like help with?</b><p>Ask about ECE placement, prerequisites, and what to take next. Answers use UW course catalog data for Electrical &amp; Computer Engineering.</p><div class="starter-prompts"><button class="prompt">What should I take next quarter?</button><button class="prompt">What do I still need for ECE placement?</button><button class="prompt">Can I take E E 215 next quarter?</button></div></div></div>
             <div id="thread"></div>
           </div>
-          <div class="composer-wrap"><div class="composer"><textarea id="messageInput" rows="1" placeholder="Ask about courses, requirements, or schedule preferences…" aria-label="Message the planning assistant"></textarea><button id="sendMessage" aria-label="Send message">↑</button></div><div class="composer-note"><span>↳</span> Suggestions are planning aids built on sample data. Confirm details in official UW systems.</div></div>
+          <div class="composer-wrap"><div class="composer"><textarea id="messageInput" rows="1" placeholder="Ask about courses, requirements, or schedule preferences…" aria-label="Message the planning assistant"></textarea><button id="sendMessage" aria-label="Send message">↑</button></div><div class="composer-note"><span>↳</span> Prototype using UW catalog data for ECE. Confirm details in MyPlan, DARS, and with an adviser.</div></div>
         </section>
         <section class="full-page hidden" id="profilePage" aria-labelledby="profileHeading">
           <div class="page-heading"><span class="eyebrow">MY COURSES</span><h1 id="profileHeading">Start with what you’ve taken.</h1><p>Import an unofficial transcript and review the detected classes, then personalize your plan.</p></div>
@@ -42,16 +42,17 @@
           </section>
           <div class="profile-section-label"><span class="eyebrow">STEP 02 · PERSONALIZE</span><h2>Your planning preferences</h2></div>
           <form id="studentForm" class="student-form">
-            <div class="field-row"><label>Preferred name<input id="studentName" maxlength="60" required placeholder="Your name"></label><label>Major / program<input id="studentMajor" maxlength="100" required placeholder="e.g. Applied Mathematics"></label></div>
+            <div class="field-row"><label>Preferred name<input id="studentName" maxlength="60" required placeholder="Your name"></label><label>Major / program<input id="studentMajor" maxlength="100" required placeholder="e.g. Engineering Undeclared, aiming for ECE"></label></div>
             <div class="field-row"><label>Target quarter<select id="studentQuarter"><option>Winter 2027</option><option>Spring 2027</option><option>Summer 2027</option><option>Autumn 2027</option></select></label><label>Preferred credits<input id="studentCredits" type="number" min="1" max="25" required value="15"></label></div>
-            <label>Completed courses <span class="field-help">Comma or newline separated UW course codes</span><textarea id="studentCompleted" rows="3" placeholder="CSE 122, MATH 124"></textarea></label>
+            <label>Completed courses <span class="field-help">Comma or newline separated UW course codes; add a grade after a code if you know it (MATH 124 3.5)</span><textarea id="studentCompleted" rows="3" placeholder="CSE 122, MATH 124"></textarea></label>
+            <label>Courses in progress <span class="field-help">Courses you are taking this quarter</span><textarea id="studentInProgress" rows="2" placeholder="MATH 125, CSE 121"></textarea></label>
             <label>Interests and career goals<textarea id="studentGoals" rows="3" placeholder="Software engineering, interaction design, research..."></textarea></label>
             <div class="form-actions"><button class="primary action-primary" type="submit">Save profile</button><button class="secondary-action" type="button" id="backToChat">Back to assistant</button><span id="profileSaved" role="status"></span></div>
           </form>
-          <div class="info-note"><b>How this affects the demo</b><p>Your target credits and completed courses influence scripted recommendations. The major and goals appear as context, but do not yet enforce degree rules. Real eligibility and course offerings still require official UW data.</p></div>
+          <div class="info-note"><b>How this affects the demo</b><p>Your courses, target credits, goals and preferences are sent to the Husky Path backend, which checks prerequisites and ECE requirements and asks the AI for suggestions. Nothing is stored on the server. Results are planning estimates; confirm them in DARS and with an adviser.</p></div>
         </section>
         <section class="full-page hidden" id="schedulePage" aria-labelledby="scheduleHeading">
-          <div class="page-heading"><span class="eyebrow">WEEKLY SCHEDULE</span><h1 id="scheduleHeading">Make room for what matters.</h1><p>Draft timetable based on courses added in the assistant. Lecture and quiz times are fictional samples.</p></div>
+          <div class="page-heading"><span class="eyebrow">WEEKLY SCHEDULE</span><h1 id="scheduleHeading">Make room for what matters.</h1><p>Draft timetable based on courses added in the assistant. Real UW course times aren't in this prototype yet, so only sample sections appear on the calendar.</p></div>
           <div class="schedule-toolbar"><div><b id="scheduleQuarter">Winter 2027</b><span id="scheduleTotal">0 credits · 0 courses</span></div><button class="secondary-action" id="scheduleToChat" type="button">＋ Explore courses</button></div>
           <div id="scheduleAlerts" aria-live="polite"></div>
           <div class="timetable-scroll"><div class="timetable" id="timetable" aria-label="Weekly timetable"></div></div>
@@ -61,10 +62,10 @@
         </section>
         <aside class="context" aria-label="Your context">
           <div class="context-title"><div><span class="eyebrow">YOUR CONTEXT</span><h2 id="contextQuarter">Winter 2027</h2></div></div>
-          <div class="context-section"><div class="context-label">DEGREE PROGRESS <button id="openDegree">View details ↗</button></div><div class="major"><span class="major-icon">⌘</span><div><b id="contextMajor">Computer Science</b><small>Your profile · degree audit is sample-only</small></div></div><p class="mini-note">The degree progress popup shows a separate fictional CS audit; it is not calculated from your profile.</p></div>
-          <div class="context-section"><div class="context-label">YOUR PREFERENCES <button id="addPref">＋ Add preference</button></div><div id="prefChips"></div><p class="mini-note">Used only for this demo's suggestions. Does not change MyPlan settings.</p></div>
+          <div class="context-section"><div class="context-label">DEGREE PROGRESS <button id="openDegree">View details ↗</button></div><div class="major"><span class="major-icon">⌘</span><div><b id="contextMajor">Engineering Undeclared, aiming for ECE</b><small>Your profile · ECE requirements</small></div></div><p class="mini-note">Estimated from your profile against UW ECE requirements. Not your official DARS audit.</p></div>
+          <div class="context-section"><div class="context-label">YOUR PREFERENCES <button id="addPref">＋ Add preference</button></div><div id="prefChips"></div><p class="mini-note">Sent with each question to shape suggestions. Does not change MyPlan settings.</p></div>
           <div class="context-section"><div class="context-label">PLAN SO FAR <button id="clearPlan">Clear</button></div><div class="empty-plan" id="emptyPlan"><span>＋</span><p>No courses added yet.<br>Ask for options, then choose “Add to plan”.</p></div><div id="planItems"></div><div id="planSummary"></div></div>
-          <div class="context-foot">Fictional demo data · Not connected to MyPlan<br>Check prerequisites, restrictions, and seats with UW.</div>
+          <div class="context-foot">UW catalog data (Nov 2026) · Not connected to MyPlan<br>Check prerequisites, restrictions, and seats with UW.</div>
         </aside>
       </div>
     </main>
@@ -76,5 +77,6 @@
   <script src="data.js"></script>
   <script src="chat.js"></script>
   <script src="enhancements.js"></script>
+  <script src="backend.js"></script>
 </body>
 </html>
