@@ -121,3 +121,42 @@ def test_chat_card_warns_when_prereqs_missing(monkeypatch):
                                                       "courses": [{"code": "EE 215", "reason": "r"}]})
     card = client.post("/chat", json={"message": "Can I take EE 215?", "profile": FIRST_YEAR}).json()["cards"][0]
     assert any("Prerequisites not met" in w for w in card["warns"])
+
+
+# ---------- Gemini call handling (httpx is faked; no network)
+
+class _Resp:
+    def __init__(self, code, payload):
+        self.status_code, self._p = code, payload
+        self.text = __import__("json").dumps(payload)
+
+    def json(self):
+        return self._p
+
+
+def test_retries_without_thinking_if_model_rejects_it(monkeypatch):
+    calls = []
+    good = {"candidates": [{"content": {"parts": [{"text": '{"title":"t","intro":"i","courses":[]}'}]}}]}
+
+    def fake_post(url, headers, json, timeout):
+        calls.append("thinkingConfig" in json["generationConfig"])
+        if json["generationConfig"].get("thinkingConfig"):
+            return _Resp(400, {"error": {"message": "thinking_level is not supported"}})
+        return _Resp(200, good)
+
+    monkeypatch.setenv("GEMINI_API_KEY", "test")
+    monkeypatch.setattr(ai.httpx, "post", fake_post)
+    assert ai.call_model("hi")["title"] == "t"
+    assert calls == [True, False]
+
+
+def test_timeout_gives_clear_message(monkeypatch):
+    def slow(*a, **k):
+        raise ai.httpx.ReadTimeout("slow")
+    monkeypatch.setenv("GEMINI_API_KEY", "test")
+    monkeypatch.setattr(ai.httpx, "post", slow)
+    try:
+        ai.call_model("hi")
+        assert False
+    except ai.AIUnavailable as e:
+        assert "longer than" in str(e)

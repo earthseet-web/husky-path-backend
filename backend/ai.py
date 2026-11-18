@@ -59,6 +59,26 @@ def _catalog_lines() -> str:
 CATALOG_TEXT = _catalog_lines()
 
 
+def _requirements_text() -> str:
+    r = checks.REQUIREMENTS
+    p = r["placement"]
+    lines = [f"Program: {r['program']}. {r['applies_to']}. Total {r['total_credits']} credits.",
+             f"{p['label']}: " + "; ".join(i["label"] for i in p["items"]) + f". {p['deadline']}. {p['min_grade_note']}"]
+    for grp in r["graduation"]:
+        parts = []
+        for i in grp["items"]:
+            t = i["label"]
+            if i.get("rules"):
+                t += " (" + "; ".join(i["rules"]) + ")"
+            parts.append(t)
+        lines.append(f"{grp['group']}: " + "; ".join(parts))
+    lines.append("Grade rules: " + "; ".join(f"{k}: {v}" for k, v in r["grade_rules"].items()))
+    return "\n".join(lines)
+
+
+REQUIREMENTS_TEXT = _requirements_text()
+
+
 def build_context(message: str, profile: dict, student: checks.Student, prefs: list[str], plan: list[str]) -> dict:
     asked = mentioned_codes(message)
     return {
@@ -86,10 +106,9 @@ def build_prompt(message: str, context: dict, history: list[dict] | None) -> str
         who = "Student" if turn.get("role") == "user" else "Assistant"
         convo += f"{who}: {str(turn.get('text', ''))[:600]}\n"
     return (
-        f"{SYSTEM_RULES}\n\n=== ECE REQUIREMENTS (summary) ===\n"
-        f"{json.dumps(checks.REQUIREMENTS, separators=(',', ':'))}\n\n"
+        f"{SYSTEM_RULES}\n\n=== ECE REQUIREMENTS (summary) ===\n{REQUIREMENTS_TEXT}\n\n"
         f"=== COURSE CATALOG (only these courses exist for you) ===\n{CATALOG_TEXT}\n\n"
-        f"=== STUDENT AND CHECK RESULTS (computed by code) ===\n{json.dumps(context, indent=1)}\n\n"
+        f"=== STUDENT AND CHECK RESULTS (computed by code) ===\n{json.dumps(context, separators=(',', ':'))}\n\n"
         f"=== RECENT CONVERSATION ===\n{convo or '(none)'}\n"
         f"=== STUDENT'S NEW MESSAGE ===\n{message}\n"
     )
@@ -105,12 +124,21 @@ def call_model(prompt: str) -> dict:
     if not key:
         raise AIUnavailable("No GEMINI_API_KEY set")
     model = os.getenv("GEMINI_MODEL", DEFAULT_MODEL).strip() or DEFAULT_MODEL
-    body = {
-        "contents": [{"role": "user", "parts": [{"text": prompt}]}],
-        "generationConfig": {"temperature": 0.3, "responseMimeType": "application/json"},
-    }
+    timeout = float(os.getenv("GEMINI_TIMEOUT", "90") or 90)
+    config = {"temperature": 0.3, "responseMimeType": "application/json",
+              "thinkingConfig": {"thinkingLevel": "low"}}  # quick answers; set by model generation
+    body = {"contents": [{"role": "user", "parts": [{"text": prompt}]}], "generationConfig": config}
+    url = GEMINI_URL.format(model=model)
+    headers = {"x-goog-api-key": key}
     try:
-        r = httpx.post(GEMINI_URL.format(model=model), headers={"x-goog-api-key": key}, json=body, timeout=45)
+        r = httpx.post(url, headers=headers, json=body, timeout=timeout)
+        if r.status_code == 400 and "thinking" in r.text.lower():
+            # Older models don't accept thinkingLevel: retry without it.
+            config.pop("thinkingConfig")
+            r = httpx.post(url, headers=headers, json=body, timeout=timeout)
+    except httpx.TimeoutException as e:
+        raise AIUnavailable(f"Gemini took longer than {timeout:.0f} seconds (timeout). "
+                            "Try again, or set GEMINI_MODEL to a faster model in .env") from e
     except httpx.HTTPError as e:
         raise AIUnavailable(f"Could not reach Gemini: {e.__class__.__name__}") from e
     if r.status_code != 200:

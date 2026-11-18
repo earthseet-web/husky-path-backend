@@ -7,6 +7,7 @@ from __future__ import annotations
 
 import os
 import re
+import time
 from pathlib import Path
 from typing import Any
 
@@ -150,6 +151,7 @@ def chat(req: ChatRequest):
     s = checks.student_from_profile(profile)
     plan = [c for c in (checks.normalize_code(p) for p in req.plan) if c]
     context = ai.build_context(req.message, profile, s, req.preferences, plan)
+    started = time.monotonic()
     try:
         raw = ai.call_model(ai.build_prompt(req.message, context, req.history))
         source = "ai"
@@ -157,6 +159,7 @@ def chat(req: ChatRequest):
         raw = ai.fallback_reply(req.message, context, str(e))
         source = "fallback"
     reply = shape_reply(raw, s, source)
+    reply["seconds"] = round(time.monotonic() - started, 1)
     if raw.get("ai_error"):
         reply["ai_error"] = raw["ai_error"]  # for debugging; the front end doesn't need to show it
     reply["placement"] = {"done": context["placement_progress"]["done"], "total": context["placement_progress"]["total"]}
