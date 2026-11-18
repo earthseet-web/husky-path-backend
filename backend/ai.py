@@ -110,7 +110,7 @@ def call_model(prompt: str) -> dict:
         "generationConfig": {"temperature": 0.3, "responseMimeType": "application/json"},
     }
     try:
-        r = httpx.post(GEMINI_URL.format(model=model), params={"key": key}, json=body, timeout=45)
+        r = httpx.post(GEMINI_URL.format(model=model), headers={"x-goog-api-key": key}, json=body, timeout=45)
     except httpx.HTTPError as e:
         raise AIUnavailable(f"Could not reach Gemini: {e.__class__.__name__}") from e
     if r.status_code != 200:
