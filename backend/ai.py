@@ -13,7 +13,7 @@ import httpx
 import checks
 
 GEMINI_URL = "https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent"
-DEFAULT_MODEL = "gemini-flash-latest"
+DEFAULT_MODEL = "gemini-3.1-flash-lite"
 
 SYSTEM_RULES = """You are Husky Path, a course-planning assistant for University of Washington students
 who want to study Electrical and Computer Engineering (ECE). This is a student demo, not an official UW tool.

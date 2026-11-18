@@ -33,7 +33,7 @@ Then open **http://127.0.0.1:8000/docs** to try every endpoint in the browser.
 
 **Check it's connected:** open http://127.0.0.1:8000/health. `"ai_connected": true` means the key was found.
 If chat answers say *"The AI isn't connected right now"*, the response's `ai_error` field says why
-(for example a wrong key, or a model name that changed: set `GEMINI_MODEL` in `.env`).
+(for example a wrong key, or a model that stopped answering). Run `python tools/test_gemini.py` to test which models work with your key and set the fastest as `GEMINI_MODEL` in `.env`. Tested on 2026-11-17: `gemini-3.1-flash-lite` answers in under a second.
 
 **Run the tests:** `pytest -q` inside `backend/`. They use a fake AI, so no key is needed.
 

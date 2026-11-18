@@ -12,7 +12,7 @@ from dotenv import load_dotenv
 
 load_dotenv(Path(__file__).resolve().parent.parent / ".env")
 KEY = os.getenv("GEMINI_API_KEY", "").strip()
-MODEL = os.getenv("GEMINI_MODEL", "gemini-flash-latest").strip() or "gemini-flash-latest"
+MODEL = os.getenv("GEMINI_MODEL", "gemini-3.1-flash-lite").strip() or "gemini-3.1-flash-lite"
 BASE = "https://generativelanguage.googleapis.com/v1beta"
 H = {"x-goog-api-key": KEY}
 
@@ -67,7 +67,7 @@ def ask(label, model, extra=None):
 
 
 # 2. Tiny question to several models (or the ones you name: python tools/test_gemini.py gemini-2.5-flash)
-models = sys.argv[1:] or [MODEL, "gemini-2.5-flash", "gemini-2.5-flash-lite", "gemini-3.1-flash-lite"]
+models = sys.argv[1:] or [MODEL, "gemini-3.1-flash-lite", "gemini-flash-lite-latest", "gemini-3-flash-preview"]
 seen = []
 for m in models:
     if m not in seen:
