@@ -1,6 +1,6 @@
 """Quick Gemini connection test. Never prints your key.
 
-Run from the backend/ folder:   python tools/test_gemini.py
+Run from the backend/ folder:   python tools/test_gemini.py   (or add model names to test)
 """
 import os
 import sys
@@ -55,7 +55,7 @@ def ask(label, model, extra=None):
             "generationConfig": {"maxOutputTokens": 50, **(extra or {})}}
     t = time.monotonic()
     try:
-        r = httpx.post(f"{BASE}/models/{model}:generateContent", headers=H, json=body, timeout=60)
+        r = httpx.post(f"{BASE}/models/{model}:generateContent", headers=H, json=body, timeout=30)
         show(label, t, r)
         if r.status_code == 200:
             try:
@@ -66,8 +66,12 @@ def ask(label, model, extra=None):
         show(label, t, err=e)
 
 
-# 2. Tiny question to the configured model
-ask(f"2. Tiny question to {MODEL}", MODEL)
-# 3. Same, with low thinking (what the backend uses)
-ask(f"3. Tiny question to {MODEL}, low thinking", MODEL, {"thinkingConfig": {"thinkingLevel": "low"}})
-print("\nDone. Copy everything above (it doesn't include your key) and send it to Claude.")
+# 2. Tiny question to several models (or the ones you name: python tools/test_gemini.py gemini-2.5-flash)
+models = sys.argv[1:] or [MODEL, "gemini-2.5-flash", "gemini-2.5-flash-lite", "gemini-3.1-flash-lite"]
+seen = []
+for m in models:
+    if m not in seen:
+        seen.append(m)
+        ask(f"2. Tiny question to {m}", m)
+print("\nPick the fastest [OK] model and put it in backend/.env as GEMINI_MODEL=<name>, then restart.")
+print("Copy everything above (it doesn't include your key) and send it to Claude.")
