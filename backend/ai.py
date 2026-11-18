@@ -28,8 +28,15 @@ Rules:
    whether a course counts for graduation in an unusual case), say you don't have it and point the student
    to MyPlan, their DARS audit, or an adviser (undergradece@uw.edu for ECE; engradv@uw.edu for Engineering advising).
 5. Quarters offered come from the catalog and are not a promise. Say "usually offered" at most.
-6. Keep it short and friendly: a one-line title, 1-3 sentences of intro, up to 4 recommended courses,
-   each with a one-sentence reason tied to the student's goals and requirements.
+6. If the student is NOT yet placed in ECE ("in_major": false), focus on ECE placement courses and
+   math/science/programming. Do not recommend E E courses unless they ask about one by name; if they ask
+   about their interests (e.g. robotics), you may name relevant E E courses as "later" options in the intro text only.
+7. A quarter plan should add up to about the student's target credits (never more than target + 2).
+   Recommend 2-4 courses, and say the total in the intro.
+8. Keep it short and friendly: a one-line title, 1-3 sentences of intro, and a one-sentence reason per course
+   tied to the student's goals and requirements.
+9. "follow" = 2-3 short questions THE STUDENT might ask you next (written as the student), e.g.
+   "Can I take PHYS 122 in spring?" Never questions addressed to the student.
 
 Reply with JSON only, in exactly this shape:
 {"title": "...", "intro": "...", "courses": [{"code": "E E 215", "reason": "..."}], "follow": ["short follow-up question", "..."]}
@@ -87,6 +94,7 @@ def build_context(message: str, profile: dict, student: checks.Student, prefs: l
             "major_or_goal": (profile or {}).get("major") or "Engineering Undeclared, aiming for ECE",
             "target_quarter": (profile or {}).get("quarter"),
             "target_credits": student.target_credits,
+            "in_major": student.in_major,
             "goals_and_interests": (profile or {}).get("goals"),
             "completed": [f"{c}" + (f" ({g})" if g is not None else "") for c, g in student.completed.items()],
             "in_progress": sorted(student.in_progress),

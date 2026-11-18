@@ -45,6 +45,7 @@ class Student:
     in_progress: set[str] = field(default_factory=set)
     english_comp_done: bool = False
     target_credits: int = 15
+    in_major: bool = False  # admitted/placed into ECE (otherwise: working toward placement)
 
     def has(self, code: str, min_grade: float | None = None, include_in_progress: bool = False) -> bool:
         if code in self.completed:
@@ -90,6 +91,10 @@ def student_from_profile(profile: dict | None) -> Student:
         s.target_credits = int(float(profile.get("credits") or 15))
     except (TypeError, ValueError):
         s.target_credits = 15
+    major = str(profile.get("major") or "").lower()
+    says_ece = bool(re.search(r"\bece\b|electrical", major))
+    not_yet = any(w in major for w in ("undeclared", "aiming", "pre-", "intended", "want"))
+    s.in_major = s.has("E E 215", include_in_progress=True) or (says_ece and not not_yet)
     return s
 
 
@@ -273,7 +278,7 @@ def _level(code: str) -> int:
 def eligible_next(s: Student, limit: int = 12) -> list[dict]:
     """Placement and required courses the student still needs and is ready for next quarter,
     in sample-plan order (placement first)."""
-    in_major = s.has("E E 215", include_in_progress=True)
+    in_major = s.in_major
     items = [("ECE placement", i) for i in REQUIREMENTS["placement"]["items"]]
     items += [(grp["group"].split(" (")[0], i) for grp in REQUIREMENTS["graduation"] for i in grp["items"]]
     candidates = []
@@ -295,8 +300,8 @@ def eligible_next(s: Student, limit: int = 12) -> list[dict]:
         for code in pool:
             if code in s.completed or code in s.in_progress or code not in COURSES:
                 continue
-            if _level(code) >= 300 and not in_major:
-                continue  # upper-division courses wait until the student is in the major
+            if not in_major and (_level(code) >= 300 or code.startswith("E E ")):
+                continue  # E E and upper-division courses come after placement into the major
             st = prereq_status(code, s)
             if st["status"] in ("met", "no_prereqs"):
                 candidates.append((placement_first, PLAN_ORDER.get(code, 99), code, f"{group_label}: {item['label']}"))
@@ -310,6 +315,23 @@ def eligible_next(s: Student, limit: int = 12) -> list[dict]:
             seen.add(code)
             out.append({"code": code, "requirement": label})
     return out[:limit]
+
+
+def plan_year(code: str) -> int | None:
+    """Year of the official sample plan in which this course appears (1-4), if it does."""
+    idx = PLAN_ORDER.get(code)
+    return idx // 3 + 1 if idx is not None else None
+
+
+def timing_note(code: str, s: Student) -> str | None:
+    """A gentle warning when a course is far ahead of where the student is."""
+    if s.in_major:
+        return None
+    year = plan_year(code)
+    if code.startswith("E E ") or _level(code) >= 300:
+        when = f"year {year}" if year else "later in the degree"
+        return f"The official ECE plan schedules this in {when}, after placement into ECE. Focus on placement courses first."
+    return None
 
 
 def credits_of(code: str) -> int:

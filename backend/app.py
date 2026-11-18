@@ -79,6 +79,9 @@ def course_card(code: str, reason: str, student: checks.Student) -> dict:
         fits.append("No prerequisites listed")
     else:
         warns.append("Prerequisites not met yet: " + "; ".join(st["missing"]))
+    note = checks.timing_note(code, student)
+    if note:
+        warns.insert(0, note)
     warns += st["notes"]
     warns.append(f"Usually offered: {quarters_text(c['offered'])} (not confirmed for a specific quarter)" if c.get("offered")
                  else "Quarters offered not listed in the catalog; check MyPlan")
@@ -163,6 +166,11 @@ def chat(req: ChatRequest):
     if raw.get("ai_error"):
         reply["ai_error"] = raw["ai_error"]  # for debugging; the front end doesn't need to show it
     reply["placement"] = {"done": context["placement_progress"]["done"], "total": context["placement_progress"]["total"]}
+    total = sum(checks.credits_of(cd["code"]) for cd in reply["cards"])
+    reply["total_credits"] = total
+    if reply["cards"] and total > s.target_credits + 2:
+        reply["workload_warning"] = (f"These courses add up to {total} credits, more than your ~{s.target_credits}-credit "
+                                     "target. Pick the ones that matter most for placement.")
     return reply
 
 

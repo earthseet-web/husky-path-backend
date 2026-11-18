@@ -160,3 +160,28 @@ def test_timeout_gives_clear_message(monkeypatch):
         assert False
     except ai.AIUnavailable as e:
         assert "longer than" in str(e)
+
+
+# ---------- first-year guidance
+
+def test_first_year_not_offered_ee_courses():
+    s = student(FIRST_YEAR | {"major": "Engineering Undeclared, aiming for ECE"})
+    assert not s.in_major
+    assert not any(e["code"].startswith("E E") for e in checks.eligible_next(s))
+
+
+def test_ece_major_gets_ee_core():
+    s = student({"major": "Electrical and Computer Engineering",
+                 "completed": "MATH 124, MATH 125, MATH 126, CHEM 142, PHYS 121, PHYS 122, CSE 121, CSE 122, MATH 207"})
+    assert s.in_major
+    assert any(e["code"].startswith("E E") for e in checks.eligible_next(s))
+
+
+def test_card_warns_first_year_about_ee271_and_credit_total(monkeypatch):
+    monkeypatch.setattr(ai, "call_model", lambda p: {"title": "t", "intro": "i", "courses": [
+        {"code": "MATH 126", "reason": "r"}, {"code": "PHYS 121", "reason": "r"},
+        {"code": "E E 271", "reason": "r"}, {"code": "MATH 207", "reason": "r"}]})
+    r = client.post("/chat", json={"message": "plan", "profile": FIRST_YEAR | {"major": "Engineering Undeclared"}}).json()
+    ee = next(c for c in r["cards"] if c["code"] == "E E 271")
+    assert "year 3" in ee["warns"][0]
+    assert r["total_credits"] == 19 and "workload_warning" in r
